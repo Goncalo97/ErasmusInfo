@@ -13,17 +13,27 @@ Funcionalidades:
  Tabelas:
  
   - Perfil
+   - Nome
+   - Idade
   - Universidade
+   - Nome
+   - País
+   - Localização
   - Contactos
+   - Nome
+   - Número
   - Disciplinas
-  - Notas
-  
+   - Codigo
+   - Nome
+   - ECTs
+   - Disciplina Equivalente
+   - Nota
+   
  Relações:
   
    - Perfil 1..M Contactos
    - Perfil 1..M Universidade
    - Universidade 1..M Disciplinas
-   - Disciplinas 1..M Notas
   
   
   
