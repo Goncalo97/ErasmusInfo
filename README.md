@@ -32,7 +32,7 @@ Funcionalidades:
  Relações:
   
    - Perfil 1..M Contactos
-   - Perfil 1..M Universidade
+   - Perfil 1..1 Universidade
    - Universidade 1..M Disciplinas
   
   
