@@ -12,7 +12,18 @@ Funcionalidades:
  
  Tabelas:
  
-  - asd
+  - Perfil
+  - Universidade
+  - Contactos
+  - Disciplinas
+  - Notas
+  
+ Relações:
+  
+   - Perfil 1..M Contactos
+   - Perfil 1..M Universidade
+   - Universidade 1..M Disciplinas
+   - Disciplinas 1..M Notas
   
   
   
