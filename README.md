@@ -13,21 +13,21 @@ Funcionalidades:
  Tabelas:
  
   - Perfil
-   - Nome
-   - Idade
+    - Nome
+    - Idade
   - Universidade
-   - Nome
-   - País
-   - Localização
+    - Nome
+    - País
+    - Localização
   - Contactos
-   - Nome
-   - Número
+    - Nome
+    - Número
   - Disciplinas
-   - Codigo
-   - Nome
-   - ECTs
-   - Disciplina Equivalente
-   - Nota
+    - Codigo
+    - Nome
+    - ECTs
+    - Disciplina Equivalente
+    - Nota
    
  Relações:
   
