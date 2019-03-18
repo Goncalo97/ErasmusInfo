@@ -35,5 +35,5 @@ Funcionalidades:
    - Perfil 1..1 Universidade
    - Universidade 1..M Disciplinas
   
-  
+   <img src="mod_er.png" alt="Mod ER" height="" width=""> 
   
