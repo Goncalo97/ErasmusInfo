@@ -1,5 +1,6 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,5 +53,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendMessagePerfil(View view) {
+        Intent intent = new Intent(this, Perfil.class);
+
+        intent.putExtra(AppConsts.MESSAGE_PERFIL, "Perfil MSG");
+
+        startActivity(intent);
+
+        Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
     }
 }
