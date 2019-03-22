@@ -12,24 +12,23 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-public class Perfil extends AppCompatActivity {
+public class Disciplinas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil);
+        setContentView(R.layout.activity_disciplinas);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        showMessagePerfil();
 
+        showMessageDisciplinas();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private void showMessagePerfil() {
+    private void showMessageDisciplinas() {
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(AppConsts.MESSAGE_PERFIL);
+        String message = intent.getStringExtra(AppConsts.MESSAGE_DISCIPLINAS);
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 }

@@ -23,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 
     @Override
@@ -56,12 +56,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessagePerfil(View view) {
+
         Intent intent = new Intent(this, Perfil.class);
-
-        intent.putExtra(AppConsts.MESSAGE_PERFIL, "Perfil MSG");
-
+        intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Perfil }");
         startActivity(intent);
+        // Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
+    }
 
-        Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
+    public void sendMessageContactos(View view) {
+
+        Intent intent = new Intent(this, Contactos.class);
+        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contactos }");
+        startActivity(intent);
+    }
+
+    public void sendMessageUniversidade(View view) {
+
+        Intent intent = new Intent(this, Universidade.class);
+        intent.putExtra(AppConsts.MESSAGE_UNIVERSIDADE, "{ Universidade }");
+        startActivity(intent);
+    }
+
+    public void sendMessageDisciplinas(View view) {
+
+        Intent intent = new Intent(this, Disciplinas.class);
+        intent.putExtra(AppConsts.MESSAGE_DISCIPLINAS, "{ Disciplinas }");
+        startActivity(intent);
     }
 }

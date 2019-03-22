@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Disciplinas"
+            android:label="@string/title_activity_disciplinas"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Universidade"
+            android:label="@string/title_activity_universidade"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Contactos"
+            android:label="@string/title_activity_contactos"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.MainActivity" />
+        </activity>
+        <activity
             android:name=".Perfil"
             android:label="@string/title_activity_perfil"
             android:parentActivityName=".MainActivity"
