@@ -1,7 +1,7 @@
 # ErasmusInfo
 Trabalho para a aula de Programação Avançada.
 
-A app possibilita ao utilizador, registrar informação sobre país e a universidade, e o que pretende fazer em Erasmus.
+A app possibilita ao utilizador, registar informação sobre país e a universidade, e o que pretende fazer em Erasmus.
 
 Funcionalidades:
  
