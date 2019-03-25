@@ -9,4 +9,6 @@
     <string name="title_activity_contactos">Contactos</string>
     <string name="title_activity_universidade">Universidade</string>
     <string name="title_activity_disciplinas">Disciplinas</string>
+    <string name="read_profile">View Profile</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>
