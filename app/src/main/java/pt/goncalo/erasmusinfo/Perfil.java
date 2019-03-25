@@ -32,4 +32,10 @@ public class Perfil extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    public void openEditPerfil(View view) {
+
+        Intent intent = new Intent(this, EditPerfil.class);
+        startActivity(intent);
+    }
+
 }
