@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".EditPerfil"
+            android:label="@string/title_activity_edit_perfil"
+            android:parentActivityName=".Perfil"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Perfil" />
+        </activity>
+        <activity
             android:name=".Disciplinas"
             android:label="@string/title_activity_disciplinas"
             android:parentActivityName=".MainActivity"

@@ -11,4 +11,5 @@
     <string name="title_activity_disciplinas">Disciplinas</string>
     <string name="read_profile">View Profile</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="title_activity_edit_perfil">EditPerfil</string>
 </resources>
