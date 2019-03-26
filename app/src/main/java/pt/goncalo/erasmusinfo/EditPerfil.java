@@ -20,7 +20,8 @@ public class EditPerfil extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Toast.makeText(this, "{Edit Perfil}", Toast.LENGTH_LONG).show();
+        // getString of Resource @string/edit_profile
+        Toast.makeText(this, "{"+getString(R.string.edit_profile)+"}", Toast.LENGTH_LONG).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
