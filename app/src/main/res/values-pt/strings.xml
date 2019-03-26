@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ErasmusInfo</string>
+    <string name="action_settings">Configurações</string>
+    <string name="disciplinas">Disciplinas</string>
+    <string name="contactos">Contactos</string>
+    <string name="universidade">Universidade</string>
+    <string name="perfil">Perfil</string>
+    <string name="title_activity_perfil">Perfil</string>
+    <string name="title_activity_contactos">Contactos</string>
+    <string name="title_activity_universidade">Universidade</string>
+    <string name="title_activity_disciplinas">Disciplinas</string>
+    <string name="read_profile">Ver Perfil</string>
+    <string name="edit_profile">Configurar Perfil</string>
+    <string name="title_activity_edit_perfil">Configurar Perfil</string>
+</resources>
