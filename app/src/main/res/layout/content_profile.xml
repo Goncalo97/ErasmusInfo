@@ -7,7 +7,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Profile"
-    tools:showIn="@layout/activity_perfil">
+    tools:showIn="@layout/activity_profile">
 
     <Button
         android:id="@+id/buttonRead"

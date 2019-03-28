@@ -46,7 +46,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Contacts"
+            android:name=".Contact"
             android:label="@string/title_activity_contactos"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

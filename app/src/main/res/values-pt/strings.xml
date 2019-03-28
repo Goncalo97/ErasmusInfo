@@ -16,9 +16,10 @@
     <string name="required_profile_name">Introduza um nome.</string>
     <string name="required_profile_age">Introduza uma idade.</string>
     <string name="saved">Dados guardados com sucesso.</string>
-    <string name="canceled">Dados não guardados.</string>
+    <string name="canceled">Dados não guardados!</string>
     <string name="name_profile">Nome:</string>
     <string name="age_profile">Idade:</string>
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
+    <string name="title_activity_profile_view">Ver Perfil</string>
 </resources>

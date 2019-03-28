@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessageContactos(View view) {
 
-        Intent intent = new Intent(this, Contacts.class);
-        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contacts }");
+        Intent intent = new Intent(this, Contact.class);
+        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contact }");
         startActivity(intent);
     }
 

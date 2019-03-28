@@ -13,13 +13,13 @@
     <string name="title_activity_disciplinas">Classes</string>
     <string name="title_activity_edit_perfil">Edit Profile</string>
     <string name="saved">Data saved with success.</string>
-    <string name="canceled">Data not saved</string>
+    <string name="canceled">Data not saved!</string>
     <string name="required_profile_name">Please enter a name.</string>
     <string name="required_profile_age">Please enter an age.</string>
     <string name="name_profile">Name:</string>
     <string name="age_profile">Age:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="title_activity_profile_view">ProfileView</string>
+    <string name="title_activity_profile_view">View Profile</string>
 
 </resources>
