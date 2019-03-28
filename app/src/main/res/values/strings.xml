@@ -20,5 +20,6 @@
     <string name="age_profile">Age:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="title_activity_profile_view">ProfileView</string>
 
 </resources>

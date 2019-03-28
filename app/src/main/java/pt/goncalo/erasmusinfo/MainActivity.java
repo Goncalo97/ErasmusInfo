@@ -3,16 +3,12 @@ package pt.goncalo.erasmusinfo;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,30 +53,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessagePerfil(View view) {
 
-        Intent intent = new Intent(this, Perfil.class);
-        intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Perfil }");
+        Intent intent = new Intent(this, Profile.class);
+        intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Profile }");
         startActivity(intent);
         // Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
     }
 
     public void sendMessageContactos(View view) {
 
-        Intent intent = new Intent(this, Contactos.class);
-        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contactos }");
+        Intent intent = new Intent(this, Contacts.class);
+        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contacts }");
         startActivity(intent);
     }
 
     public void sendMessageUniversidade(View view) {
 
-        Intent intent = new Intent(this, Universidade.class);
-        intent.putExtra(AppConsts.MESSAGE_UNIVERSIDADE, "{ Universidade }");
+        Intent intent = new Intent(this, College.class);
+        intent.putExtra(AppConsts.MESSAGE_UNIVERSIDADE, "{ College }");
         startActivity(intent);
     }
 
     public void sendMessageDisciplinas(View view) {
 
-        Intent intent = new Intent(this, Disciplinas.class);
-        intent.putExtra(AppConsts.MESSAGE_DISCIPLINAS, "{ Disciplinas }");
+        Intent intent = new Intent(this, Class.class);
+        intent.putExtra(AppConsts.MESSAGE_DISCIPLINAS, "{ Class }");
         startActivity(intent);
     }
 }

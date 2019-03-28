@@ -12,24 +12,23 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-public class Contactos extends AppCompatActivity {
+public class Class extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactos);
+        setContentView(R.layout.activity_disciplinas);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        showMessageContactos();
+        showMessageDisciplinas();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private void showMessageContactos() {
+    private void showMessageDisciplinas() {
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(AppConsts.MESSAGE_CONTACTOS);
+        String message = intent.getStringExtra(AppConsts.MESSAGE_DISCIPLINAS);
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 }

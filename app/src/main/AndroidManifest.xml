@@ -10,16 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".EditPerfil"
-            android:label="@string/title_activity_edit_perfil"
-            android:parentActivityName=".Perfil"
+            android:name=".ProfileView"
+            android:label="@string/title_activity_profile_view"
+            android:parentActivityName=".Profile"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Perfil" />
+                android:value="pt.goncalo.erasmusinfo.Profile" />
         </activity>
         <activity
-            android:name=".Disciplinas"
+            android:name=".ProfileEdit"
+            android:label="@string/title_activity_edit_perfil"
+            android:parentActivityName=".Profile"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Profile" />
+        </activity>
+        <activity
+            android:name=".Class"
             android:label="@string/title_activity_disciplinas"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -28,7 +37,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Universidade"
+            android:name=".College"
             android:label="@string/title_activity_universidade"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -37,7 +46,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Contactos"
+            android:name=".Contacts"
             android:label="@string/title_activity_contactos"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -46,7 +55,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Perfil"
+            android:name=".Profile"
             android:label="@string/title_activity_perfil"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
