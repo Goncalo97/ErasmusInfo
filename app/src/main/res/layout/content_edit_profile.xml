@@ -28,13 +28,13 @@
 
     <Button
         android:id="@+id/buttonSaveProfile"
-        style="@android:style/Widget.Button"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="saveProfile"
         android:text="@string/save"
-        android:textSize="18sp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
     <Button
         android:id="@+id/buttonCancelProfile"
@@ -43,7 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="cancelProfile"
-        android:text="@string/cancel" />
+        android:text="@string/cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
 
 </LinearLayout>

@@ -17,17 +17,20 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        showMessagePerfil();
+        /* showMessagePerfil(); */
+        Toast.makeText(this, "{ Profile }", Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    /*
     private void showMessagePerfil() {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(AppConsts.MESSAGE_PERFIL);
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+    */
 
     public void openEditPerfil(View view) {
 

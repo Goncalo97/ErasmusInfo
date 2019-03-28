@@ -51,13 +51,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void sendMessagePerfil(View view) {
 
         Intent intent = new Intent(this, Profile.class);
-        intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Profile }");
+        // intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Profile }");
         startActivity(intent);
         // Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
     }
+
 
     public void sendMessageContactos(View view) {
 

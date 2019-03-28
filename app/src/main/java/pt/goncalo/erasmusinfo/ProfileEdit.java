@@ -44,7 +44,9 @@ public class ProfileEdit extends AppCompatActivity {
             return;
         }
 
-        if (stringProfileAge.trim().length() == 0) {
+        if (stringProfileAge.trim().length() == 0 ||
+                Integer.parseInt(stringProfileAge) <  0 ||
+                Integer.parseInt(stringProfileAge) > 130 ) {
 
             // err Attribution
             editProfileAge.setError(getString(R.string.required_profile_age));
