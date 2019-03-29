@@ -2,16 +2,16 @@
     <string name="app_name">ErasmusInfo</string>
     <string name="action_settings">Settings</string>
     <string name="disciplinas">Classes</string>
-    <string name="contactos">Contacts</string>
-    <string name="universidade">University</string>
-    <string name="perfil">Profile</string>
-    <string name="title_activity_perfil">Profile</string>
+    <string name="contact">Contacts</string>
+    <string name="college">University</string>
+    <string name="profile">Profile</string>
+    <string name="title_activity_profile">Profile</string>
     <string name="read_profile">View Profile</string>
     <string name="edit_profile">Edit Profile</string>
-    <string name="title_activity_contactos">Contacts</string>
-    <string name="title_activity_universidade">University</string>
-    <string name="title_activity_disciplinas">Classes</string>
-    <string name="title_activity_edit_perfil">Edit Profile</string>
+    <string name="title_activity_contact">Contacts</string>
+    <string name="title_activity_college">University</string>
+    <string name="title_activity_class">Classes</string>
+    <string name="title_activity_profile_edit">Edit Profile</string>
     <string name="saved">Data saved with success.</string>
     <string name="canceled">Data not saved!</string>
     <string name="required_profile_name">Please enter a name.</string>
@@ -21,5 +21,6 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="title_activity_profile_view">View Profile</string>
+    <string name="title_activity_class_edit">Edit Class</string>
 
 </resources>

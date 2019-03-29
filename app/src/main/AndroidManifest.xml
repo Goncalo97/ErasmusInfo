@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ClassEdit"
+            android:label="@string/title_activity_class_edit"
+            android:parentActivityName=".Class"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Class" />
+        </activity>
+        <activity
             android:name=".ProfileView"
             android:label="@string/title_activity_profile_view"
             android:parentActivityName=".Profile"
@@ -20,7 +29,7 @@
         </activity>
         <activity
             android:name=".ProfileEdit"
-            android:label="@string/title_activity_edit_perfil"
+            android:label="@string/title_activity_profile_edit"
             android:parentActivityName=".Profile"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -29,7 +38,7 @@
         </activity>
         <activity
             android:name=".Class"
-            android:label="@string/title_activity_disciplinas"
+            android:label="@string/title_activity_class"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -38,7 +47,7 @@
         </activity>
         <activity
             android:name=".College"
-            android:label="@string/title_activity_universidade"
+            android:label="@string/title_activity_college"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -47,7 +56,7 @@
         </activity>
         <activity
             android:name=".Contact"
-            android:label="@string/title_activity_contactos"
+            android:label="@string/title_activity_contact"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -56,7 +65,7 @@
         </activity>
         <activity
             android:name=".Profile"
-            android:label="@string/title_activity_perfil"
+            android:label="@string/title_activity_profile"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
