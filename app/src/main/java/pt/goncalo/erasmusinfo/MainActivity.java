@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    // ToDo: Refazer as funções "sendMessage<Activity_Name>";
     public void sendMessagePerfil(View view) {
 
         Intent intent = new Intent(this, Profile.class);
