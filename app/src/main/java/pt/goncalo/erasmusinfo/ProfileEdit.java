@@ -24,12 +24,12 @@ public class ProfileEdit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_profile_edit);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // getString of Resource @string/edit_profile
-        Toast.makeText(this, "{" + getString(R.string.edit_profile) + "}", Toast.LENGTH_LONG).show();
+        // getString of Resource @string/profile_edit
+        Toast.makeText(this, "{" + getString(R.string.profile_edit) + "}", Toast.LENGTH_LONG).show();
 
         editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();

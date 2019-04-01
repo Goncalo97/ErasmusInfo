@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ProfileDelete"
+            android:label="@string/title_activity_profile_delete"
+            android:parentActivityName=".Profile"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Profile" />
+        </activity>
+        <activity
+            android:name=".ProfileInsert"
+            android:label="@string/title_activity_profile_insert"
+            android:parentActivityName=".Profile"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Profile" />
+        </activity>
+        <activity
             android:name=".ClassEdit"
             android:label="@string/title_activity_class_edit"
             android:parentActivityName=".Class"

@@ -15,7 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        android:text="@string/read_profile"
+        android:onClick="openProfileView"
+        android:text="@string/profile_read"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:onClick="openProfileInsert"
+        android:text="@string/profile_insert"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -24,7 +35,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        android:onClick="openEditPerfil"
-        android:text="@string/edit_profile"
+        android:onClick="openProfileEdit"
+        android:text="@string/profile_edit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:onClick="openProfileEdit"
+        android:text="@string/profile_edit"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 </LinearLayout>

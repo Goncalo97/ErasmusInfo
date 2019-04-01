@@ -10,17 +10,20 @@
     <string name="title_activity_contact">Contactos</string>
     <string name="title_activity_college">Universidade</string>
     <string name="title_activity_class">Disciplinas</string>
-    <string name="read_profile">Ver Perfil</string>
-    <string name="edit_profile">Configurar Perfil</string>
+    <string name="profile_read">Ver Perfil</string>
+    <string name="profile_edit">Configurar Perfil</string>
     <string name="title_activity_profile_edit">Configurar Perfil</string>
     <string name="required_profile_name">Introduza um nome.</string>
     <string name="required_profile_age">Introduza uma idade.</string>
     <string name="saved">Dados guardados com sucesso.</string>
-    <string name="canceled">Dados não guardados!</string>
+    <string name="canceled">Cancelado!</string>
     <string name="name_profile">Nome:</string>
     <string name="age_profile">Idade:</string>
     <string name="save">Guardar</string>
     <string name="cancel">Cancelar</string>
     <string name="title_activity_profile_view">Ver Perfil</string>
     <string name="title_activity_class_edit">Configurar Disciplina</string>
+    <string name="title_activity_profile_insert">Inserir Perfil</string>
+    <string name="profile_insert">Inserir Perfil</string>
+    <string name="title_activity_profile_delete">Eliminar Perfil</string>
 </resources>

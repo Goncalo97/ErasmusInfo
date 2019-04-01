@@ -5,22 +5,37 @@
     <string name="contact">Contacts</string>
     <string name="college">University</string>
     <string name="profile">Profile</string>
+
     <string name="title_activity_profile">Profile</string>
-    <string name="read_profile">View Profile</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="title_activity_contact">Contacts</string>
-    <string name="title_activity_college">University</string>
-    <string name="title_activity_class">Classes</string>
+    <string name="profile_read">View Profile</string>
+    <string name="profile_insert">Insert Profile</string>
+    <string name="profile_edit">Edit Profile</string>
+
+    <string name="title_activity_profile_view">View Profile</string>
+
+    <string name="title_activity_profile_insert">Insert Profile</string>
+
     <string name="title_activity_profile_edit">Edit Profile</string>
     <string name="saved">Data saved with success.</string>
-    <string name="canceled">Data not saved!</string>
+    <string name="canceled">Canceled!</string>
     <string name="required_profile_name">Please enter a name.</string>
     <string name="required_profile_age">Please enter an age.</string>
     <string name="name_profile">Name:</string>
     <string name="age_profile">Age:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="title_activity_profile_view">View Profile</string>
+
+    <string name="title_activity_profile_delete">Profile Delete</string>
+    <string name="delete">Delete</string>
+
+    <string name="title_activity_contact">Contacts</string>
+
+    <string name="title_activity_college">University</string>
+
+    <string name="title_activity_class">Classes</string>
+
     <string name="title_activity_class_edit">Edit Class</string>
+
+
 
 </resources>

@@ -32,10 +32,24 @@ public class Profile extends AppCompatActivity {
     }
     */
 
-    public void openEditPerfil(View view) {
+    public void openProfileView(View view) {
+
+        Intent intent = new Intent(this, ProfileView.class);
+        startActivity(intent);
+    }
+
+    public void openProfileInsert(View view) {
+
+        Intent intent = new Intent(this, ProfileInsert.class);
+        startActivity(intent);
+    }
+
+    public void openProfileEdit(View view) {
 
         Intent intent = new Intent(this, ProfileEdit.class);
         startActivity(intent);
     }
+
+
 
 }
