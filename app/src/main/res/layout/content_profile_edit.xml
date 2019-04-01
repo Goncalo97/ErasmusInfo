@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProfileEdit"
+    tools:showIn="@layout/activity_profile_edit">
+
+
+    <EditText
+        android:id="@+id/editTextViewProfileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:hint="@string/name_profile"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextViewProfileAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:hint="@string/age_profile"
+        android:clickable="true"
+        android:focusable="false"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/buttonSaveProfile"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:onClick="saveProfile"
+        android:text="@string/save"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+
+    <Button
+        android:id="@+id/buttonCancelProfile"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:onClick="cancelProfile"
+        android:text="@string/cancel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+
+
+</LinearLayout>
