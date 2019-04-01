@@ -10,18 +10,19 @@
     <string name="profile_read">View Profile</string>
     <string name="profile_insert">Insert Profile</string>
     <string name="profile_edit">Edit Profile</string>
+    <string name="profile_delete">Delete Profile</string>
 
     <string name="title_activity_profile_view">View Profile</string>
 
     <string name="title_activity_profile_insert">Insert Profile</string>
 
     <string name="title_activity_profile_edit">Edit Profile</string>
-    <string name="saved">Data saved with success.</string>
+    <string name="saved">Data saved with success!</string>
     <string name="canceled">Canceled!</string>
     <string name="required_profile_name">Please enter a name.</string>
-    <string name="required_profile_age">Please enter an age.</string>
+    <string name="required_profile_age">Please enter date of birth.</string>
     <string name="name_profile">Name:</string>
-    <string name="age_profile">Age:</string>
+    <string name="age_profile">Date of birth:</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
 
