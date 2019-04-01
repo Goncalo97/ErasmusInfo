@@ -15,7 +15,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+
 public class ProfileEdit extends AppCompatActivity {
+
+    EditText editProfileAge;
+    Calendar myCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +31,51 @@ public class ProfileEdit extends AppCompatActivity {
         // getString of Resource @string/edit_profile
         Toast.makeText(this, "{" + getString(R.string.edit_profile) + "}", Toast.LENGTH_LONG).show();
 
+        editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
+        myCalendar = Calendar.getInstance();
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                updateLabel();
+            }
+
+        };
+
+        editProfileAge.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(ProfileEdit.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    private void updateLabel() {
+        String myFormat = "dd/MM/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, new Locale("pt", "PT"));
 
-    // get ID
-    EditText editProfileName = (EditText) findViewById(R.id.editTextViewProfileName);
-    EditText editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
+        editProfileAge.setText(sdf.format(myCalendar.getTime()));
+    }
+
+
 
     public void saveProfile(View view) {
+
+        // get ID
+        EditText editProfileName = (EditText) findViewById(R.id.editTextViewProfileName);
 
 
         // get View data
@@ -69,41 +109,6 @@ public class ProfileEdit extends AppCompatActivity {
         // getString of Resource @string/saved
         Toast.makeText(this, "{" + getString(R.string.saved) + "}", Toast.LENGTH_SHORT).show();
 
-    }
-
-    final Calendar myCalendar = Calendar.getInstance();
-
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear,
-                              int dayOfMonth) {
-            // TODO Auto-generated method stub
-            myCalendar.set(Calendar.YEAR, year);
-            myCalendar.set(Calendar.MONTH, monthOfYear);
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
-
-    };
-
-        editProfileAge.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick (View v){
-            // TODO Auto-generated method stub
-            new DatePickerDialog(this, date, myCalendar
-                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                    myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-
-    private void updateLabel() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, new Locale("pt", "PT"));
-
-        editProfileAge.setText(sdf.format(myCalendar.getTime()));
     }
 
     public void cancelProfile(View view) {

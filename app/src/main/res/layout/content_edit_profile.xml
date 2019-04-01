@@ -33,7 +33,8 @@
         android:ems="10"
         android:hint="@string/age_profile"
         android:clickable="true"
-        android:editable="false" />
+        android:focusable="false"
+        android:inputType="date" />
 
     <Button
         android:id="@+id/buttonSaveProfile"
