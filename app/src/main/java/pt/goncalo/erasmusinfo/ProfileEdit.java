@@ -69,13 +69,10 @@ public class ProfileEdit extends AppCompatActivity {
         editProfileAge.setText(sdf.format(myCalendar.getTime()));
     }
 
-
-
     public void saveProfile(View view) {
 
         // get ID
         EditText editProfileName = (EditText) findViewById(R.id.editTextViewProfileName);
-
 
         // get View data
         String stringProfileName = editProfileName.getText().toString();
@@ -91,9 +88,7 @@ public class ProfileEdit extends AppCompatActivity {
             return;
         }
 
-        if (stringProfileAge.trim().length() == 0 ||
-                Integer.parseInt(stringProfileAge) < 0 ||
-                Integer.parseInt(stringProfileAge) > 130) {
+        if (stringProfileAge.trim().length() == 0) {
 
             // err Attribution
             editProfileAge.setError(getString(R.string.required_profile_age));
