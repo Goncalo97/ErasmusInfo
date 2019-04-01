@@ -18,7 +18,7 @@ public class Profile extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /* showMessagePerfil(); */
-        Toast.makeText(this, "{ Profile }", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{"+ getString(R.string.profile)+"}", Toast.LENGTH_SHORT).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
