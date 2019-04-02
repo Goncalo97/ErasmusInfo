@@ -10,31 +10,41 @@
     tools:showIn="@layout/activity_profile_insert">
 
 
-    <EditText
-        android:id="@+id/editTextViewProfileName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:hint="@string/name_profile"
-        android:inputType="textPersonName" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editTextViewProfileAge"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextViewProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:ems="10"
+            android:hint="@string/name_profile"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:hint="@string/age_profile"
-        android:clickable="true"
-        android:focusable="true"
-        android:inputType="date" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextViewProfileAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:ems="10"
+            android:hint="@string/age_profile"
+            android:clickable="true"
+            android:focusable="true"
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonSaveProfile"
