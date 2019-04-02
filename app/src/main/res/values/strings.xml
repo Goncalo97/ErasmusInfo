@@ -28,6 +28,7 @@
 
     <string name="title_activity_profile_delete">Profile Delete</string>
     <string name="delete">Delete</string>
+    <string name="deleted">... successfully deleted</string>
 
     <string name="title_activity_contact">Contacts</string>
 
@@ -36,7 +37,6 @@
     <string name="title_activity_class">Classes</string>
 
     <string name="title_activity_class_edit">Edit Class</string>
-
 
 
 </resources>

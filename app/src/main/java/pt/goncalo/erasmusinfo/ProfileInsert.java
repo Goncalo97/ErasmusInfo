@@ -29,8 +29,8 @@ public class ProfileInsert extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // getString of Resource @string/profile_edit
-        Toast.makeText(this, "{" + getString(R.string.profile_edit) + "}", Toast.LENGTH_LONG).show();
+        // getString of Resource @string/profile_insert
+        Toast.makeText(this, "{" + getString(R.string.profile_insert) + "}", Toast.LENGTH_LONG).show();
 
         editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();

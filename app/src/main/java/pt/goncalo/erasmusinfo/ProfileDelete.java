@@ -15,12 +15,12 @@ public class ProfileDelete extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_edit);
+        setContentView(R.layout.activity_profile_delete);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // getString of Resource @string/profile_edit
-        Toast.makeText(this, "{" + getString(R.string.profile_edit) + "}", Toast.LENGTH_LONG).show();
+        // getString of Resource @string/profile_delete
+        Toast.makeText(this, "{" + getString(R.string.profile_delete) + "}", Toast.LENGTH_LONG).show();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -28,7 +28,7 @@ public class ProfileDelete extends AppCompatActivity {
     public void profileDelete(View view) {
 
         // getString of Resource @string/saved
-        Toast.makeText(this, "{" + getString(R.string.delete) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.deleted) + "}", Toast.LENGTH_SHORT).show();
         finish();
 
     }
@@ -36,11 +36,8 @@ public class ProfileDelete extends AppCompatActivity {
     public void cancelProfile(View view) {
 
         // getString of Resource @string/saved
-        Toast.makeText(this, "{" + getString(R.string.canceled) + "}", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "{" + getString(R.string.canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
 }
-
-
-

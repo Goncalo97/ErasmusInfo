@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        android:onClick="openProfileEdit"
+        android:onClick="openProfileDelete"
         android:text="@string/profile_delete"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 </LinearLayout>

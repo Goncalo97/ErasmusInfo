@@ -27,4 +27,6 @@
     <string name="profile_insert">Inserir Perfil</string>
     <string name="title_activity_profile_delete">Eliminar Perfil</string>
     <string name="delete">Eliminar</string>
+    <string name="profile_delete">Eliminar Perfil</string>
+    <string name="deleted">... apagado com sucesso</string>
 </resources>
