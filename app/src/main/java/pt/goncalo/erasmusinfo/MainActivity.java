@@ -18,15 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     @Override
@@ -42,43 +33,31 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    // ToDo: Refazer as funções "sendMessage<Activity_Name>";
-    public void sendMessagePerfil(View view) {
-
+    public void openProfile(View view) {
         Intent intent = new Intent(this, Profile.class);
-        // intent.putExtra(AppConsts.MESSAGE_PERFIL, "{ Profile }");
         startActivity(intent);
-        // Toast.makeText(this, "Perf", Toast.LENGTH_SHORT).show();
     }
 
 
-    public void sendMessageContactos(View view) {
-
+    public void openContact(View view) {
         Intent intent = new Intent(this, Contact.class);
-        intent.putExtra(AppConsts.MESSAGE_CONTACTOS, "{ Contact }");
         startActivity(intent);
     }
 
-    public void sendMessageUniversidade(View view) {
-
+    public void openCollege(View view) {
         Intent intent = new Intent(this, College.class);
-        intent.putExtra(AppConsts.MESSAGE_UNIVERSIDADE, "{ College }");
         startActivity(intent);
     }
 
-    public void sendMessageDisciplinas(View view) {
-
+    public void openClass(View view) {
         Intent intent = new Intent(this, Class.class);
-        intent.putExtra(AppConsts.MESSAGE_DISCIPLINAS, "{ Class }");
         startActivity(intent);
     }
 }
