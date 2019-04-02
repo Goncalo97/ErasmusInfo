@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ProfileEdit"
     tools:showIn="@layout/activity_profile_edit">
@@ -33,7 +34,8 @@
         android:ems="10"
         android:hint="@string/age_profile"
         android:clickable="true"
-        android:focusable="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:inputType="date" />
 
     <Button

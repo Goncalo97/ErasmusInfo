@@ -20,6 +20,7 @@ public class ProfileEdit extends AppCompatActivity {
 
     EditText editProfileAge;
     Calendar myCalendar;
+    DatePickerDialog.OnDateSetListener date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class ProfileEdit extends AppCompatActivity {
         editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();
 
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -95,14 +96,17 @@ public class ProfileEdit extends AppCompatActivity {
 
             // focus on field
             editProfileAge.requestFocus();
+            if(editProfileAge.hasFocus())
+                new DatePickerDialog(ProfileEdit.this, date,
+                        myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
             return;
         }
 
-        finish();
-
         // getString of Resource @string/saved
         Toast.makeText(this, "{" + getString(R.string.saved) + "}", Toast.LENGTH_SHORT).show();
-
+        finish();
     }
 
     public void cancelProfile(View view) {

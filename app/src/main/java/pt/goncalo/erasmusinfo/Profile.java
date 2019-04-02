@@ -50,6 +50,10 @@ public class Profile extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openProfileDelete(View view) {
 
+        Intent intent = new Intent(this, ProfileDelete.class);
+        startActivity(intent);
+    }
 
 }
