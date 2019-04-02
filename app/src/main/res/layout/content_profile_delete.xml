@@ -11,35 +11,45 @@
     tools:showIn="@layout/activity_profile_delete">
 
 
-    <EditText
-        android:id="@+id/editTextViewProfileName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:hint="@string/name_profile"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="none" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editTextViewProfileAge"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextViewProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:ems="10"
+            android:hint="@string/name_profile"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:hint="@string/age_profile"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:inputType="none" />
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextViewProfileAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:ems="10"
+            android:hint="@string/age_profile"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonDeleteProfile"
