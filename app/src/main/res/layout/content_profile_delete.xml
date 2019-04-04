@@ -24,7 +24,7 @@
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginBottom="@dimen/bottom_margin"
             android:ems="10"
-            android:hint="@string/name_profile"
+            android:hint="@string/profile_edit_textView_hint_name"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
@@ -44,7 +44,7 @@
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginBottom="@dimen/bottom_margin"
             android:ems="10"
-            android:hint="@string/age_profile"
+            android:hint="@string/profile_edit_textView_hint_birthday"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
@@ -61,7 +61,7 @@
         android:layout_marginRight="@dimen/side_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:onClick="profileDelete"
-        android:text="@string/delete"
+        android:text="@string/profile_delete_button_delete"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
     <Button
@@ -74,7 +74,7 @@
         android:layout_marginRight="@dimen/side_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:onClick="cancelProfile"
-        android:text="@string/cancel"
+        android:text="@string/profile_edit_button_cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
 

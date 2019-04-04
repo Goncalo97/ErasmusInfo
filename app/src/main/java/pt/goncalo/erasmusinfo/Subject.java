@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.widget.Toast;
 
-public class Class extends AppCompatActivity {
+public class Subject extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

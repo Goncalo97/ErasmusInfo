@@ -28,13 +28,13 @@
                 android:value="pt.goncalo.erasmusinfo.Profile" />
         </activity>
         <activity
-            android:name=".ClassEdit"
-            android:label="@string/title_activity_class_edit"
-            android:parentActivityName=".Class"
+            android:name=".SubjectEdit"
+            android:label="@string/title_activity_subject_edit"
+            android:parentActivityName=".Subject"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Class" />
+                android:value="pt.goncalo.erasmusinfo.Subject" />
         </activity>
         <activity
             android:name=".ProfileView"
@@ -55,8 +55,8 @@
                 android:value="pt.goncalo.erasmusinfo.Profile" />
         </activity>
         <activity
-            android:name=".Class"
-            android:label="@string/title_activity_class"
+            android:name=".Subject"
+            android:label="@string/title_activity_subject"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

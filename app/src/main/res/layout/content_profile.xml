@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="openProfileView"
-        android:text="@string/profile_read"
+        android:text="@string/profile_view_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="openProfileInsert"
-        android:text="@string/profile_insert"
+        android:text="@string/profile_insert_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="openProfileEdit"
-        android:text="@string/profile_edit"
+        android:text="@string/profile_edit_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -46,6 +46,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:onClick="openProfileDelete"
-        android:text="@string/profile_delete"
+        android:text="@string/profile_delete_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 </LinearLayout>

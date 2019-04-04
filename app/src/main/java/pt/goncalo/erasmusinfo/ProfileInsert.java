@@ -29,8 +29,8 @@ public class ProfileInsert extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // getString of Resource @string/profile_insert
-        Toast.makeText(this, "{" + getString(R.string.profile_insert) + "}", Toast.LENGTH_LONG).show();
+        // getString of Resource @string/profile_insert_button
+        Toast.makeText(this, "{" + getString(R.string.profile_insert_button) + "}", Toast.LENGTH_LONG).show();
 
         editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();
@@ -82,7 +82,7 @@ public class ProfileInsert extends AppCompatActivity {
         if (stringProfileName.trim().length() == 0) {
 
             // err Attribution
-            editProfileName.setError(getString(R.string.required_profile_name));
+            editProfileName.setError(getString(R.string.profile_edit_error_name));
 
             // focus on field
             editProfileName.requestFocus();
@@ -92,7 +92,7 @@ public class ProfileInsert extends AppCompatActivity {
         if (stringProfileAge.trim().length() == 0) {
 
             // err Attribution
-            editProfileAge.setError(getString(R.string.required_profile_age));
+            editProfileAge.setError(getString(R.string.profile_edit_error_birthday));
 
             // focus on field
             editProfileAge.requestFocus();
@@ -104,15 +104,15 @@ public class ProfileInsert extends AppCompatActivity {
             return;
         }
 
-        // getString of Resource @string/saved
-        Toast.makeText(this, "{" + getString(R.string.saved) + "}", Toast.LENGTH_SHORT).show();
+        // getString of Resource @string/profile_edit_toast_saved
+        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_saved) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
     public void cancelProfile(View view) {
 
-        // getString of Resource @string/saved
-        Toast.makeText(this, "{" + getString(R.string.canceled) + "}", Toast.LENGTH_SHORT).show();
+        // getString of Resource @string/profile_edit_toast_saved
+        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
