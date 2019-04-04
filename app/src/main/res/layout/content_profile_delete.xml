@@ -25,12 +25,12 @@
             android:layout_marginBottom="@dimen/bottom_margin"
             android:ems="10"
             android:hint="@string/profile_edit_textView_hint_name"
+            android:enabled="false"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
-        <!--android:enabled="false"-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -46,12 +46,12 @@
             android:layout_marginBottom="@dimen/bottom_margin"
             android:ems="10"
             android:hint="@string/profile_edit_textView_hint_birthday"
+            android:enabled="false"
             android:clickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
-        <!--android:enabled="false"-->
 
     <Button
         android:id="@+id/buttonDeleteProfile"
