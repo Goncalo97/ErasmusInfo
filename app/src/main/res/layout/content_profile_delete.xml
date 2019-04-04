@@ -30,6 +30,7 @@
             android:focusableInTouchMode="false"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
+        <!--android:enabled="false"-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -50,6 +51,7 @@
             android:focusableInTouchMode="false"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
+        <!--android:enabled="false"-->
 
     <Button
         android:id="@+id/buttonDeleteProfile"
