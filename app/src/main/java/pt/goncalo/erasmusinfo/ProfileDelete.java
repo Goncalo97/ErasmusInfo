@@ -35,7 +35,7 @@ public class ProfileDelete extends AppCompatActivity {
     public void cancelProfile(View view) {
 
         // getString of Resource @string/profile_edit_toast_saved
-        // Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
