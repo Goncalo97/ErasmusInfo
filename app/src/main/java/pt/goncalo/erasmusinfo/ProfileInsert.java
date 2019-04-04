@@ -66,8 +66,8 @@ public class ProfileInsert extends AppCompatActivity {
         String myFormat = "dd/MM/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat,
                 new Locale("pt", "PT"));
-
         editProfileAge.setText(sdf.format(myCalendar.getTime()));
+        editProfileAge.setError(null);
     }
 
     public void saveProfile(View view) {
