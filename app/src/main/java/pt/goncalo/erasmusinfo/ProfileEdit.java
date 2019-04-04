@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -59,6 +60,7 @@ public class ProfileEdit extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat,
                 new Locale("pt", "PT"));
         editProfileAge.setText(sdf.format(myCalendar.getTime()));
+        editProfileAge.setError(null);
     }
 
     public void saveProfile(View view) {
@@ -87,6 +89,9 @@ public class ProfileEdit extends AppCompatActivity {
 
             return;
         }
+
+        // if (stringProfileAge.trim().length() > 0) editProfileAge.setError(null);
+
         // getString of Resource @string/profile_edit_toast_saved
         Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_saved) + "}", Toast.LENGTH_SHORT).show();
         finish();
