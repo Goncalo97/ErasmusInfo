@@ -64,6 +64,7 @@
     <string name="title_activity_subject_edit">Edit Subject</string>
     <string name="title_activity_contact_view">ContactView</string>
     <string name="title_activity_contact_insert">ContactInsert</string>
+    <string name="title_activity_contact_edit">ContactEdit</string>
     <!-- Subject Edit Screen End -->
 
 </resources>
