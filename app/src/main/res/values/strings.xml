@@ -42,6 +42,8 @@
 
     <!-- Profile Delete Screen Start -->
     <string name="title_activity_profile_delete">Delete Profile</string>
+    <string name="profile_delete_textView_name_example">John Doe</string>
+    <string name="profile_delete_textView_date_example">07/04/2019</string>
     <string name="profile_delete_button_delete">Delete</string>
     <string name="profile_delete_toast_deleted">... successfully deleted</string>
     <!-- Profile Delete Screen End -->
