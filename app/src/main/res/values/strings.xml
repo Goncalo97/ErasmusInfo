@@ -50,6 +50,14 @@
 
     <!-- Contact Screen Start -->
     <string name="title_activity_contact">Contacts</string>
+    <string name="contact_view_button">View Contact</string>
+    <string name="contact_insert_button">Insert Contact</string>
+    <string name="contact_edit_button">Edit Contact</string>
+    <string name="contact_delete_button">Delete Contact</string>
+    <string name="title_activity_contact_view">Contact View</string>
+    <string name="title_activity_contact_insert">Contact Insert</string>
+    <string name="title_activity_contact_edit">Contact Edit</string>
+    <string name="title_activity_contact_delete">Contact Delete</string>
     <!-- Contact Screen End -->
 
     <!-- College Screen Start -->
@@ -62,10 +70,7 @@
 
     <!-- Subject Edit Screen Start -->
     <string name="title_activity_subject_edit">Edit Subject</string>
-    <string name="title_activity_contact_view">ContactView</string>
-    <string name="title_activity_contact_insert">ContactInsert</string>
-    <string name="title_activity_contact_edit">ContactEdit</string>
-    <string name="title_activity_contact_delete">ContactDelete</string>
+
     <!-- Subject Edit Screen End -->
 
 </resources>
