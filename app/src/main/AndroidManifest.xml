@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ContactDelete"
+            android:label="@string/title_activity_contact_delete"
+            android:parentActivityName=".Contact"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Contact" />
+        </activity>
+        <activity
             android:name=".ContactEdit"
             android:label="@string/title_activity_contact_edit"
             android:parentActivityName=".Contact"
