@@ -31,4 +31,5 @@
     <string name="profile_delete_toast_deleted">... apagado com sucesso</string>
     <string name="profile_delete_textView_name_example">Desconhecido</string>
     <string name="profile_delete_textView_date_example">07/04/2019</string>
+    <string name="contact_view_button">Ver Contacto</string>
 </resources>
