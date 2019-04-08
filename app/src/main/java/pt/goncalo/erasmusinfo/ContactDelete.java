@@ -22,16 +22,16 @@ public class ContactDelete extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void profileDelete(View view) {
+    public void contactDelete(View view) {
 
-        Toast.makeText(this, "{" + getString(R.string.profile_delete_toast_deleted) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.contact_delete_toast_deleted) + "}", Toast.LENGTH_SHORT).show();
         finish();
 
     }
 
-    public void cancelProfile(View view) {
+    public void contactCancel(View view) {
 
-        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.contact_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 }
