@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class ContactInsert extends AppCompatActivity {
 
@@ -19,6 +21,32 @@ public class ContactInsert extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void contactSave(View view) {
+
+        EditText contactInsertName = (EditText) findViewById(R.id.editTextContactName);
+        EditText contactInsertNumber = (EditText) findViewById(R.id.editTextContactNumber);
+
+        if (contactInsertName.getText().toString().trim().length() == 0) {
+            contactInsertName.setError(getString(R.string.contact_insert_editText_error_name));
+            contactInsertName.requestFocus();
+            return;
+        }
+
+        if (contactInsertNumber.getText().toString().trim().length() == 0) {
+            contactInsertNumber.setError(getString(R.string.contact_insert_editText_error_number));
+            contactInsertNumber.requestFocus();
+            return;
+        }
+        Toast.makeText(this, "{" + getString(R.string.contact_insert_toast_saved) + "}", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    public void contactCancel(View view) {
+
+        Toast.makeText(this, "{" + getString(R.string.contact_insert_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 }
