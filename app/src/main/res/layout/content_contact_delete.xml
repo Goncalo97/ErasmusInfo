@@ -10,7 +10,6 @@
     tools:context=".ContactDelete"
     tools:showIn="@layout/activity_contact_delete">
 
-
     <TextView
         android:id="@+id/textViewContactNameHint"
         android:layout_width="match_parent"
@@ -84,6 +83,4 @@
         android:onClick="contactCancel"
         android:text="@string/contact_delete_button_cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
-
 </LinearLayout>
