@@ -31,7 +31,7 @@ public class Profile extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
     */
-
+/**/
     public void openProfileView(View view) {
 
         Intent intent = new Intent(this, ProfileView.class);
