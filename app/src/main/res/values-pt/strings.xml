@@ -1,35 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
+    <!-- App Start -->
     <string name="app_name">ErasmusInfo</string>
     <string name="action_settings">Configurações</string>
-    <string name="subject">Disciplinas</string>
-    <string name="contact">Contactos</string>
-    <string name="college">Universidade</string>
+    <!-- App End -->
+
+    <!-- Main Screen Start _ ( Menu ) -->
     <string name="profile">Perfil</string>
+    <string name="contact">Contactos</string>
+    <string name="college">Universidades</string>
+    <string name="subject">Disciplinas</string>
+    <!-- Main Screen End -->
+
+    <!-- Profile Screen Start -->
     <string name="title_activity_profile">Perfil</string>
-    <string name="title_activity_contact">Contactos</string>
-    <string name="title_activity_college">Universidade</string>
-    <string name="title_activity_subject">Disciplinas</string>
     <string name="profile_view_button">Ver Perfil</string>
-    <string name="profile_edit_button">Configurar Perfil</string>
-    <string name="title_activity_profile_edit">Configurar Perfil</string>
-    <string name="profile_edit_textInputEditText_error_name">Introduza um nome.</string>
-    <string name="profile_edit_textInputEditText_error_birthDate">Introduza a data de nascimento.</string>
-    <string name="profile_edit_toast_saved">Dados guardados com sucesso.</string>
-    <string name="profile_edit_toast_canceled">Cancelado!</string>
-    <string name="profile_edit_textView_hint_name">Nome:</string>
-    <string name="profile_edit_textView_hint_birthday">Idade:</string>
+    <string name="profile_insert_button">Inserir Perfil</string>
+    <string name="profile_edit_button">Alterar Perfil</string>
+    <string name="profile_delete_button">Eliminar Perfil</string>
+    <!-- Profile Screen End -->
+
+    <!-- Profile View Screen Start -->
+    <string name="title_activity_profile_view">Ver Perfil</string>
+    <string name="profile_view_textView_hint_name">Nome:</string>
+    <string name="profile_view_textView_example_name">John Doe</string>
+    <string name="profile_view_textView_hint_birthDate">Data de nascimento:</string>
+    <string name="profile_view_textView_example_birthDate">07/04/2019</string>
+    <!-- Class Begin -->
+    <!-- Profile View Screen End -->
+
+    <!-- Profile Insert Screen Start -->
+    <string name="title_activity_profile_insert">Inserir Perfil</string>
+    <string name="profile_insert_textInputEditText_hint_name">Nome:</string>
+    <string name="profile_insert_textInputEditText_hint_birthDate">Data de nascimento:</string>
+    <string name="profile_insert_button_save">Guardar</string>
+    <string name="profile_insert_button_cancel">Cancelar</string>
+    <!-- Class Begin -->
+    <string name="profile_insert_textInputEditText_error_name">Por favor inserir um nome.</string>
+    <string name="profile_insert_textInputEditText_error_birthDate">Por favor inserir uma data de nascimento.</string>
+    <string name="profile_insert_toast_saved">Dados guardados com sucesso!</string>
+    <string name="profile_insert_toast_canceled">Cancelado!</string>
+    <!-- Profile Insert Screen End -->
+
+    <!-- Profile Edit Screen Start -->
+    <string name="title_activity_profile_edit">Alterar Perfil</string>
+    <string name="profile_edit_textInputEditText_hint_name">Nome:</string>
+    <string name="profile_edit_textInputEditText_hint_birthDate">Data de nascimento:</string>
     <string name="profile_edit_button_save">Guardar</string>
     <string name="profile_edit_button_cancel">Cancelar</string>
-    <string name="title_activity_profile_view">Ver Perfil</string>
-    <string name="title_activity_subject_edit">Configurar Disciplina</string>
-    <string name="title_activity_profile_insert">Inserir Perfil</string>
-    <string name="profile_insert_button">Inserir Perfil</string>
+    <!-- Class Begin -->
+    <string name="profile_edit_textInputEditText_error_name">Por favor inserir um nome.</string>
+    <string name="profile_edit_textInputEditText_error_birthDate">Por favor inserir uma data de nascimento:</string>
+    <string name="profile_edit_toast_saved">Dados guardados com sucesso!</string>
+    <string name="profile_edit_toast_canceled">Cancelado!</string>
+    <!-- Profile Edit Screen End -->
+
+    <!-- Profile Delete Screen Start -->
     <string name="title_activity_profile_delete">Eliminar Perfil</string>
-    <string name="profile_delete_button_delete">Eliminar</string>
-    <string name="profile_delete_button">Eliminar Perfil</string>
-    <string name="profile_delete_toast_deleted">... apagado com sucesso</string>
-    <string name="profile_delete_textView_example_name">Desconhecido</string>
+    <string name="profile_delete_textView_hint_name">Nome:</string>
+    <string name="profile_delete_textView_example_name">John Doe</string>
+    <string name="profile_delete_textView_hint_birthDate">Data de nascimento:</string>
     <string name="profile_delete_textView_example_birthDate">07/04/2019</string>
+    <!-- Class Begin -->
+    <string name="profile_delete_button_delete">Eliminar</string>
+    <string name="profile_delete_toast_deleted">... eliminado com sucesso</string>
+    <!-- Profile Delete Screen End -->
+
+    <!-- Contact Screen Start -->
+    <string name="title_activity_contact">Contactos</string>
     <string name="contact_view_button">Ver Contacto</string>
+    <string name="contact_insert_button">Inserir Contacto</string>
+    <string name="contact_edit_button">Alterar Contacto</string>
+    <string name="contact_delete_button">Eliminar Contacto</string>
+    <!-- Contact Screen End -->
+
+    <!-- Contact View Screen Start -->
+    <string name="title_activity_contact_view">Ver Contacto</string>
+    <string name="contact_view_textView_hint_name">Nome:</string>
+    <string name="contact_view_textView_example_name">John Doe</string>
+    <string name="contact_view_textView_hint_number">Número:</string>
+    <string name="contact_view_textView_example_number">987654321</string>
+    <!-- Contact View Screen End -->
+
+    <!-- Contact Insert Screen Start -->
+    <string name="title_activity_contact_insert">Inserir Contacto</string>
+    <string name="contact_insert_textInputEditText_hint_name">Nome:</string>
+    <string name="contact_insert_textInputEditText_hint_number">Número:</string>
+    <string name="contact_insert_button_save">Guardar</string>
+    <string name="contact_insert_button_cancel">Cancelar</string>
+    <!-- Class Begin -->
+    <string name="contact_insert_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="contact_insert_textInputEditText_error_number">Por favor insira um número.</string>
+    <string name="contact_insert_toast_saved">Dados guardados com sucesso!</string>
+    <string name="contact_insert_toast_canceled">Cancelado!</string>
+    <!-- Contact Insert Screen End -->
+
+    <!-- Contact Edit Screen Start -->
+    <string name="title_activity_contact_edit">Alterar Contacto</string>
+    <string name="contact_edit_textInputEditText_hint_name">Nome:</string>
+    <string name="contact_edit_textInputEditText_hint_number">Numero:</string>
+    <string name="contact_edit_button_save">Guardar</string>
+    <string name="contact_edit_button_cancel">Cancelar</string>
+    <!-- Class Begin -->
+    <string name="contact_edit_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="contact_edit_textInputEditText_error_number">Por favor insira um número.</string>
+    <string name="contact_edit_toast_saved">Dados guardados com sucesso!</string>
+    <string name="contact_edit_toast_canceled">Cancelado!</string>
+    <!-- Contact Edit Screen End -->
+
+    <!-- Contact Delete Screen Start -->
+    <string name="title_activity_contact_delete">Eliminar Contacto</string>
+    <string name="contact_delete_textView_hint_name">Nome:</string>
+    <string name="contact_delete_textView_example_name">John Doe</string>
+    <string name="contact_delete_textView_hint_number">Numero:</string>
+    <string name="contact_delete_textView_example_number">987654321</string>
+    <string name="contact_delete_button_delete">Eliminar</string>
+    <string name="contact_delete_button_cancel">Cancelar</string>
+    <!-- Class Begin -->
+    <string name="contact_delete_toast_deleted">... eliminado com sucesso</string>
+    <string name="contact_delete_toast_canceled">Cancelado</string>
+    <!-- Contact Delete Screen End -->
+
+    <!-- College Screen Start -->
+    <string name="title_activity_college">Universidades</string>
+    <!-- College Screen End -->
+
+    <!-- Subject Screen Start -->
+    <!-- Subject Screen End -->
+
+    <!-- Subject Edit Screen Start -->
+    <string name="title_activity_subject_edit">Alterar Disciplina</string>
+    <string name="title_activity_subject">Disciplinas</string>
+
+    <!-- Subject Edit Screen End -->
+
 </resources>

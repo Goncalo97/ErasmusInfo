@@ -75,7 +75,7 @@
     <!-- Contact Screen End -->
 
     <!-- Contact View Screen Start -->
-    <string name="title_activity_contact_view">Contact View</string>
+    <string name="title_activity_contact_view">View Contact</string>
     <string name="contact_view_textView_hint_name">Name:</string>
     <string name="contact_view_textView_example_name">John Doe</string>
     <string name="contact_view_textView_hint_number">Number:</string>
@@ -83,7 +83,7 @@
     <!-- Contact View Screen End -->
 
     <!-- Contact Insert Screen Start -->
-    <string name="title_activity_contact_insert">Contact Insert</string>
+    <string name="title_activity_contact_insert">Insert Contact</string>
     <string name="contact_insert_textInputEditText_hint_name">Name:</string>
     <string name="contact_insert_textInputEditText_hint_number">Number:</string>
     <string name="contact_insert_button_save">Save</string>
@@ -96,7 +96,7 @@
     <!-- Contact Insert Screen End -->
 
     <!-- Contact Edit Screen Start -->
-    <string name="title_activity_contact_edit">Contact Edit</string>
+    <string name="title_activity_contact_edit">Edit Contact</string>
     <string name="contact_edit_textInputEditText_hint_name">Name:</string>
     <string name="contact_edit_textInputEditText_hint_number">Number:</string>
     <string name="contact_edit_button_save">Save</string>
@@ -109,7 +109,7 @@
     <!-- Contact Edit Screen End -->
 
     <!-- Contact Delete Screen Start -->
-    <string name="title_activity_contact_delete">Contact Delete</string>
+    <string name="title_activity_contact_delete">Delete Contact</string>
     <string name="contact_delete_textView_hint_name">Name:</string>
     <string name="contact_delete_textView_example_name">John Doe</string>
     <string name="contact_delete_textView_hint_number">Number:</string>
