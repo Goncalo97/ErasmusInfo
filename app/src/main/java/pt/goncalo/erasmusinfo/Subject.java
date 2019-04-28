@@ -25,14 +25,14 @@ public class Subject extends AppCompatActivity {
 
     public void openSubjectView(View view) {
 
-        Intent intent = new Intent(this, SubjectView.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, SubjectView.class);
+        //startActivity(intent);
     }
 
     public void openSubjectInsert(View view) {
 
-        Intent intent = new Intent(this, SubjectInsert.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, SubjectInsert.class);
+        //startActivity(intent);
     }
 
     public void openSubjectEdit(View view) {
@@ -43,7 +43,7 @@ public class Subject extends AppCompatActivity {
 
     public void openSubjectDelete(View view) {
 
-        Intent intent = new Intent(this, SubjectDelete.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, SubjectDelete.class);
+        //startActivity(intent);
     }
 }
