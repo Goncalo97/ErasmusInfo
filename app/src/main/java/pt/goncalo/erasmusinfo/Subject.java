@@ -23,27 +23,27 @@ public class Subject extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void openContactView(View view) {
+    public void openSubjectView(View view) {
 
-        Intent intent = new Intent(this, ContactView.class);
+        Intent intent = new Intent(this, SubjectView.class);
         startActivity(intent);
     }
 
-    public void openContactInsert(View view) {
+    public void openSubjectInsert(View view) {
 
-        Intent intent = new Intent(this, ContactInsert.class);
+        Intent intent = new Intent(this, SubjectInsert.class);
         startActivity(intent);
     }
 
-    public void openContactEdit(View view) {
+    public void openSubjectEdit(View view) {
 
-        Intent intent = new Intent(this, ContactEdit.class);
+        Intent intent = new Intent(this, SubjectEdit.class);
         startActivity(intent);
     }
 
-    public void openContactDelete(View view) {
+    public void openSubjectDelete(View view) {
 
-        Intent intent = new Intent(this, ContactDelete.class);
+        Intent intent = new Intent(this, SubjectDelete.class);
         startActivity(intent);
     }
 }
