@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SubjectDelete"
+            android:label="@string/title_activity_subject_delete"
+            android:parentActivityName=".Subject"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.Subject" />
+        </activity>
+        <activity
             android:name=".SubjectInsert"
             android:label="@string/title_activity_subject_insert"
             android:parentActivityName=".Subject"
