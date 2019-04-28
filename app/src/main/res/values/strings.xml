@@ -96,13 +96,13 @@
 
     <!-- Contact Edit Screen Start -->
     <string name="title_activity_contact_edit">Contact Edit</string>
-    <string name="contact_edit_editText_hint_name">Name:</string>
-    <string name="contact_edit_editText_hint_number">Number:</string>
+    <string name="contact_edit_textInputEditText_hint_name">Name:</string>
+    <string name="contact_edit_textInputEditText_hint_number">Number:</string>
     <string name="contact_edit_button_save">Save</string>
     <string name="contact_edit_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="contact_edit_editText_error_name">Please enter a name.</string>
-    <string name="contact_edit_editText_error_number">Please enter a number.</string>
+    <string name="contact_edit_textInputEditText_error_name">Please enter a name.</string>
+    <string name="contact_edit_textInputEditText_error_number">Please enter a number.</string>
     <string name="contact_edit_toast_saved">Data saved with success!</string>
     <string name="contact_edit_toast_canceled">Canceled!</string>
     <!-- Contact Edit Screen End -->

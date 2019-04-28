@@ -2,9 +2,6 @@ package pt.goncalo.erasmusinfo;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -29,13 +26,13 @@ public class ContactEdit extends AppCompatActivity {
         EditText contactEditNumber = (EditText) findViewById(R.id.editTextContactNumber);
 
         if (contactEditName.getText().toString().trim().length() == 0) {
-            contactEditName.setError(getString(R.string.contact_edit_editText_error_name));
+            contactEditName.setError(getString(R.string.contact_edit_textInputEditText_error_name));
             contactEditName.requestFocus();
             return;
         }
 
         if (contactEditNumber.getText().toString().trim().length() == 0) {
-            contactEditNumber.setError(getString(R.string.contact_edit_editText_error_number));
+            contactEditNumber.setError(getString(R.string.contact_edit_textInputEditText_error_number));
             contactEditNumber.requestFocus();
             return;
         }
