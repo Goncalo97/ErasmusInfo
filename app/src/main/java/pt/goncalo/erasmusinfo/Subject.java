@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.View;
 import android.widget.Toast;
 
 public class Subject extends AppCompatActivity {
@@ -16,15 +17,33 @@ public class Subject extends AppCompatActivity {
         setContentView(R.layout.activity_class);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        showMessageDisciplinas();
+        Toast.makeText(this,
+                "{"+ getString(R.string.subject)+"}",
+                Toast.LENGTH_SHORT).show();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    private void showMessageDisciplinas() {
+    public void openContactView(View view) {
 
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(AppConsts.MESSAGE_DISCIPLINAS);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, ContactView.class);
+        startActivity(intent);
+    }
+
+    public void openContactInsert(View view) {
+
+        Intent intent = new Intent(this, ContactInsert.class);
+        startActivity(intent);
+    }
+
+    public void openContactEdit(View view) {
+
+        Intent intent = new Intent(this, ContactEdit.class);
+        startActivity(intent);
+    }
+
+    public void openContactDelete(View view) {
+
+        Intent intent = new Intent(this, ContactDelete.class);
+        startActivity(intent);
     }
 }
