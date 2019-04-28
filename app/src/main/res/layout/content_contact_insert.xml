@@ -23,7 +23,7 @@
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginBottom="@dimen/bottom_margin"
             android:ems="10"
-            android:hint="@string/contact_insert_editText_hint_name"
+            android:hint="@string/contact_insert_textInputEditText_hint_name"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,7 +43,7 @@
             android:ems="10"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:hint="@string/contact_insert_editText_hint_number"
+            android:hint="@string/contact_insert_textInputEditText_hint_number"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -62,6 +62,11 @@
     <string name="profile_delete_toast_deleted">... successfully deleted</string>
     <!-- Profile Delete Screen End -->
 
+
+    <!--
+        TODO: "Mudar 'example' para antes da palavra que descreve a string!";
+        TODO: "Mudar 'numero' para 'number'";
+    -->
     <!-- Contact Screen Start -->
     <string name="title_activity_contact">Contacts</string>
     <string name="contact_view_button">View Contact</string>
@@ -78,13 +83,13 @@
 
     <!-- Contact Insert Screen Start -->
     <string name="title_activity_contact_insert">Contact Insert</string>
-    <string name="contact_insert_editText_hint_name">Name:</string>
-    <string name="contact_insert_editText_hint_number">Number:</string>
+    <string name="contact_insert_textInputEditText_hint_name">Name:</string>
+    <string name="contact_insert_textInputEditText_hint_number">Number:</string>
     <string name="contact_insert_button_save">Save</string>
     <string name="contact_insert_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="contact_insert_editText_error_name">Please enter a name.</string>
-    <string name="contact_insert_editText_error_number">Please enter a number.</string>
+    <string name="contact_insert_textInputEditText_error_name">Please enter a name.</string>
+    <string name="contact_insert_textInputEditText_error_number">Please enter a number.</string>
     <string name="contact_insert_toast_saved">Data saved with success!</string>
     <string name="contact_insert_toast_canceled">Canceled!</string>
     <!-- Contact Insert Screen End -->
@@ -105,8 +110,8 @@
     <!-- Contact Delete Screen Start -->
     <string name="title_activity_contact_delete">Contact Delete</string>
     <string name="contact_delete_textView_hint_name">Name:</string>
-    <string name="contact_delete_textView_hint_number">Number:</string>
     <string name="contact_delete_textView_example_name">John Doe</string>
+    <string name="contact_delete_textView_hint_number">Number:</string>
     <string name="contact_delete_textView_example_number">987654321</string>
     <string name="contact_delete_button_delete">Delete</string>
     <string name="contact_delete_button_cancel">Cancel</string>
