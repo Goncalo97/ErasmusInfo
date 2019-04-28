@@ -17,8 +17,8 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
-        android:onClick="openContactInsert"
-        android:text="@string/contact_insert_button"
+        android:onClick="openSubjectInsert"
+        android:text="@string/subject_insert_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -29,8 +29,8 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
-        android:onClick="openContactEdit"
-        android:text="@string/contact_edit_button"
+        android:onClick="openSubjectEdit"
+        android:text="@string/subject_edit_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
     <Button
@@ -41,8 +41,8 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
-        android:onClick="openContactDelete"
-        android:text="@string/contact_delete_button"
+        android:onClick="openSubjectDelete"
+        android:text="@string/subject_delete_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
 </LinearLayout>
