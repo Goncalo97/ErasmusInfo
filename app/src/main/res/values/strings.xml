@@ -6,10 +6,10 @@
     <!-- App End -->
 
     <!-- Main Screen Start _ ( Menu ) -->
-    <string name="subject">Subjects</string>
+    <string name="profile">Profile</string>
     <string name="contact">Contacts</string>
     <string name="college">Colleges</string>
-    <string name="profile">Profile</string>
+    <string name="subject">Subjects</string>
     <!-- Main Screen End -->
 
     <!-- Profile Screen Start -->
@@ -22,6 +22,15 @@
 
     <!-- Profile View Screen Start -->
     <string name="title_activity_profile_view">View Profile</string>
+    <string name="profile_view_textInputEditText_hint_name">Name:</string>
+    <string name="profile_view_textInputEditText_hint_birthDate">Date of birth:</string>
+    <string name="profile_view_button_save">Save</string>
+    <string name="profile_view_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="profile_view_error_name">Please enter a name.</string>
+    <string name="profile_view_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_view_toast_saved">Data saved with success!</string>
+    <string name="profile_view_toast_canceled">Canceled!</string>
     <!-- Profile View Screen End -->
 
     <!-- Profile Insert Screen Start -->
