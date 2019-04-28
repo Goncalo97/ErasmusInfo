@@ -33,7 +33,7 @@
         android:layout_marginRight="@dimen/side_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:ems="10"
-        android:text="@string/profile_delete_textView_name_example"
+        android:text="@string/profile_delete_textView_example_name"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
     <TextView
@@ -57,7 +57,7 @@
         android:layout_marginRight="@dimen/side_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:ems="10"
-        android:text="@string/profile_delete_textView_date_example"
+        android:text="@string/profile_delete_textView_example_birthDate"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
     <Button

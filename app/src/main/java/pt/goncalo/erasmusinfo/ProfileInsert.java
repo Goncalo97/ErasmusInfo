@@ -82,7 +82,7 @@ public class ProfileInsert extends AppCompatActivity {
         if (stringProfileName.trim().length() == 0) {
 
             // err Attribution
-            editProfileName.setError(getString(R.string.profile_edit_error_name));
+            editProfileName.setError(getString(R.string.profile_edit_textInputEditText_error_name));
 
             // focus on field
             editProfileName.requestFocus();
@@ -92,7 +92,7 @@ public class ProfileInsert extends AppCompatActivity {
         if (stringProfileAge.trim().length() == 0) {
 
             // err Attribution
-            editProfileAge.setError(getString(R.string.profile_edit_error_birthday));
+            editProfileAge.setError(getString(R.string.profile_edit_textInputEditText_error_birthDate));
 
             // focus on field
             editProfileAge.requestFocus();

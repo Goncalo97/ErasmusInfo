@@ -22,8 +22,10 @@
 
     <!-- Profile View Screen Start -->
     <string name="title_activity_profile_view">View Profile</string>
-    <string name="profile_view_textView_name_example">John Doe</string>
-    <string name="profile_view_textView_date_example">07/04/2019</string>
+    <string name="profile_view_textView_hint_name">Name:</string>
+    <string name="profile_view_textView_example_name">John Doe</string>
+    <string name="profile_view_textView_hint_birthDate">Date of birth:</string>
+    <string name="profile_view_textView_example_birthDate">07/04/2019</string>
     <!-- Class Begin -->
     <!-- Profile View Screen End -->
 
@@ -34,8 +36,8 @@
     <string name="profile_insert_button_save">Save</string>
     <string name="profile_insert_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="profile_insert_error_name">Please enter a name.</string>
-    <string name="profile_insert_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_insert_textInputEditText_error_name">Please enter a name.</string>
+    <string name="profile_insert_textInputEditText_error_birthDate">Please enter a date of birth.</string>
     <string name="profile_insert_toast_saved">Data saved with success!</string>
     <string name="profile_insert_toast_canceled">Canceled!</string>
     <!-- Profile Insert Screen End -->
@@ -47,26 +49,23 @@
     <string name="profile_edit_button_save">Save</string>
     <string name="profile_edit_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="profile_edit_error_name">Please enter a name.</string>
-    <string name="profile_edit_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_edit_textInputEditText_error_name">Please enter a name.</string>
+    <string name="profile_edit_textInputEditText_error_birthDate">Please enter a date of birth.</string>
     <string name="profile_edit_toast_saved">Data saved with success!</string>
     <string name="profile_edit_toast_canceled">Canceled!</string>
     <!-- Profile Edit Screen End -->
 
     <!-- Profile Delete Screen Start -->
     <string name="title_activity_profile_delete">Delete Profile</string>
-    <string name="profile_delete_textView_name_example">John Doe</string>
-    <string name="profile_delete_textView_date_example">07/04/2019</string>
+    <string name="profile_delete_textView_hint_name">Name:</string>
+    <string name="profile_delete_textView_example_name">John Doe</string>
+    <string name="profile_delete_textView_hint_birthDate">Date of birth:</string>
+    <string name="profile_delete_textView_example_birthDate">07/04/2019</string>
     <!-- Class Begin -->
     <string name="profile_delete_button_delete">Delete</string>
     <string name="profile_delete_toast_deleted">... successfully deleted</string>
     <!-- Profile Delete Screen End -->
 
-
-    <!--
-        TODO: "Mudar 'example' para antes da palavra que descreve a string!";
-        TODO: "Mudar 'numero' para 'number'";
-    -->
     <!-- Contact Screen Start -->
     <string name="title_activity_contact">Contacts</string>
     <string name="contact_view_button">View Contact</string>

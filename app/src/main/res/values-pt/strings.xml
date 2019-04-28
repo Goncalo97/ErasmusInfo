@@ -13,8 +13,8 @@
     <string name="profile_view_button">Ver Perfil</string>
     <string name="profile_edit_button">Configurar Perfil</string>
     <string name="title_activity_profile_edit">Configurar Perfil</string>
-    <string name="profile_edit_error_name">Introduza um nome.</string>
-    <string name="profile_edit_error_birthday">Introduza a data de nascimento.</string>
+    <string name="profile_edit_textInputEditText_error_name">Introduza um nome.</string>
+    <string name="profile_edit_textInputEditText_error_birthDate">Introduza a data de nascimento.</string>
     <string name="profile_edit_toast_saved">Dados guardados com sucesso.</string>
     <string name="profile_edit_toast_canceled">Cancelado!</string>
     <string name="profile_edit_textView_hint_name">Nome:</string>
@@ -29,7 +29,7 @@
     <string name="profile_delete_button_delete">Eliminar</string>
     <string name="profile_delete_button">Eliminar Perfil</string>
     <string name="profile_delete_toast_deleted">... apagado com sucesso</string>
-    <string name="profile_delete_textView_name_example">Desconhecido</string>
-    <string name="profile_delete_textView_date_example">07/04/2019</string>
+    <string name="profile_delete_textView_example_name">Desconhecido</string>
+    <string name="profile_delete_textView_example_birthDate">07/04/2019</string>
     <string name="contact_view_button">Ver Contacto</string>
 </resources>

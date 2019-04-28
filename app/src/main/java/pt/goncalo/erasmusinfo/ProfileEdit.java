@@ -11,7 +11,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -72,7 +71,7 @@ public class ProfileEdit extends AppCompatActivity {
 
         if (stringProfileName.trim().length() == 0) {
             // err Attribution
-            editProfileName.setError(getString(R.string.profile_edit_error_name));
+            editProfileName.setError(getString(R.string.profile_edit_textInputEditText_error_name));
             // focus on field
             editProfileName.requestFocus();
             return;
@@ -80,7 +79,7 @@ public class ProfileEdit extends AppCompatActivity {
 
         if (stringProfileAge.trim().length() == 0) {
             // err Attribution
-            editProfileAge.setError(getString(R.string.profile_edit_error_birthday));
+            editProfileAge.setError(getString(R.string.profile_edit_textInputEditText_error_birthDate));
             // focus on field
             editProfileAge.requestFocus();
             if(editProfileAge.hasFocus()) new DatePickerDialog(ProfileEdit.this, date,
