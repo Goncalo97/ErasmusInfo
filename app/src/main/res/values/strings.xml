@@ -28,7 +28,7 @@
     <string name="profile_view_button_cancel">Cancel</string>
     <!-- Class Begin -->
     <string name="profile_view_error_name">Please enter a name.</string>
-    <string name="profile_view_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_view_error_birthDate">Please enter a date of birth.</string>
     <string name="profile_view_toast_saved">Data saved with success!</string>
     <string name="profile_view_toast_canceled">Canceled!</string>
     <!-- Profile View Screen End -->
