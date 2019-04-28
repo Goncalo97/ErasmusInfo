@@ -25,8 +25,6 @@
     <string name="profile_view_textView_name_example">John Doe</string>
     <string name="profile_view_textView_date_example">07/04/2019</string>
     <!-- Class Begin -->
-    <string name="profile_view_button_delete">Delete</string>
-    <string name="profile_view_toast_deleted">... successfully deleted</string>
     <!-- Profile View Screen End -->
 
     <!-- Profile Insert Screen Start -->
@@ -84,6 +82,7 @@
     <string name="contact_insert_editText_hint_number">Number:</string>
     <string name="contact_insert_button_save">Save</string>
     <string name="contact_insert_button_cancel">Cancel</string>
+    <!-- Class Begin -->
     <string name="contact_insert_editText_error_name">Please enter a name.</string>
     <string name="contact_insert_editText_error_number">Please enter a number.</string>
     <string name="contact_insert_toast_saved">Data saved with success!</string>
@@ -96,6 +95,7 @@
     <string name="contact_edit_editText_hint_number">Number:</string>
     <string name="contact_edit_button_save">Save</string>
     <string name="contact_edit_button_cancel">Cancel</string>
+    <!-- Class Begin -->
     <string name="contact_edit_editText_error_name">Please enter a name.</string>
     <string name="contact_edit_editText_error_number">Please enter a number.</string>
     <string name="contact_edit_toast_saved">Data saved with success!</string>
@@ -110,6 +110,7 @@
     <string name="contact_delete_textView_example_number">987654321</string>
     <string name="contact_delete_button_delete">Delete</string>
     <string name="contact_delete_button_cancel">Cancel</string>
+    <!-- Class Begin -->
     <string name="contact_delete_toast_deleted">... successfully deleted</string>
     <string name="contact_delete_toast_canceled">Canceled</string>
     <!-- Contact Delete Screen End -->
