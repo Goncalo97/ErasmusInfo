@@ -129,11 +129,66 @@
 
     <!-- Subject Screen Start -->
     <string name="title_activity_subject">Subjects</string>
+    <string name="subject_insert_button">Insert Subject</string>
+    <string name="subject_edit_button">Edit Subject</string>
+    <string name="subject_delete_button">Delete Subject</string>
     <!-- Subject Screen End -->
+
+    <!-- Subject Insert Screen Start -->
+    <string name="title_activity_subject_insert">Insert Subject</string>
+    <string name="subject_insert_textInputEditText_hint_code">Code:</string>
+    <string name="subject_insert_textInputEditText_hint_name">Name:</string>
+    <string name="subject_insert_textInputEditText_hint_ects">ECTs:</string>
+    <string name="subject_insert_textInputEditText_hint_discEqual">Equivalent Subject:</string>
+    <string name="subject_insert_textInputEditText_hint_score">Score:</string>
+    <string name="subject_insert_button_save">Save</string>
+    <string name="subject_insert_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="subject_insert_textInputEditText_error_code">Please enter a code.</string>
+    <string name="subject_insert_textInputEditText_error_name">Please enter a name.</string>
+    <string name="subject_insert_textInputEditText_error_ects">Please enter the ECTs.</string>
+    <string name="subject_insert_textInputEditText_error_discEqual">Please enter an equivalent subject.</string>
+    <string name="subject_insert_textInputEditText_error_score">Please enter a score.</string>
+    <string name="subject_insert_toast_saved">Data saved with success!</string>
+    <string name="subject_insert_toast_canceled">Canceled!</string>
+    <!-- Subject Insert Screen End -->
 
     <!-- Subject Edit Screen Start -->
     <string name="title_activity_subject_edit">Edit Subject</string>
-
+    <string name="subject_edit_textInputEditText_hint_code">Code:</string>
+    <string name="subject_edit_textInputEditText_hint_name">Name:</string>
+    <string name="subject_edit_textInputEditText_hint_ects">ECTs:</string>
+    <string name="subject_edit_textInputEditText_hint_discEqual">Equivalent Subject:</string>
+    <string name="subject_edit_textInputEditText_hint_score">Score:</string>
+    <string name="subject_edit_button_save">Save</string>
+    <string name="subject_edit_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="subject_edit_textInputEditText_error_code">Please enter a code.</string>
+    <string name="subject_edit_textInputEditText_error_name">Please enter a name.</string>
+    <string name="subject_edit_textInputEditText_error_ects">Please enter the ECTs.</string>
+    <string name="subject_edit_textInputEditText_error_discEqual">Please enter an equivalent subject.</string>
+    <string name="subject_edit_textInputEditText_error_score">Please enter a score.</string>
+    <string name="subject_edit_toast_saved">Data saved with success!</string>
+    <string name="subject_edit_toast_canceled">Canceled!</string>
     <!-- Subject Edit Screen End -->
+
+    <!-- Subject Delete Screen Start -->
+    <string name="title_activity_subject_delete">Delete Subject</string>
+    <string name="subject_delete_textView_hint_code">Code:</string>
+    <string name="subject_delete_textView_example_code">UINF8800</string>
+    <string name="subject_delete_textView_hint_name">Name:</string>
+    <string name="subject_delete_textView_example_name">Advanced Programming</string>
+    <string name="subject_delete_textView_hint_ects">ECTs:</string>
+    <string name="subject_delete_textView_example_ects">6</string>
+    <string name="subject_delete_textView_hint_discEqual">Equivalent Subject:</string>
+    <string name="subject_delete_textView_example_discEqual">Progarmação Avançada</string>
+    <string name="subject_delete_textView_hint_score">Score:</string>
+    <string name="subject_delete_textView_example_score">B</string>
+    <string name="subject_delete_button_delete">Delete</string>
+    <string name="subject_delete_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="subject_delete_toast_deleted">... successfully deleted</string>
+    <string name="subject_delete_toast_canceled">Canceled</string>
+    <!-- Subject Delete Screen End -->
 
 </resources>
