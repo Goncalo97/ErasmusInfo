@@ -22,37 +22,44 @@
 
     <!-- Profile View Screen Start -->
     <string name="title_activity_profile_view">View Profile</string>
-    <string name="profile_view_textInputEditText_hint_name">Name:</string>
-    <string name="profile_view_textInputEditText_hint_birthDate">Date of birth:</string>
-    <string name="profile_view_button_save">Save</string>
-    <string name="profile_view_button_cancel">Cancel</string>
+    <string name="profile_view_textView_name_example">John Doe</string>
+    <string name="profile_view_textView_date_example">07/04/2019</string>
     <!-- Class Begin -->
-    <string name="profile_view_error_name">Please enter a name.</string>
-    <string name="profile_view_error_birthDate">Please enter a date of birth.</string>
-    <string name="profile_view_toast_saved">Data saved with success!</string>
-    <string name="profile_view_toast_canceled">Canceled!</string>
+    <string name="profile_view_button_delete">Delete</string>
+    <string name="profile_view_toast_deleted">... successfully deleted</string>
     <!-- Profile View Screen End -->
 
     <!-- Profile Insert Screen Start -->
     <string name="title_activity_profile_insert">Insert Profile</string>
+    <string name="profile_insert_textInputEditText_hint_name">Name:</string>
+    <string name="profile_insert_textInputEditText_hint_birthDate">Date of birth:</string>
+    <string name="profile_insert_button_save">Save</string>
+    <string name="profile_insert_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="profile_insert_error_name">Please enter a name.</string>
+    <string name="profile_insert_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_insert_toast_saved">Data saved with success!</string>
+    <string name="profile_insert_toast_canceled">Canceled!</string>
     <!-- Profile Insert Screen End -->
 
     <!-- Profile Edit Screen Start -->
     <string name="title_activity_profile_edit">Edit Profile</string>
-    <string name="profile_edit_toast_saved">Data saved with success!</string>
-    <string name="profile_edit_toast_canceled">Canceled!</string>
-    <string name="profile_edit_error_name">Please enter a name.</string>
-    <string name="profile_edit_error_birthday">Please enter date of birth.</string>
-    <string name="profile_edit_textView_hint_name">Name:</string>
-    <string name="profile_edit_textView_hint_birthday">Date of birth:</string>
+    <string name="profile_edit_textInputEditText_hint_name">Name:</string>
+    <string name="profile_edit_textInputEditText_hint_birthDate">Date of birth:</string>
     <string name="profile_edit_button_save">Save</string>
     <string name="profile_edit_button_cancel">Cancel</string>
+    <!-- Class Begin -->
+    <string name="profile_edit_error_name">Please enter a name.</string>
+    <string name="profile_edit_error_birthday">Please enter a date of birth.</string>
+    <string name="profile_edit_toast_saved">Data saved with success!</string>
+    <string name="profile_edit_toast_canceled">Canceled!</string>
     <!-- Profile Edit Screen End -->
 
     <!-- Profile Delete Screen Start -->
     <string name="title_activity_profile_delete">Delete Profile</string>
     <string name="profile_delete_textView_name_example">John Doe</string>
     <string name="profile_delete_textView_date_example">07/04/2019</string>
+    <!-- Class Begin -->
     <string name="profile_delete_button_delete">Delete</string>
     <string name="profile_delete_toast_deleted">... successfully deleted</string>
     <!-- Profile Delete Screen End -->
