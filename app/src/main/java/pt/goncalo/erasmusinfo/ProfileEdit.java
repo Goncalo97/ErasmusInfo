@@ -27,9 +27,7 @@ public class ProfileEdit extends AppCompatActivity {
         setContentView(R.layout.activity_profile_edit);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // getString of Resource @string/profile_edit_button
-        Toast.makeText(this, "{" + getString(R.string.profile_edit_button) + "}", Toast.LENGTH_LONG).show();
-        editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
+        editProfileAge = findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();
         date = new DatePickerDialog.OnDateSetListener() {
 
@@ -63,24 +61,16 @@ public class ProfileEdit extends AppCompatActivity {
     }
 
     public void saveProfile(View view) {
-        // get ID
-        EditText editProfileName = (EditText) findViewById(R.id.editTextViewProfileName);
-        // get View data
+        EditText editProfileName = findViewById(R.id.editTextViewProfileName);
         String stringProfileName = editProfileName.getText().toString();
         String stringProfileAge = editProfileAge.getText().toString();
-
         if (stringProfileName.trim().length() == 0) {
-            // err Attribution
             editProfileName.setError(getString(R.string.profile_edit_textInputEditText_error_name));
-            // focus on field
             editProfileName.requestFocus();
             return;
         }
-
         if (stringProfileAge.trim().length() == 0) {
-            // err Attribution
             editProfileAge.setError(getString(R.string.profile_edit_textInputEditText_error_birthDate));
-            // focus on field
             editProfileAge.requestFocus();
             if(editProfileAge.hasFocus()) new DatePickerDialog(ProfileEdit.this, date,
                     myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
@@ -88,16 +78,12 @@ public class ProfileEdit extends AppCompatActivity {
 
             return;
         }
-
         // if (stringProfileAge.trim().length() > 0) editProfileAge.setError(null);
-
-        // getString of Resource @string/profile_edit_toast_saved
         Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_saved) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
     public void cancelProfile(View view) {
-        // getString of Resource @string/profile_edit_toast_saved
         Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }

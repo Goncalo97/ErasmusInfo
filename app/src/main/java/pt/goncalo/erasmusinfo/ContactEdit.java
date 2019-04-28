@@ -21,29 +21,28 @@ public class ContactEdit extends AppCompatActivity {
     }
 
     public void contactSave(View view) {
-
-        EditText contactEditName = (EditText) findViewById(R.id.editTextContactName);
-        EditText contactEditNumber = (EditText) findViewById(R.id.editTextContactNumber);
-
+        EditText contactEditName = findViewById(R.id.editTextContactName);
+        EditText contactEditNumber = findViewById(R.id.editTextContactNumber);
         if (contactEditName.getText().toString().trim().length() == 0) {
             contactEditName.setError(getString(R.string.contact_edit_textInputEditText_error_name));
             contactEditName.requestFocus();
             return;
         }
-
         if (contactEditNumber.getText().toString().trim().length() == 0) {
             contactEditNumber.setError(getString(R.string.contact_edit_textInputEditText_error_number));
             contactEditNumber.requestFocus();
             return;
         }
-        Toast.makeText(this, "{" + getString(R.string.contact_edit_toast_saved) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,
+                "{" + getString(R.string.contact_edit_toast_saved) + "}",
+                Toast.LENGTH_SHORT).show();
         finish();
     }
 
     public void contactCancel(View view) {
-
-        Toast.makeText(this, "{" + getString(R.string.contact_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,
+                "{" + getString(R.string.contact_edit_toast_canceled) + "}",
+                Toast.LENGTH_SHORT).show();
         finish();
     }
-
 }

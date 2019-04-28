@@ -10,6 +10,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+// TODO: Verificar se as strings correspondem
+// TODO: Refatorar IDs
+// TODO: Melhorar o funcionamento da função 'datePickerDialog'
+// TODO: Criar College
+// TODO: Criar Subject
+// TODO: Gets & Sets
+// TODO: Melhorar o design
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

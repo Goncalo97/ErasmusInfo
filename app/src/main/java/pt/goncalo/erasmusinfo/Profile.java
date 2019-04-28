@@ -17,21 +17,12 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /* showMessagePerfil(); */
-        Toast.makeText(this, "{"+ getString(R.string.profile)+"}", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this,
+                "{"+ getString(R.string.profile)+"}",
+                Toast.LENGTH_SHORT).show();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    /*
-    private void showMessagePerfil() {
-
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(AppConsts.MESSAGE_PERFIL);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-    */
-/**/
     public void openProfileView(View view) {
 
         Intent intent = new Intent(this, ProfileView.class);
@@ -55,5 +46,4 @@ public class Profile extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileDelete.class);
         startActivity(intent);
     }
-
 }

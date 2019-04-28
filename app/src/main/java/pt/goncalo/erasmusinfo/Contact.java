@@ -17,7 +17,9 @@ public class Contact extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Toast.makeText(this, "{"+ getString(R.string.contact)+"}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,
+                "{"+ getString(R.string.contact)+"}",
+                Toast.LENGTH_SHORT).show();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-
 public class ProfileInsert extends AppCompatActivity {
 
     EditText editProfileAge;
@@ -28,13 +27,8 @@ public class ProfileInsert extends AppCompatActivity {
         setContentView(R.layout.activity_profile_insert);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // getString of Resource @string/profile_insert_button
-        Toast.makeText(this, "{" + getString(R.string.profile_insert_button) + "}", Toast.LENGTH_LONG).show();
-
-        editProfileAge = (EditText) findViewById(R.id.editTextViewProfileAge);
+        editProfileAge = findViewById(R.id.editTextViewProfileAge);
         myCalendar = Calendar.getInstance();
-
         date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -71,49 +65,29 @@ public class ProfileInsert extends AppCompatActivity {
     }
 
     public void saveProfile(View view) {
-
-        // get ID
-        EditText editProfileName = (EditText) findViewById(R.id.editTextViewProfileName);
-
-        // get View data
+        EditText editProfileName = findViewById(R.id.editTextViewProfileName);
         String stringProfileName = editProfileName.getText().toString();
         String stringProfileAge = editProfileAge.getText().toString();
-
         if (stringProfileName.trim().length() == 0) {
-
-            // err Attribution
-            editProfileName.setError(getString(R.string.profile_edit_textInputEditText_error_name));
-
-            // focus on field
+            editProfileName.setError(getString(R.string.profile_insert_textInputEditText_error_name));
             editProfileName.requestFocus();
             return;
         }
-
         if (stringProfileAge.trim().length() == 0) {
-
-            // err Attribution
             editProfileAge.setError(getString(R.string.profile_edit_textInputEditText_error_birthDate));
-
-            // focus on field
             editProfileAge.requestFocus();
             if(editProfileAge.hasFocus())
                 new DatePickerDialog(ProfileInsert.this, date,
                         myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-
             return;
         }
-
-        // getString of Resource @string/profile_edit_toast_saved
-        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_saved) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.profile_insert_toast_saved) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
 
     public void cancelProfile(View view) {
-
-        // getString of Resource @string/profile_edit_toast_saved
-        Toast.makeText(this, "{" + getString(R.string.profile_edit_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "{" + getString(R.string.profile_insert_toast_canceled) + "}", Toast.LENGTH_SHORT).show();
         finish();
     }
-
 }

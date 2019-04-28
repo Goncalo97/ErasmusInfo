@@ -61,9 +61,11 @@
     <string name="profile_delete_textView_example_name">John Doe</string>
     <string name="profile_delete_textView_hint_birthDate">Date of birth:</string>
     <string name="profile_delete_textView_example_birthDate">07/04/2019</string>
-    <!-- Class Begin -->
     <string name="profile_delete_button_delete">Delete</string>
+    <string name="profile_delete_button_cancel">Cancel</string>
+    <!-- Class Begin -->
     <string name="profile_delete_toast_deleted">... successfully deleted</string>
+    <string name="profile_delete_toast_canceled">Canceled</string>
     <!-- Profile Delete Screen End -->
 
     <!-- Contact Screen Start -->
