@@ -132,54 +132,42 @@
 
     <!-- College Insert Screen Start -->
     <string name="title_activity_college_insert">Insert College</string>
-    <string name="college_insert_textInputEditText_hint_code">Code:</string>
     <string name="college_insert_textInputEditText_hint_name">Name:</string>
-    <string name="college_insert_textInputEditText_hint_ects">ECTs:</string>
-    <string name="college_insert_textInputEditText_hint_discEqual">Equivalent College:</string>
-    <string name="college_insert_textInputEditText_hint_score">Score:</string>
+    <string name="college_insert_textInputEditText_hint_country">Country:</string>
+    <string name="college_insert_textInputEditText_hint_location">Location:</string>
     <string name="college_insert_button_save">Save</string>
     <string name="college_insert_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="college_insert_textInputEditText_error_code">Please enter a code.</string>
     <string name="college_insert_textInputEditText_error_name">Please enter a name.</string>
-    <string name="college_insert_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="college_insert_textInputEditText_error_discEqual">Please enter an equivalent college.</string>
-    <string name="college_insert_textInputEditText_error_score">Please enter a score.</string>
+    <string name="college_insert_textInputEditText_error_country">Please enter the country.</string>
+    <string name="college_insert_textInputEditText_error_location">Please enter the location.</string>
     <string name="college_insert_toast_saved">Data saved with success!</string>
     <string name="college_insert_toast_canceled">Canceled!</string>
     <!-- College Insert Screen End -->
 
     <!-- College Edit Screen Start -->
     <string name="title_activity_college_edit">Edit College</string>
-    <string name="college_edit_textInputEditText_hint_code">Code:</string>
     <string name="college_edit_textInputEditText_hint_name">Name:</string>
-    <string name="college_edit_textInputEditText_hint_ects">ECTs:</string>
-    <string name="college_edit_textInputEditText_hint_discEqual">Equivalent College:</string>
-    <string name="college_edit_textInputEditText_hint_score">Score:</string>
+    <string name="college_edit_textInputEditText_hint_country">Country:</string>
+    <string name="college_edit_textInputEditText_hint_location">Location:</string>
     <string name="college_edit_button_save">Save</string>
     <string name="college_edit_button_cancel">Cancel</string>
     <!-- Class Begin -->
-    <string name="college_edit_textInputEditText_error_code">Please enter a code.</string>
     <string name="college_edit_textInputEditText_error_name">Please enter a name.</string>
-    <string name="college_edit_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="college_edit_textInputEditText_error_discEqual">Please enter an equivalent college.</string>
-    <string name="college_edit_textInputEditText_error_score">Please enter a score.</string>
+    <string name="college_edit_textInputEditText_error_country">Please enter the country.</string>
+    <string name="college_edit_textInputEditText_error_location">Please enter the location.</string>
     <string name="college_edit_toast_saved">Data saved with success!</string>
     <string name="college_edit_toast_canceled">Canceled!</string>
     <!-- College Edit Screen End -->
 
     <!-- College Delete Screen Start -->
     <string name="title_activity_college_delete">Delete College</string>
-    <string name="college_delete_textView_hint_code">Code:</string>
-    <string name="college_delete_textView_example_code">UINF8800</string>
     <string name="college_delete_textView_hint_name">Name:</string>
-    <string name="college_delete_textView_example_name">Advanced Programming</string>
-    <string name="college_delete_textView_hint_ects">ECTs:</string>
-    <string name="college_delete_textView_example_ects">6</string>
-    <string name="college_delete_textView_hint_discEqual">Equivalent College:</string>
-    <string name="college_delete_textView_example_discEqual">Programação Avançada</string>
-    <string name="college_delete_textView_hint_score">Score:</string>
-    <string name="college_delete_textView_example_score">B</string>
+    <string name="college_delete_textView_example_name">French College</string>
+    <string name="college_delete_textView_hint_country">Country:</string>
+    <string name="college_delete_textView_example_country">France</string>
+    <string name="college_delete_textView_hint_location">Location:</string>
+    <string name="college_delete_textView_example_location">SouthWest</string>
     <string name="college_delete_button_delete">Delete</string>
     <string name="college_delete_button_cancel">Cancel</string>
     <!-- Class Begin -->

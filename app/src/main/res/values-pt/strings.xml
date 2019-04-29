@@ -125,140 +125,120 @@
     <string name="contact_delete_toast_canceled">Cancelado</string>
     <!-- Contact Delete Screen End -->
 
-    <!--
-        TODO: Internacionalizar COLLEGE;
-    -->
-
     <!-- College Screen Start -->
     <string name="title_activity_college">Universidades</string>
-    <string name="college_insert_button">Insert College</string>
-    <string name="college_edit_button">Edit College</string>
-    <string name="college_delete_button">Delete College</string>
+    <string name="college_insert_button">Inserir Universidade</string>
+    <string name="college_edit_button">Editar Universidade</string>
+    <string name="college_delete_button">Eliminar Universidade</string>
     <!-- College Screen End -->
 
     <!-- College Insert Screen Start -->
-    <string name="title_activity_college_insert">Insert College</string>
-    <string name="college_insert_textInputEditText_hint_code">Code:</string>
-    <string name="college_insert_textInputEditText_hint_name">Name:</string>
-    <string name="college_insert_textInputEditText_hint_ects">ECTs:</string>
-    <string name="college_insert_textInputEditText_hint_discEqual">Equivalent College:</string>
-    <string name="college_insert_textInputEditText_hint_score">Score:</string>
-    <string name="college_insert_button_save">Save</string>
-    <string name="college_insert_button_cancel">Cancel</string>
+    <string name="title_activity_college_insert">Inserir Universidade</string>
+    <string name="college_insert_textInputEditText_hint_name">Nome:</string>
+    <string name="college_insert_textInputEditText_hint_country">ECTs:</string>
+    <string name="college_insert_textInputEditText_hint_location">Localização:</string>
+    <string name="college_insert_button_save">Guardar</string>
+    <string name="college_insert_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="college_insert_textInputEditText_error_code">Please enter a code.</string>
-    <string name="college_insert_textInputEditText_error_name">Please enter a name.</string>
-    <string name="college_insert_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="college_insert_textInputEditText_error_discEqual">Please enter an equivalent college.</string>
-    <string name="college_insert_textInputEditText_error_score">Please enter a score.</string>
-    <string name="college_insert_toast_saved">Data saved with success!</string>
-    <string name="college_insert_toast_canceled">Canceled!</string>
+    <string name="college_insert_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="college_insert_textInputEditText_error_country">Por favor insira o país.</string>
+    <string name="college_insert_textInputEditText_error_location">Por favor insira a localização.</string>
+    <string name="college_insert_toast_saved">Dados guardados com sucesso!</string>
+    <string name="college_insert_toast_canceled">Cancelado!</string>
     <!-- College Insert Screen End -->
 
     <!-- College Edit Screen Start -->
-    <string name="title_activity_college_edit">Edit College</string>
-    <string name="college_edit_textInputEditText_hint_code">Code:</string>
-    <string name="college_edit_textInputEditText_hint_name">Name:</string>
-    <string name="college_edit_textInputEditText_hint_ects">ECTs:</string>
-    <string name="college_edit_textInputEditText_hint_discEqual">Equivalent College:</string>
-    <string name="college_edit_textInputEditText_hint_score">Score:</string>
-    <string name="college_edit_button_save">Save</string>
-    <string name="college_edit_button_cancel">Cancel</string>
+    <string name="title_activity_college_edit">Alterar Universidade</string>
+    <string name="college_edit_textInputEditText_hint_name">Nome:</string>
+    <string name="college_edit_textInputEditText_hint_country">País:</string>
+    <string name="college_edit_textInputEditText_hint_location">Localização:</string>
+    <string name="college_edit_button_save">Guardar</string>
+    <string name="college_edit_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="college_edit_textInputEditText_error_code">Please enter a code.</string>
-    <string name="college_edit_textInputEditText_error_name">Please enter a name.</string>
-    <string name="college_edit_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="college_edit_textInputEditText_error_discEqual">Please enter an equivalent college.</string>
-    <string name="college_edit_textInputEditText_error_score">Please enter a score.</string>
-    <string name="college_edit_toast_saved">Data saved with success!</string>
-    <string name="college_edit_toast_canceled">Canceled!</string>
+    <string name="college_edit_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="college_edit_textInputEditText_error_country">Por favor insira o país.</string>
+    <string name="college_edit_textInputEditText_error_location">Por favor insira a localização.</string>
+    <string name="college_edit_toast_saved">Dados guardados com sucesso!</string>
+    <string name="college_edit_toast_canceled">Cancelado!</string>
     <!-- College Edit Screen End -->
 
     <!-- College Delete Screen Start -->
-    <string name="title_activity_college_delete">Delete College</string>
-    <string name="college_delete_textView_hint_code">Code:</string>
-    <string name="college_delete_textView_example_code">UINF8800</string>
-    <string name="college_delete_textView_hint_name">Name:</string>
-    <string name="college_delete_textView_example_name">Advanced Programming</string>
-    <string name="college_delete_textView_hint_ects">ECTs:</string>
-    <string name="college_delete_textView_example_ects">6</string>
-    <string name="college_delete_textView_hint_discEqual">Equivalent College:</string>
-    <string name="college_delete_textView_example_discEqual">Progarmação Avançada</string>
-    <string name="college_delete_textView_hint_score">Score:</string>
-    <string name="college_delete_textView_example_score">B</string>
-    <string name="college_delete_button_delete">Delete</string>
-    <string name="college_delete_button_cancel">Cancel</string>
+    <string name="title_activity_college_delete">Eliminar Universidade</string>
+    <string name="college_delete_textView_hint_name">Nome:</string>
+    <string name="college_delete_textView_example_name">Universidade Francesa</string>
+    <string name="college_delete_textView_hint_country">País:</string>
+    <string name="college_delete_textView_example_country">França</string>
+    <string name="college_delete_textView_hint_location">Localização:</string>
+    <string name="college_delete_textView_example_location">Sudoeste</string>
+    <string name="college_delete_button_delete">Eliminar</string>
+    <string name="college_delete_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="college_delete_toast_deleted">... successfully deleted</string>
-    <string name="college_delete_toast_canceled">Canceled</string>
+    <string name="college_delete_toast_deleted">... eliminado com sucesso</string>
+    <string name="college_delete_toast_canceled">Cancelado</string>
     <!-- College Delete Screen End -->
 
-    <!--
-        TODO: Internacionalizar SUBJECT;
-    -->
-
     <!-- Subject Screen Start -->
-    <string name="title_activity_subject">Subjects</string>
-    <string name="subject_insert_button">Insert Subject</string>
-    <string name="subject_edit_button">Edit Subject</string>
-    <string name="subject_delete_button">Delete Subject</string>
+    <string name="title_activity_subject">Disciplinas</string>
+    <string name="subject_insert_button">Inserir Disciplina</string>
+    <string name="subject_edit_button">Alterar Disciplina</string>
+    <string name="subject_delete_button">Eliminar Disciplina</string>
     <!-- Subject Screen End -->
 
     <!-- Subject Insert Screen Start -->
-    <string name="title_activity_subject_insert">Insert Subject</string>
-    <string name="subject_insert_textInputEditText_hint_code">Code:</string>
-    <string name="subject_insert_textInputEditText_hint_name">Name:</string>
+    <string name="title_activity_subject_insert">Inserir Disciplina</string>
+    <string name="subject_insert_textInputEditText_hint_code">Código:</string>
+    <string name="subject_insert_textInputEditText_hint_name">Nome:</string>
     <string name="subject_insert_textInputEditText_hint_ects">ECTs:</string>
-    <string name="subject_insert_textInputEditText_hint_discEqual">Equivalent Subject:</string>
-    <string name="subject_insert_textInputEditText_hint_score">Score:</string>
-    <string name="subject_insert_button_save">Save</string>
-    <string name="subject_insert_button_cancel">Cancel</string>
+    <string name="subject_insert_textInputEditText_hint_discEqual">Disciplina Equivalente:</string>
+    <string name="subject_insert_textInputEditText_hint_score">Avaliação:</string>
+    <string name="subject_insert_button_save">Guardar</string>
+    <string name="subject_insert_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="subject_insert_textInputEditText_error_code">Please enter a code.</string>
-    <string name="subject_insert_textInputEditText_error_name">Please enter a name.</string>
-    <string name="subject_insert_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="subject_insert_textInputEditText_error_discEqual">Please enter an equivalent subject.</string>
-    <string name="subject_insert_textInputEditText_error_score">Please enter a score.</string>
-    <string name="subject_insert_toast_saved">Data saved with success!</string>
-    <string name="subject_insert_toast_canceled">Canceled!</string>
+    <string name="subject_insert_textInputEditText_error_code">Por favor insira um código.</string>
+    <string name="subject_insert_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="subject_insert_textInputEditText_error_ects">Por favor insira os ECTs.</string>
+    <string name="subject_insert_textInputEditText_error_discEqual">Por favor insira uma disciplina equivalente.</string>
+    <string name="subject_insert_textInputEditText_error_score">Por favor insira a avaliação.</string>
+    <string name="subject_insert_toast_saved">Dados guardados com sucesso!</string>
+    <string name="subject_insert_toast_canceled">Cancelado!</string>
     <!-- Subject Insert Screen End -->
 
     <!-- Subject Edit Screen Start -->
-    <string name="title_activity_subject_edit">Edit Subject</string>
-    <string name="subject_edit_textInputEditText_hint_code">Code:</string>
-    <string name="subject_edit_textInputEditText_hint_name">Name:</string>
+    <string name="title_activity_subject_edit">Alterar Disciplina</string>
+    <string name="subject_edit_textInputEditText_hint_code">Código:</string>
+    <string name="subject_edit_textInputEditText_hint_name">Nome:</string>
     <string name="subject_edit_textInputEditText_hint_ects">ECTs:</string>
-    <string name="subject_edit_textInputEditText_hint_discEqual">Equivalent Subject:</string>
-    <string name="subject_edit_textInputEditText_hint_score">Score:</string>
-    <string name="subject_edit_button_save">Save</string>
-    <string name="subject_edit_button_cancel">Cancel</string>
+    <string name="subject_edit_textInputEditText_hint_discEqual">Disciplina Equivalente:</string>
+    <string name="subject_edit_textInputEditText_hint_score">Avaliação:</string>
+    <string name="subject_edit_button_save">Guardar</string>
+    <string name="subject_edit_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="subject_edit_textInputEditText_error_code">Please enter a code.</string>
-    <string name="subject_edit_textInputEditText_error_name">Please enter a name.</string>
-    <string name="subject_edit_textInputEditText_error_ects">Please enter the ECTs.</string>
-    <string name="subject_edit_textInputEditText_error_discEqual">Please enter an equivalent subject.</string>
-    <string name="subject_edit_textInputEditText_error_score">Please enter a score.</string>
-    <string name="subject_edit_toast_saved">Data saved with success!</string>
-    <string name="subject_edit_toast_canceled">Canceled!</string>
+    <string name="subject_edit_textInputEditText_error_code">Por favor insira um código.</string>
+    <string name="subject_edit_textInputEditText_error_name">Por favor insira um nome.</string>
+    <string name="subject_edit_textInputEditText_error_ects">Por favor insira os ECTs.</string>
+    <string name="subject_edit_textInputEditText_error_discEqual">Por favor insira uma disciplina equivalente.</string>
+    <string name="subject_edit_textInputEditText_error_score">Por favor insira a avaliação.</string>
+    <string name="subject_edit_toast_saved">Dados guardados com sucesso!</string>
+    <string name="subject_edit_toast_canceled">Cancelado!</string>
     <!-- Subject Edit Screen End -->
 
     <!-- Subject Delete Screen Start -->
-    <string name="title_activity_subject_delete">Delete Subject</string>
-    <string name="subject_delete_textView_hint_code">Code:</string>
+    <string name="title_activity_subject_delete">Eliminar Disciplina</string>
+    <string name="subject_delete_textView_hint_code">Código:</string>
     <string name="subject_delete_textView_example_code">UINF8800</string>
-    <string name="subject_delete_textView_hint_name">Name:</string>
+    <string name="subject_delete_textView_hint_name">Nome:</string>
     <string name="subject_delete_textView_example_name">Advanced Programming</string>
     <string name="subject_delete_textView_hint_ects">ECTs:</string>
     <string name="subject_delete_textView_example_ects">6</string>
-    <string name="subject_delete_textView_hint_discEqual">Equivalent Subject:</string>
+    <string name="subject_delete_textView_hint_discEqual">Disciplina Equivalente:</string>
     <string name="subject_delete_textView_example_discEqual">Progarmação Avançada</string>
-    <string name="subject_delete_textView_hint_score">Score:</string>
+    <string name="subject_delete_textView_hint_score">Avaliação:</string>
     <string name="subject_delete_textView_example_score">B</string>
-    <string name="subject_delete_button_delete">Delete</string>
-    <string name="subject_delete_button_cancel">Cancel</string>
+    <string name="subject_delete_button_delete">Eliminar</string>
+    <string name="subject_delete_button_cancel">Cancelar</string>
     <!-- Class Begin -->
-    <string name="subject_delete_toast_deleted">... successfully deleted</string>
-    <string name="subject_delete_toast_canceled">Canceled</string>
+    <string name="subject_delete_toast_deleted">... eliminado com sucesso</string>
+    <string name="subject_delete_toast_canceled">Cancelado</string>
     <!-- Subject Delete Screen End -->
 
 </resources>
