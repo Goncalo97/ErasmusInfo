@@ -28,10 +28,10 @@
                 android:layout_marginLeft="@dimen/side_margin"
                 android:layout_marginTop="@dimen/top_margin"
                 android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_hint_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+                android:textColor="@color/colorHint"
+                android:textSize="@dimen/titleSize" />
 
             <TextView
                 android:id="@+id/textViewCollegeName"
@@ -43,7 +43,8 @@
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_example_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize" />
 
             <TextView
                 android:id="@+id/textViewCollegeHintCountry"
@@ -55,7 +56,8 @@
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_hint_country"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+                android:textColor="@color/colorHint"
+                android:textSize="@dimen/titleSize" />
 
             <TextView
                 android:id="@+id/textViewCollegeCountry"
@@ -67,7 +69,8 @@
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_example_country"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize" />
 
             <TextView
                 android:id="@+id/textViewCollegeHintLocation"
@@ -79,7 +82,8 @@
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_hint_location"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+                android:textColor="@color/colorHint"
+                android:textSize="@dimen/titleSize" />
 
             <TextView
                 android:id="@+id/textViewCollegeLocation"
@@ -91,7 +95,8 @@
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:ems="10"
                 android:text="@string/college_delete_textView_example_location"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/textSize" />
 
             <Button
                 android:id="@+id/buttonCollegeDelete"

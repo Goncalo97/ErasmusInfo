@@ -5,13 +5,14 @@
     <dimen name="default_margin">8dp</dimen>
     <dimen name="top_margin">8dp</dimen>
     <dimen name="bottom_margin">8dp</dimen>
+    <dimen name="double_side_margin">32dp</dimen>
     <dimen name="side_margin">32dp</dimen>
     <dimen name="half_side_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- String -->
     <dimen name="hintSize">22sp</dimen>
-    <dimen name="textSize">16sp</dimen>
+    <dimen name="textSize">18sp</dimen>
     <dimen name="buttonSize">24sp</dimen>
     <dimen name="titleSize">24sp</dimen>
 </resources>
