@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".College"
     tools:showIn="@layout/activity_college">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/buttonInsert"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_side_margin"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:onClick="openCollegeInsert"
+        android:text="@string/college_insert_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:id="@+id/buttonEdit"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_side_margin"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:onClick="openCollegeEdit"
+        android:text="@string/college_edit_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/half_side_margin"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:onClick="openCollegeDelete"
+        android:text="@string/college_delete_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+</LinearLayout>
