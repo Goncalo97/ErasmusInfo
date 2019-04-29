@@ -11,7 +11,6 @@
 
     <Button
         android:id="@+id/buttonInsert"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/half_side_margin"
@@ -20,11 +19,11 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openCollegeInsert"
         android:text="@string/college_insert_button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
     <Button
         android:id="@+id/buttonEdit"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/half_side_margin"
@@ -33,11 +32,11 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openCollegeEdit"
         android:text="@string/college_edit_button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
     <Button
         android:id="@+id/buttonDelete"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/half_side_margin"
@@ -46,6 +45,7 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openCollegeDelete"
         android:text="@string/college_delete_button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
 </LinearLayout>
