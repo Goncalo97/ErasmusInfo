@@ -27,7 +27,6 @@ public class CollegeEdit extends AppCompatActivity {
         EditText collegeEditName = findViewById(R.id.editTextCollegeName);
         EditText collegeEditCountry = findViewById(R.id.editTextCollegeCountry);
         EditText collegeEditLocation = findViewById(R.id.editTextCollegeLocation);
-
         if (collegeEditName.getText().toString().trim().length() == 0) {
             collegeEditName.setError(getString(R.string.college_edit_textInputEditText_error_name));
             collegeEditName.requestFocus();
