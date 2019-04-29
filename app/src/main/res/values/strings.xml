@@ -177,7 +177,7 @@
     <string name="college_delete_textView_hint_ects">ECTs:</string>
     <string name="college_delete_textView_example_ects">6</string>
     <string name="college_delete_textView_hint_discEqual">Equivalent College:</string>
-    <string name="college_delete_textView_example_discEqual">Progarmação Avançada</string>
+    <string name="college_delete_textView_example_discEqual">Programação Avançada</string>
     <string name="college_delete_textView_hint_score">Score:</string>
     <string name="college_delete_textView_example_score">B</string>
     <string name="college_delete_button_delete">Delete</string>
@@ -241,7 +241,7 @@
     <string name="subject_delete_textView_hint_ects">ECTs:</string>
     <string name="subject_delete_textView_example_ects">6</string>
     <string name="subject_delete_textView_hint_discEqual">Equivalent Subject:</string>
-    <string name="subject_delete_textView_example_discEqual">Progarmação Avançada</string>
+    <string name="subject_delete_textView_example_discEqual">Programação Avançada</string>
     <string name="subject_delete_textView_hint_score">Score:</string>
     <string name="subject_delete_textView_example_score">B</string>
     <string name="subject_delete_button_delete">Delete</string>
