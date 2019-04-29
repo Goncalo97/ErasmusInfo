@@ -5,7 +5,8 @@
         <color name="colorPrimaryDark">#00574B</color>
         <color name="colorAccent">#D81B60</color>
     -->
-    <color name="colorPrimary">#B4AA69</color>
+    <color name="colorPrimary">#857439</color>
     <color name="colorPrimaryDark">#B5B4AA69</color>
     <color name="colorAccent">#F5673C</color>
+    <color name="colorBtnRounded">#B4AA69</color>
 </resources>
