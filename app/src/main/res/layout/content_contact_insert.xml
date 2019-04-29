@@ -58,7 +58,6 @@
         android:layout_marginBottom="@dimen/bottom_margin"
         android:onClick="contactSave"
         android:text="@string/contact_insert_button_save"
-        android:background="@drawable/btn_rounded"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
     <Button

@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openContactView"
         android:text="@string/contact_view_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
@@ -25,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openContactInsert"
         android:text="@string/contact_insert_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
@@ -35,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openContactEdit"
         android:text="@string/contact_edit_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
@@ -45,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openContactDelete"
         android:text="@string/contact_delete_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />

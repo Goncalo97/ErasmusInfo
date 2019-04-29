@@ -17,6 +17,7 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openSubjectInsert"
         android:text="@string/subject_insert_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
@@ -29,6 +30,7 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openSubjectEdit"
         android:text="@string/subject_edit_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
@@ -41,6 +43,7 @@
         android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
         android:layout_marginRight="@dimen/side_margin"
+        android:background="@drawable/btn_rounded"
         android:onClick="openSubjectDelete"
         android:text="@string/subject_delete_button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
