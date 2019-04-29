@@ -10,14 +10,14 @@
 
     <Button
         android:id="@+id/buttonPerfil"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/btn_rounded"
         android:onClick="openProfile"
         android:text="@string/profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/buttonContacto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -43,7 +43,7 @@
 
     <Button
         android:id="@+id/buttonUniversidade"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -60,7 +60,7 @@
     <!-- ToDo: Renomear as strings; -->
     <Button
         android:id="@+id/buttonDisciplinas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
