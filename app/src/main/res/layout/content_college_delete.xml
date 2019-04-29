@@ -100,29 +100,31 @@
 
             <Button
                 android:id="@+id/buttonCollegeDelete"
-                style="@android:style/Widget.Button.Inset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/side_margin"
                 android:layout_marginTop="@dimen/top_margin"
                 android:layout_marginRight="@dimen/side_margin"
                 android:layout_marginBottom="@dimen/bottom_margin"
+                android:background="@color/colorBtnDelete"
                 android:onClick="collegeDelete"
                 android:text="@string/college_delete_button_delete"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+                android:textColor="@color/colorButton"
+                android:textSize="@dimen/buttonSize" />
 
             <Button
                 android:id="@+id/buttonCollegeCancel"
-                style="@android:style/Widget.DeviceDefault.Button.Inset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/side_margin"
                 android:layout_marginTop="@dimen/top_margin"
                 android:layout_marginRight="@dimen/side_margin"
                 android:layout_marginBottom="@dimen/bottom_margin"
+                android:background="@color/colorBtnCancel"
                 android:onClick="collegeCancel"
                 android:text="@string/college_delete_button_cancel"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+                android:textColor="@color/colorButton"
+                android:textSize="@dimen/buttonSize" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
