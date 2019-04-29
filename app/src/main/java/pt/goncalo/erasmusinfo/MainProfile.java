@@ -8,6 +8,11 @@ public class MainProfile {
 
     }
 
+    public MainProfile(String name, Date date) {
+        this.name = name;
+        this.date = date;
+    }
+
     private String name;
     private Date date;
 
