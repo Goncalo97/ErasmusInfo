@@ -6,19 +6,15 @@ public class MainCollege {
 
     }
 
-    public MainCollege(String code, String name, String ects, String discEqual, String score) {
-        this.code = code;
+    public MainCollege(String name, String country, String location) {
         this.name = name;
-        this.ects = ects;
-        this.discEqual = discEqual;
-        this.score = score;
+        this.country = country;
+        this.location = location;
     }
 
-    private String code;
     private String name;
-    private String ects;
-    private String discEqual;
-    private String score;
+    private String country;
+    private String location;
 
     public String getName() {
         return name;
@@ -28,46 +24,28 @@ public class MainCollege {
         this.name = name;
     }
 
-    public String getCode() {
-        return code;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getEcts() {
-        return ects;
+    public String getLocation() {
+        return location;
     }
 
-    public void setEcts(String ects) {
-        this.ects = ects;
-    }
-
-    public String getDiscEqual() {
-        return discEqual;
-    }
-
-    public void setDiscEqual(String discEqual) {
-        this.discEqual = discEqual;
-    }
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
     public String toString() {
         return "MainCollege{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", ects='" + ects + '\'' +
-                ", discEqual='" + discEqual + '\'' +
-                ", score='" + score + '\'' +
+                "name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", location='" + location + '\'' +
                 '}';
     }
 }
