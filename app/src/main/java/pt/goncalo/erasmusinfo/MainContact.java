@@ -6,6 +6,11 @@ public class MainContact {
 
     }
 
+    public MainContact(String name, String number) {
+        this.name = name;
+        this.number = number;
+    }
+
     private String name;
     private String number;
 
