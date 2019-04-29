@@ -1,5 +1,5 @@
 package pt.goncalo.erasmusinfo;
-8
+
 public class MainCollege {
 
     public MainCollege() {
