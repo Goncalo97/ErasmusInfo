@@ -124,5 +124,5 @@
             android:text="@string/subject_edit_button_cancel"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
-    </LinearLayout>
+</LinearLayout>
 
