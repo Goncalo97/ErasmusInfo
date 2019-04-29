@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void openContact(View view) {
         Intent intent = new Intent(this, Contact.class);
         startActivity(intent);
