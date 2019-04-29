@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CollegeDelete"
+            android:label="@string/title_activity_college_delete"
+            android:parentActivityName=".College"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pt.goncalo.erasmusinfo.College" />
+        </activity>
+        <activity
             android:name=".CollegeEdit"
             android:label="@string/title_activity_college_edit"
             android:parentActivityName=".College"
