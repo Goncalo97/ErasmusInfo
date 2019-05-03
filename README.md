@@ -1,12 +1,12 @@
 # ErasmusInfo
 Trabalho para a aula de Programação Avançada.
 
-A app possibilita ao utilizador, registar informação sobre país e a universidade, e o que pretende fazer em Erasmus.
+A app possibilita ao utilizador, registar informação sobre o país e a(s) universidade(s), e o que pretende fazer em Erasmus.
 
 Funcionalidades:
  
-  - Registo de disciplinas a fazer na universidade.
-  - Registo da nota final das disciplinas feitas na universidade.
+  - Registo de disciplinas a fazer na(s) universidade(s).
+  - Registo da nota final das disciplinas feitas na(s) universidade(s).
   - Registo de informações do país importante. 
     - Contactos: Polícia, Hospital, etc
  
@@ -15,7 +15,7 @@ Funcionalidades:
   - Perfil
     - Nome
     - Idade
-  - Universidade
+  - Universidades
     - Nome
     - País
     - Localização
@@ -32,8 +32,8 @@ Funcionalidades:
  Relações:
   
    - Perfil 1..M Contactos
-   - Perfil 1..1 Universidade
-   - Universidade 1..M Disciplinas
+   - Perfil 1..M Universidades
+   - UniversidadeM 1..M Disciplinas
   
    <img src="mod_er.png" alt="Mod ER" height="" width=""> 
   
