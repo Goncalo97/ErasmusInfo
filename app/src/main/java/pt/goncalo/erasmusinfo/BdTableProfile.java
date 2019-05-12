@@ -17,7 +17,7 @@ public class BdTableProfile implements BaseColumns {
         this.db = db;
     }
 
-    public void cria() {
+    public void create() {
         db.execSQL(
                 "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
