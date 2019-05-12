@@ -22,7 +22,7 @@ public class BdTableProfile implements BaseColumns {
                 "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         FIELD_NAME + " TEXT NOT NULL," +
-                        FIELD_AGE + " DATE NOT NULL" +
+                        FIELD_AGE + " TEXT NOT NULL" +
                         ")"
         );
     }
