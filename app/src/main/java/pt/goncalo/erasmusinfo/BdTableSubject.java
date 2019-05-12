@@ -5,16 +5,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-public class BdTableCollege implements BaseColumns {
-    public static final String TABLE_NAME = "college";
+public class BdTableSubject implements BaseColumns {
+    public static final String TABLE_NAME = "contact";
+    public static final String FIELD_CODE = "code";
     public static final String FIELD_NAME = "name";
-    public static final String FIELD_COUNTRY = "country";
-    public static final String FIELD_LOCATION = "location";
+    public static final String FIELD_ECTS = "ects";
+    public static final String FIELD_DISC_EQUAL = "disc_equal";
+    public static final String FIELD_SCORE = "score";
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_NAME, FIELD_COUNTRY, FIELD_LOCATION };
+    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_CODE, FIELD_NAME, FIELD };
 
-    public BdTableCollege(SQLiteDatabase db) {
+    public BdTableSubject(SQLiteDatabase db) {
         this.db = db;
     }
 
