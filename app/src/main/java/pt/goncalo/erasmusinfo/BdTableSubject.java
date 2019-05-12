@@ -10,11 +10,11 @@ public class BdTableSubject implements BaseColumns {
     public static final String FIELD_CODE = "code";
     public static final String FIELD_NAME = "name";
     public static final String FIELD_ECTS = "ects";
-    public static final String FIELD_DISC_EQUAL = "disc_equal";
+    public static final String FIELD_EQUAL_SUBJECT = "equal_subject";
     public static final String FIELD_SCORE = "score";
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_CODE, FIELD_NAME, FIELD };
+    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_CODE, FIELD_NAME, FIELD_ECTS, FIELD_EQUAL_SUBJECT, FIELD_SCORE };
 
     public BdTableSubject(SQLiteDatabase db) {
         this.db = db;
@@ -24,9 +24,11 @@ public class BdTableSubject implements BaseColumns {
         db.execSQL(
                 "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        FIELD_CODE + " TEXT NOT NULL," +
                         FIELD_NAME + " TEXT NOT NULL," +
-                        FIELD_COUNTRY + " TEXT NOT NULL," +
-                        FIELD_LOCATION + " TEXT NOT NULL" +
+                        FIELD_ECTS + " INTEGER NOT NULL," +
+                        FIELD_EQUAL_SUBJECT + " TEXT NOT NULL," +
+                        FIELD_SCORE + " TEXT NOT NULL" +
                         ")"
         );
     }
