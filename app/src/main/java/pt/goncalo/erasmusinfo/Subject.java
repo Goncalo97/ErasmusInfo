@@ -71,7 +71,7 @@ public class Subject extends AppCompatActivity {
 
     public static Subject fromCursor(Cursor cursor) {
         long id = cursor.getLong(cursor.getColumnIndex(BdTableSubject._ID));
-        String code = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_CODE);
+        String code = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_CODE));
         String name = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_NAME));
         int ects = cursor.getInt(cursor.getColumnIndex(BdTableSubject.FIELD_ECTS));
         String equal_subject = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_EQUAL_SUBJECT));
