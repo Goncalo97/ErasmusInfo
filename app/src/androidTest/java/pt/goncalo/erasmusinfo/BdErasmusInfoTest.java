@@ -47,16 +47,42 @@ public class BdErasmusInfoTest {
     public void testCRUD() {
         BdErasmusInfoOpenHelper openHelper = new BdErasmusInfoOpenHelper(getAppContext());
         SQLiteDatabase db = openHelper.getWritableDatabase();
+
         BdTableProfile tableProfile = new BdTableProfile(db);
         MainProfile profile = new MainProfile();
         profile.setName("John Doe");
         profile.setAge("12/05/2019 10:10:10");
-        long idJohn = tableProfile.insert(profile.getContentValues());
-        assertNotEquals(-1, idJohn);
+        long idProfile1 = tableProfile.insert(profile.getContentValues());
+        assertNotEquals(-1, idProfile1);
         profile = new MainProfile();
         profile.setName("John Doe 2");
         profile.setAge("12/05/2019 20:20:20");
-        long idJohn2 = tableProfile.insert(profile.getContentValues());
-        assertNotEquals(-1, idJohn2);
+        long idProfile2 = tableProfile.insert(profile.getContentValues());
+        assertNotEquals(-1, idProfile2);
+
+        BdTableContact tableContact = new BdTableContact(db);
+        MainContact contact = new MainContact();
+        contact.setName("John Doe");
+        contact.setNumber("987654321");
+        long idContact1 = tableContact.insert(contact.getContentValues());
+        assertNotEquals(-1, idContact1);
+
+        BdTableCollege tableCollege = new BdTableCollege(db);
+        MainCollege college = new MainCollege();
+        college.setName("French College");
+        college.setCountry("France");
+        college.setLocation("SouthWest");
+        long idCollege1 = tableCollege.insert(college.getContentValues());
+        assertNotEquals(-1, idCollege1);
+
+        BdTableSubject tableSubject = new BdTableSubject(db);
+        MainSubject subject = new MainSubject();
+        subject.setCode("UINF8800");
+        subject.setName("Advanced Programming");
+        subject.setEcts(6);
+        subject.setEqualSubject("Programação Avançada");
+        subject.setScore("B");
+        long idSubject1 = tableSubject.insert(subject.getContentValues());
+        assertNotEquals(-1, idSubject1);
     }
 }
