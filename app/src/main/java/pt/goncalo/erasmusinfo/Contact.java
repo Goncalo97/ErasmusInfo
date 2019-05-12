@@ -15,7 +15,7 @@ public class Contact extends AppCompatActivity {
 
     private long id;
     private String name;
-    private String age;
+    private String number;
 
     public long getId() {
         return id;
@@ -27,36 +27,37 @@ public class Contact extends AppCompatActivity {
     public String getName() {
         return name;
     }
-    public String getAge() {
-        return age;
+    public String getNumber() {
+        return number;
     }
 
     public void setName(String name) {
         this.name = name;
     }
-    public void setAge(String age) {
-        this.age = age;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public ContentValues getContentValues() {
         ContentValues values = new ContentValues();
-        values.put(BdTableProfile.FIELD_NAME, name);
-        values.put(BdTableProfile.FIELD_AGE, age);
+        values.put(BdTableContact.FIELD_NAME, name);
+        values.put(BdTableContact.FIELD_NUMBER, number);
         return values;
     }
 
-    public static Profile fromCursor(Cursor cursor) {
-        long id = cursor.getLong(cursor.getColumnIndex(BdTableProfile._ID));
-        String name = cursor.getString(cursor.getColumnIndex(BdTableProfile.FIELD_NAME));
-        String age = cursor.getString(cursor.getColumnIndex(BdTableProfile.FIELD_AGE));
+    public static Contact fromCursor(Cursor cursor) {
+        long id = cursor.getLong(cursor.getColumnIndex(BdTableContact._ID));
+        String name = cursor.getString(cursor.getColumnIndex(BdTableContact.FIELD_NAME));
+        String number = cursor.getString(cursor.getColumnIndex(BdTableContact.FIELD_NUMBER));
 
-        Profile profile = new Profile();
-        profile.setId(id);
-        profile.setName(name);
-        profile.setAge(age);
+        Contact contact = new Contact();
+        contact.setId(id);
+        contact.setName(name);
+        contact.setNumber(number);
 
-        return profile;
+        return contact;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
