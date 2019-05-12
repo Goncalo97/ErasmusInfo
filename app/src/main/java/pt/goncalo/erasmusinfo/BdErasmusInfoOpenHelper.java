@@ -36,11 +36,11 @@ public class BdErasmusInfoOpenHelper extends SQLiteOpenHelper {
         //TODO: Criar tabela de Perfil
         new BdTableProfile(db).create();
         //TODO: Criar tabela de Contactos
-        new BdTableContact(db).create;
+        new BdTableContact(db).create();
         //TODO: Criar tabela de Universidades
-        new BdTableCollege(db).create;
+        new BdTableCollege(db).create();
         //TODO: Criar tabela de Disciplinas
-        new BdTableSubject(db).create;
+        new BdTableSubject(db).create();
     }
 
     /**
