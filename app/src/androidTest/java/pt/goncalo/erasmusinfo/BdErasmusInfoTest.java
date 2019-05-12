@@ -48,12 +48,12 @@ public class BdErasmusInfoTest {
         BdErasmusInfoOpenHelper openHelper = new BdErasmusInfoOpenHelper(getAppContext());
         SQLiteDatabase db = openHelper.getWritableDatabase();
         BdTableProfile tableProfile = new BdTableProfile(db);
-        Profile profile = new Profile();
+        MainProfile profile = new MainProfile();
         profile.setName("John Doe");
         profile.setAge("12/05/2019 10:10:10");
         long idJohn = tableProfile.insert(profile.getContentValues());
         assertNotEquals(-1, idJohn);
-        profile = new Profile();
+        profile = new MainProfile();
         profile.setName("John Doe 2");
         profile.setAge("12/05/2019 20:20:20");
         long idJohn2 = tableProfile.insert(profile.getContentValues());

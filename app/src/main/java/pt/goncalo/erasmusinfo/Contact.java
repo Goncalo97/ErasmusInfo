@@ -13,51 +13,6 @@ import android.widget.Toast;
 
 public class Contact extends AppCompatActivity {
 
-    private long id;
-    private String name;
-    private String number;
-
-    public long getId() {
-        return id;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public String getNumber() {
-        return number;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public ContentValues getContentValues() {
-        ContentValues values = new ContentValues();
-        values.put(BdTableContact.FIELD_NAME, name);
-        values.put(BdTableContact.FIELD_NUMBER, number);
-        return values;
-    }
-
-    public static Contact fromCursor(Cursor cursor) {
-        long id = cursor.getLong(cursor.getColumnIndex(BdTableContact._ID));
-        String name = cursor.getString(cursor.getColumnIndex(BdTableContact.FIELD_NAME));
-        String number = cursor.getString(cursor.getColumnIndex(BdTableContact.FIELD_NUMBER));
-
-        Contact contact = new Contact();
-        contact.setId(id);
-        contact.setName(name);
-        contact.setNumber(number);
-
-        return contact;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
-
+/*
     private long id;
     private String name;
     private String age;
@@ -57,7 +57,7 @@ public class Profile extends AppCompatActivity {
 
         return profile;
     }
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
