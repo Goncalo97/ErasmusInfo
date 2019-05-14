@@ -2,7 +2,6 @@ package pt.goncalo.erasmusinfo;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
@@ -23,7 +22,7 @@ public class BdErasmusInfoTest {
 
     @Before
     public void eraseDataBase() {
-        getAppContext().deleteDatabase(BdErasmusInfoOpenHelper.NOME_BASE_DADOS);
+        getAppContext().deleteDatabase(BdErasmusInfoOpenHelper.DATABASE_NAME);
     }
 
     @Test
