@@ -1,6 +1,7 @@
 package pt.goncalo.erasmusinfo;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.test.InstrumentationRegistry;
@@ -84,4 +85,130 @@ public class BdErasmusInfoTest {
         long idSubject1 = tableSubject.insert(subject.getContentValues());
         assertNotEquals(-1, idSubject1);
     }
+
+    // PROFILE
+
+    private long createProfile(BdTableProfile tableProfile, String name, String dateOfBirth) {
+        MainProfile profile = new MainProfile();
+        profile.setName(name);
+        profile.setAge(dateOfBirth);
+        long id = tableProfile.insert(profile.getContentValues());
+        assertNotEquals(-1, id);
+        return id;
+    }
+
+    private Cursor getProfile(BdTableProfile tableProfile) {
+        return tableProfile.query(BdTableProfile.ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    private MainProfile getProfileWithID(Cursor cursor, long id) {
+        MainProfile profile = null;
+
+        while (cursor.moveToNext()) {
+            profile = MainProfile.fromCursor(cursor);
+            if (profile.getId() == id) {
+                break;
+            }
+        }
+
+        assertNotNull(profile);
+
+        return profile;
+    }
+
+    // CONTACT
+
+    private long createContact(BdTableContact tableContact, String name, String number) {
+        MainContact contact = new MainContact();
+        contact.setName(name);
+        contact.setNumber(number);
+        long id = tableContact.insert(contact.getContentValues());
+        assertNotEquals(-1, id);
+        return id;
+    }
+
+    private Cursor getContact(BdTableContact tableContact) {
+        return tableContact.query(BdTableContact.ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    private MainContact getContactWithID(Cursor cursor, long id) {
+        MainContact contact = null;
+
+        while (cursor.moveToNext()) {
+            contact = MainContact.fromCursor(cursor);
+            if (contact.getId() == id) {
+                break;
+            }
+        }
+
+        assertNotNull(contact);
+
+        return contact;
+    }
+
+    // COLLEGE
+
+    private long createCollege(BdTableCollege tableCollege, String name, String country, String location) {
+        MainCollege college = new MainCollege();
+        college.setName(name);
+        college.setCountry(country);
+        college.setLocation(location);
+        long id = tableCollege.insert(college.getContentValues());
+        assertNotEquals(-1, id);
+        return id;
+    }
+
+    private Cursor getCollege(BdTableCollege tableCollege) {
+        return tableCollege.query(BdTableCollege.ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    private MainCollege getCollegeWithID(Cursor cursor, long id) {
+        MainCollege college = null;
+
+        while (cursor.moveToNext()) {
+            college = MainCollege.fromCursor(cursor);
+            if (college.getId() == id) {
+                break;
+            }
+        }
+
+        assertNotNull(college);
+
+        return college;
+    }
+
+
+    // SUBJECT
+
+    private long createSubject(BdTableSubject tableSubject, String code, String name, int ects, String equalSubject, String score) {
+        MainSubject subject = new MainSubject();
+        subject.setCode(code);
+        subject.setName(name);
+        subject.setEcts(ects);
+        subject.setEqualSubject(equalSubject);
+        subject.setScore(score);
+        long id = tableSubject.insert(subject.getContentValues());
+        assertNotEquals(-1, id);
+        return id;
+    }
+
+    private Cursor getSubject(BdTableSubject tableSubject) {
+        return tableSubject.query(BdTableSubject.ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    private MainSubject getSubjectWithID(Cursor cursor, long id) {
+        MainSubject subject = null;
+
+        while (cursor.moveToNext()) {
+            subject = MainSubject.fromCursor(cursor);
+            if (subject.getId() == id) {
+                break;
+            }
+        }
+
+        assertNotNull(subject);
+
+        return subject;
+    }
+
 }
