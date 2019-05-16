@@ -9,9 +9,10 @@ public class BdTableContact implements BaseColumns {
     public static final String TABLE_NAME = "contact";
     public static final String FIELD_NAME = "name";
     public static final String FIELD_NUMBER = "number";
+    public static final String FIELD_ID_PROFILE = "idProfile";
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_NAME, FIELD_NUMBER };
+    public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_NAME, FIELD_NUMBER, FIELD_ID_PROFILE };
 
     public BdTableContact(SQLiteDatabase db) {
         this.db = db;
@@ -22,7 +23,9 @@ public class BdTableContact implements BaseColumns {
                 "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                         FIELD_NAME + " TEXT NOT NULL," +
-                        FIELD_NUMBER + " TEXT NOT NULL" +
+                        FIELD_NUMBER + " TEXT NOT NULL," +
+                        FIELD_ID_PROFILE + " INTEGER NOT NULL," +
+                        "FOREIGN KEY (" + FIELD_ID_PROFILE + ") REFERENCES " + BdTableProfile.TABLE_NAME + "(" + BdTableProfile._ID + ")" +
                         ")"
         );
     }
