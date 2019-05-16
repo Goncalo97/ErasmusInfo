@@ -26,6 +26,7 @@ public class BdTableCollege implements BaseColumns {
                         FIELD_NAME + " TEXT NOT NULL," +
                         FIELD_COUNTRY + " TEXT NOT NULL," +
                         FIELD_LOCATION + " TEXT NOT NULL," +
+                        FIELD_ID_PROFILE + " INTEGER NOT NULL," +
                         "FOREIGN KEY (" + FIELD_ID_PROFILE + ") REFERENCES " + BdTableProfile.TABLE_NAME + "(" + BdTableProfile._ID + ")" +
                         ")"
         );
