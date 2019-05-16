@@ -49,24 +49,121 @@ public class BdErasmusInfoTest {
         SQLiteDatabase db = openHelper.getWritableDatabase();
 
         BdTableProfile tableProfile = new BdTableProfile(db);
-        MainProfile profile = new MainProfile();
-        profile.setName("John Doe");
-        profile.setAge("12/05/2019 10:10:10");
-        long idProfile1 = tableProfile.insert(profile.getContentValues());
-        assertNotEquals(-1, idProfile1);
-        profile = new MainProfile();
-        profile.setName("John Doe 2");
-        profile.setAge("12/05/2019 20:20:20");
-        long idProfile2 = tableProfile.insert(profile.getContentValues());
-        assertNotEquals(-1, idProfile2);
 
-        BdTableContact tableContact = new BdTableContact(db);
+        // Test Read Profile (cRud)
+        Cursor cursorProfile = getProfile(tableProfile);
+        assertEquals(0, cursorProfile.getCount());
+
+        // Test Create/Read Profile (CRud)
+        String name = "John Doe";
+        String dateOfBirth = "12/05/2019 10:10:10";
+        long idProfile1 = createProfile(tableProfile, name, dateOfBirth);
+        cursorProfile = getProfile(tableProfile);
+        assertEquals(1, cursorProfile.getCount());
+
+        MainProfile profile = getProfileWithID(cursorProfile, idProfile1);
+
+        assertEquals(name, profile.getName());
+        assertEquals(dateOfBirth, profile.getAge());
+
+        name = "John Doe 2";
+        long idProfile2 = createProfile(tableProfile, name, dateOfBirth);
+
+        cursorProfile = getProfile(tableProfile);
+        assertEquals(2, cursorProfile.getCount());
+
+        profile = getProfileWithID(cursorProfile, idProfile2);
+
+        assertEquals(name, profile.getName());
+        assertEquals(dateOfBirth, profile.getAge());
+
+        // Test Update/Read (cRUd)
+        name = "John Doe Update";
+        profile.setName(name);
+
+        int alteredRecords = tableProfile.update(profile.getContentValues(), BdTableProfile._ID + "=?", new String[]{String.valueOf(idProfile1)});
+
+        assertEquals(1, alteredRecords);
+
+        cursorProfile = getProfile(tableProfile);
+        profile = getProfileWithID(cursorProfile, idProfile1);
+
+        assertEquals(name, profile.getName());
+
+        // Test Create/Delete/Read Profile (CRuD)
+        long id = createProfile(tableProfile, "John Doe Test", "16/05/2019 21:09:00");
+        cursorProfile = getProfile(tableProfile);
+        assertEquals(3, cursorProfile.getCount());
+
+        tableProfile.delete(BdTableProfile._ID + "=?", new String[]{String.valueOf(id)});
+        cursorProfile = getProfile(tableProfile);
+        assertEquals(2, cursorProfile.getCount());
+
+        getProfileWithID(cursorProfile, idProfile1);
+        getProfileWithID(cursorProfile, idProfile2);
+
+
+        /*
+
         MainContact contact = new MainContact();
         contact.setName("John Doe");
         contact.setNumber("987654321");
         long idContact1 = tableContact.insert(contact.getContentValues());
         assertNotEquals(-1, idContact1);
+        */
 
+        BdTableContact tableContact = new BdTableContact(db);
+        // Test Read Contact (cRud)
+        Cursor cursorContact = getContact(tableContact);
+        assertEquals(0, cursorContact.getCount());
+
+        // Test Create/Read Contact (CRud)
+        name = "John Doe";
+        String number = "987654321";
+
+        id = createContact(tableContact, name, number);
+        cursorContact = getContact(tableContact);
+        assertEquals(1, cursorContact.getCount());
+
+        MainContact contact = getContactWithID(cursorContact, id);
+        assertEquals(name, contact.getName());
+        assertEquals(number, contact.getNumber());
+
+
+
+        /*
+        // Teste create/read livros (CRud)
+        String titulo = "Dom Quixote";
+        int pagina = 23;
+
+        id = criaLivro(tabelaLivros, titulo, pagina ,idRomance);
+        cursorLivros = getLivros(tabelaLivros);
+        assertEquals(1, cursorLivros.getCount());
+
+        Livro livro = getLivroComID(cursorLivros, id);
+        assertEquals(titulo, livro.getTitulo());
+        assertEquals(pagina, livro.getPagina());
+        assertEquals(idRomance, livro.getCategoria());
+
+        titulo = "Fahrenheit 451";
+        pagina = 1;
+
+        id = criaLivro(tabelaLivros, titulo, pagina ,idSuspense);
+        cursorLivros = getLivros(tabelaLivros);
+        assertEquals(2, cursorLivros.getCount());
+
+        livro = getLivroComID(cursorLivros, id);
+        assertEquals(titulo, livro.getTitulo());
+        assertEquals(pagina, livro.getPagina());
+        assertEquals(idSuspense, livro.getCategoria());
+
+        id = criaLivro(tabelaLivros, "Teste", 1, idRomance);
+        cursorLivros = getLivros(tabelaLivros);
+        assertEquals(3, cursorLivros.getCount());
+
+         */
+
+        /*
         BdTableCollege tableCollege = new BdTableCollege(db);
         MainCollege college = new MainCollege();
         college.setName("French College");
@@ -74,7 +171,9 @@ public class BdErasmusInfoTest {
         college.setLocation("SouthWest");
         long idCollege1 = tableCollege.insert(college.getContentValues());
         assertNotEquals(-1, idCollege1);
+        */
 
+        /*
         BdTableSubject tableSubject = new BdTableSubject(db);
         MainSubject subject = new MainSubject();
         subject.setCode("UINF8800");
@@ -84,6 +183,7 @@ public class BdErasmusInfoTest {
         subject.setScore("B");
         long idSubject1 = tableSubject.insert(subject.getContentValues());
         assertNotEquals(-1, idSubject1);
+        */
     }
 
     // PROFILE
