@@ -11,6 +11,7 @@ public class MainSubject {
     private int ects;
     private String equal_subject;
     private String score;
+    private long idCollege;
 
     public long getId() {
         return id;
@@ -51,6 +52,9 @@ public class MainSubject {
         this.score = score;
     }
 
+    public long setIdCollege() { return idCollege; }
+    public void setIdCollege(long idCollege) { this.idCollege = idCollege; }
+
     public ContentValues getContentValues() {
         ContentValues values = new ContentValues();
         values.put(BdTableSubject.FIELD_CODE, code);
@@ -58,6 +62,7 @@ public class MainSubject {
         values.put(BdTableSubject.FIELD_ECTS, ects);
         values.put(BdTableSubject.FIELD_EQUAL_SUBJECT, equal_subject);
         values.put(BdTableSubject.FIELD_SCORE, score);
+        values.put(BdTableSubject.FIELD_ID_COLLEGE, idCollege);
         return values;
     }
 
@@ -68,6 +73,7 @@ public class MainSubject {
         int ects = cursor.getInt(cursor.getColumnIndex(BdTableSubject.FIELD_ECTS));
         String equal_subject = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_EQUAL_SUBJECT));
         String score = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_SCORE));
+        long idCollege = cursor.getLong(cursor.getColumnIndex(BdTableSubject.FIELD_ID_COLLEGE));
 
         MainSubject subject = new MainSubject();
         subject.setId(id);
@@ -76,78 +82,8 @@ public class MainSubject {
         subject.setEcts(ects);
         subject.setEqualSubject(equal_subject);
         subject.setScore(score);
+        subject.setIdCollege(idCollege);
 
         return subject;
     }
-
-/*
-    public MainSubject() {
-
-    }
-
-    public MainSubject(String code, String name, String ects, String discEqual, String score) {
-        this.code = code;
-        this.name = name;
-        this.ects = ects;
-        this.discEqual = discEqual;
-        this.score = score;
-    }
-
-    private String code;
-    private String name;
-    private String ects;
-    private String discEqual;
-    private String score;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getEcts() {
-        return ects;
-    }
-
-    public void setEcts(String ects) {
-        this.ects = ects;
-    }
-
-    public String getDiscEqual() {
-        return discEqual;
-    }
-
-    public void setDiscEqual(String discEqual) {
-        this.discEqual = discEqual;
-    }
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "MainSubject{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", ects='" + ects + '\'' +
-                ", discEqual='" + discEqual + '\'' +
-                ", score='" + score + '\'' +
-                '}';
-    }
-    */
 }
