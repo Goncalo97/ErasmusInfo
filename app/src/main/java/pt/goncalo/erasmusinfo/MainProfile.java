@@ -3,8 +3,6 @@ package pt.goncalo.erasmusinfo;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import java.util.Date;
-
 public class MainProfile {
 
 
