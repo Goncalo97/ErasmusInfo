@@ -12,9 +12,10 @@ public class BdTableSubject implements BaseColumns {
     public static final String FIELD_ECTS = "ects";
     public static final String FIELD_EQUAL_SUBJECT = "equal_subject";
     public static final String FIELD_SCORE = "score";
+    public static final String FIELD_ID_COLLEGE = "idCollege";
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_CODE, FIELD_NAME, FIELD_ECTS, FIELD_EQUAL_SUBJECT, FIELD_SCORE };
+    public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_CODE, FIELD_NAME, FIELD_ECTS, FIELD_EQUAL_SUBJECT, FIELD_SCORE, FIELD_ID_COLLEGE };
 
     public BdTableSubject(SQLiteDatabase db) {
         this.db = db;
@@ -28,7 +29,9 @@ public class BdTableSubject implements BaseColumns {
                         FIELD_NAME + " TEXT NOT NULL," +
                         FIELD_ECTS + " INTEGER NOT NULL," +
                         FIELD_EQUAL_SUBJECT + " TEXT NOT NULL," +
-                        FIELD_SCORE + " TEXT NOT NULL" +
+                        FIELD_SCORE + " TEXT NOT NULL," +
+                        FIELD_ID_COLLEGE + " INTEGER NOT NULL," +
+                        "FOREIGN KEY (" + FIELD_ID_COLLEGE + ") REFERENCES " + BdTableCollege.TABLE_NAME + "(" + BdTableCollege._ID + ")" +
                         ")"
         );
     }
