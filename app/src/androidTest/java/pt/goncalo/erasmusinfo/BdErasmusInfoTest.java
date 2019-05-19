@@ -102,7 +102,6 @@ public class BdErasmusInfoTest {
         getProfileWithID(cursorProfile, idProfile1);
         getProfileWithID(cursorProfile, idProfile2);
 
-
         /*
 
         MainContact contact = new MainContact();
@@ -121,47 +120,53 @@ public class BdErasmusInfoTest {
         name = "John Doe";
         String number = "987654321";
 
-        id = createContact(tableContact, name, number);
+       long  idContact1 = createContact(tableContact, name, number, idProfile1);
         cursorContact = getContact(tableContact);
         assertEquals(1, cursorContact.getCount());
 
-        MainContact contact = getContactWithID(cursorContact, id);
+        MainContact contact = getContactWithID(cursorContact, idContact1);
         assertEquals(name, contact.getName());
         assertEquals(number, contact.getNumber());
+        assertEquals(idProfile1, contact.getIdProfile());
 
+        name = "John Doe 2";
+        number = "123456789";
 
+        long idContact2 = createContact(tableContact, name, number, idProfile2);
+        cursorContact = getContact(tableContact);
+        assertEquals(2, cursorContact.getCount());
 
-        /*
-        // Teste create/read livros (CRud)
-        String titulo = "Dom Quixote";
-        int pagina = 23;
+        contact = getContactWithID(cursorContact, idContact2);
+        assertEquals(name, contact.getName());
+        assertEquals(number, contact.getNumber());
+        assertEquals(idProfile2, contact.getIdProfile());
 
-        id = criaLivro(tabelaLivros, titulo, pagina ,idRomance);
-        cursorLivros = getLivros(tabelaLivros);
-        assertEquals(1, cursorLivros.getCount());
+        id = createContact(tableContact, "Teste", "111111111", idProfile1);
+        cursorContact = getContact(tableContact);
+        assertEquals(3, cursorContact.getCount());
 
-        Livro livro = getLivroComID(cursorLivros, id);
-        assertEquals(titulo, livro.getTitulo());
-        assertEquals(pagina, livro.getPagina());
-        assertEquals(idRomance, livro.getCategoria());
+        // Test Read/Update Contact (cRUd)
+        contact = getContactWithID(cursorContact, id);
+        name = "John Doe Update";
+        number = "333333333";
 
-        titulo = "Fahrenheit 451";
-        pagina = 1;
+        contact.setName(name);
+        contact.setNumber(number);
+        contact.setIdProfile(idProfile2);
 
-        id = criaLivro(tabelaLivros, titulo, pagina ,idSuspense);
-        cursorLivros = getLivros(tabelaLivros);
-        assertEquals(2, cursorLivros.getCount());
+        tableContact.update(contact.getContentValues(), BdTableContact._ID + "=?", new String[]{String.valueOf(id)});
 
-        livro = getLivroComID(cursorLivros, id);
-        assertEquals(titulo, livro.getTitulo());
-        assertEquals(pagina, livro.getPagina());
-        assertEquals(idSuspense, livro.getCategoria());
+        cursorContact = getContact(tableContact);
 
-        id = criaLivro(tabelaLivros, "Teste", 1, idRomance);
-        cursorLivros = getLivros(tabelaLivros);
-        assertEquals(3, cursorLivros.getCount());
+        contact = getContactWithID(cursorContact, id);
+        assertEquals(name, contact.getName());
+        assertEquals(number, contact.getNumber());
+        assertEquals(idProfile2, contact.getIdProfile());
 
-         */
+        // Teste Read/Delete Contact (cRuD)
+        tableContact.delete(BdTableContact._ID + "=?", new String[]{String.valueOf(id)});
+        cursorContact = getContact(tableContact);
+        assertEquals(2, cursorContact.getCount());
 
         /*
         BdTableCollege tableCollege = new BdTableCollege(db);
@@ -172,6 +177,70 @@ public class BdErasmusInfoTest {
         long idCollege1 = tableCollege.insert(college.getContentValues());
         assertNotEquals(-1, idCollege1);
         */
+
+        BdTableCollege tableCollege = new BdTableCollege(db);
+        // Test Read College (cRud)
+        Cursor cursorCollege = getCollege(tableCollege);
+        assertEquals(0, cursorCollege.getCount());
+
+        // Test Create/Read College (CRud)
+        name = "French College";
+        String country = "France";
+        String location = "SouthWest";
+
+        long idCollege1 = createCollege(tableCollege, name, country, location, idProfile1);
+        cursorCollege = getCollege(tableCollege);
+        assertEquals(1, cursorCollege.getCount());
+
+        MainCollege college = getCollegeWithID(cursorCollege, idCollege1);
+        assertEquals(name, college.getName());
+        assertEquals(country, college.getCountry());
+        assertEquals(location, college.getLocation());
+        assertEquals(idProfile1, college.getIdProfile());
+
+        name = "French College 2";
+        country = "France";
+        location = "SouthWest";
+
+        long idCollege2 = createCollege(tableCollege, name, country, location, idProfile2);
+        cursorCollege = getCollege(tableCollege);
+        assertEquals(2, cursorCollege.getCount());
+
+        college = getCollegeWithID(cursorCollege, idCollege2);
+        assertEquals(name, college.getName());
+        assertEquals(country, college.getCountry());
+        assertEquals(location, college.getLocation());
+        assertEquals(idProfile2, college.getIdProfile());
+
+        id = createCollege(tableCollege, "Test Name", "Test Country", "Test Location", idProfile1);
+        cursorCollege = getCollege(tableCollege);
+        assertEquals(3, cursorCollege.getCount());
+
+        // Test Read/Update College (cRUd)
+        college = getCollegeWithID(cursorCollege, id);
+        name = "French Update";
+        country = "France Update";
+        location = "SouthWest Update";
+
+        college.setName(name);
+        college.setCountry(country);
+        college.setLocation(location);
+        college.setIdProfile(idProfile2);
+
+        tableCollege.update(college.getContentValues(), BdTableCollege._ID + "=?", new String[]{String.valueOf(id)});
+
+        cursorCollege = getCollege(tableCollege);
+
+        college = getCollegeWithID(cursorCollege, id);
+        assertEquals(name, college.getName());
+        assertEquals(country, college.getCountry());
+        assertEquals(location, college.getLocation());
+        assertEquals(idProfile2, college.getIdProfile());
+
+        // Teste Read/Delete College (cRuD)
+        tableCollege.delete(BdTableCollege._ID + "=?", new String[]{String.valueOf(id)});
+        cursorCollege = getCollege(tableCollege);
+        assertEquals(2, cursorCollege.getCount());
 
         /*
         BdTableSubject tableSubject = new BdTableSubject(db);
@@ -184,6 +253,85 @@ public class BdErasmusInfoTest {
         long idSubject1 = tableSubject.insert(subject.getContentValues());
         assertNotEquals(-1, idSubject1);
         */
+
+        BdTableSubject tableSubject = new BdTableSubject(db);
+        // Test Read Subject (cRud)
+        Cursor cursorSubject = getSubject(tableSubject);
+        assertEquals(0, cursorSubject.getCount());
+
+        // Test Create/Read Subject (CRud)
+        String code = "UINF8800";
+        name = "Advanced Programming";
+        int ects = 6;
+        String equalSubject = "Programação Avançada";
+        String score = "B";
+
+        long idSubject1 = createSubject(tableSubject, code, name, ects, equalSubject, score, idCollege1);
+        cursorSubject = getSubject(tableSubject);
+        assertEquals(1, cursorSubject.getCount());
+
+        MainSubject subject = getSubjectWithID(cursorSubject, idSubject1);
+        assertEquals(code, subject.getCode());
+        assertEquals(name, subject.getName());
+        assertEquals(ects, subject.getECTS());
+        assertEquals(equalSubject, subject.getEqualSubject());
+        assertEquals(score, subject.getScore());
+        assertEquals(idCollege1, subject.getIdCollege());
+
+        code = "UINF1144";
+        name = "Operating System";
+        ects = 5;
+        equalSubject = "Sistemas Operativos";
+        score = "C";
+
+        long idSubject2 = createSubject(tableSubject, code, name, ects, equalSubject, score, idCollege2);
+        cursorSubject = getSubject(tableSubject);
+        assertEquals(2, cursorSubject.getCount());
+
+        subject = getSubjectWithID(cursorSubject, idSubject2);
+        assertEquals(code, subject.getCode());
+        assertEquals(name, subject.getName());
+        assertEquals(ects, subject.getECTS());
+        assertEquals(equalSubject, subject.getEqualSubject());
+        assertEquals(score, subject.getScore());
+        assertEquals(idCollege2, subject.getIdCollege());
+
+        id = createSubject(tableSubject, "Test Code", "Test Name", 3, "Nome Teste", "A", idCollege1);
+        cursorSubject = getSubject(tableSubject);
+        assertEquals(3, cursorSubject.getCount());
+
+        // Test Read/Update Subject (cRUd)
+        subject = getSubjectWithID(cursorSubject, id);
+        code = "UINF1144 Update";
+        name = "Operating System Update";
+        ects = 1;
+        equalSubject = "Sistemas Operativos Update";
+        score = "D";
+
+        subject.setCode(code);
+        subject.setName(name);
+        subject.setEcts(ects);
+        subject.setEqualSubject(equalSubject);
+        subject.setScore(score);
+        subject.setIdCollege(idCollege2);
+
+        tableSubject.update(subject.getContentValues(), BdTableSubject._ID + "=?", new String[]{String.valueOf(id)});
+
+        cursorSubject = getSubject(tableSubject);
+
+        subject = getSubjectWithID(cursorSubject, id);
+        assertEquals(code, subject.getCode());
+        assertEquals(name, subject.getName());
+        assertEquals(ects, subject.getECTS());
+        assertEquals(equalSubject, subject.getEqualSubject());
+        assertEquals(score, subject.getScore());
+        assertEquals(idCollege2, subject.getIdCollege());
+
+        // Teste Read/Delete Subject (cRuD)
+        tableSubject.delete(BdTableSubject._ID + "=?", new String[]{String.valueOf(id)});
+        cursorSubject = getSubject(tableSubject);
+        assertEquals(2, cursorSubject.getCount());
+
     }
 
     // PROFILE
@@ -218,10 +366,11 @@ public class BdErasmusInfoTest {
 
     // CONTACT
 
-    private long createContact(BdTableContact tableContact, String name, String number) {
+    private long createContact(BdTableContact tableContact, String name, String number, long idProfile) {
         MainContact contact = new MainContact();
         contact.setName(name);
         contact.setNumber(number);
+        contact.setIdProfile(idProfile);
         long id = tableContact.insert(contact.getContentValues());
         assertNotEquals(-1, id);
         return id;
@@ -233,26 +382,24 @@ public class BdErasmusInfoTest {
 
     private MainContact getContactWithID(Cursor cursor, long id) {
         MainContact contact = null;
-
         while (cursor.moveToNext()) {
             contact = MainContact.fromCursor(cursor);
             if (contact.getId() == id) {
                 break;
             }
         }
-
         assertNotNull(contact);
-
         return contact;
     }
 
     // COLLEGE
 
-    private long createCollege(BdTableCollege tableCollege, String name, String country, String location) {
+    private long createCollege(BdTableCollege tableCollege, String name, String country, String location, long idProfile) {
         MainCollege college = new MainCollege();
         college.setName(name);
         college.setCountry(country);
         college.setLocation(location);
+        college.setIdProfile(idProfile);
         long id = tableCollege.insert(college.getContentValues());
         assertNotEquals(-1, id);
         return id;
@@ -280,13 +427,14 @@ public class BdErasmusInfoTest {
 
     // SUBJECT
 
-    private long createSubject(BdTableSubject tableSubject, String code, String name, int ects, String equalSubject, String score) {
+    private long createSubject(BdTableSubject tableSubject, String code, String name, int ects, String equalSubject, String score, long idCollege) {
         MainSubject subject = new MainSubject();
         subject.setCode(code);
         subject.setName(name);
         subject.setEcts(ects);
         subject.setEqualSubject(equalSubject);
         subject.setScore(score);
+        subject.setIdCollege(idCollege);
         long id = tableSubject.insert(subject.getContentValues());
         assertNotEquals(-1, id);
         return id;
