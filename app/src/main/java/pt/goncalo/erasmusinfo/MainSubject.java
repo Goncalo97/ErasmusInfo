@@ -52,7 +52,7 @@ public class MainSubject {
         this.score = score;
     }
 
-    public long setIdCollege() { return idCollege; }
+    public long getIdCollege() { return idCollege; }
     public void setIdCollege(long idCollege) { this.idCollege = idCollege; }
 
     public ContentValues getContentValues() {
