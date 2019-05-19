@@ -62,7 +62,7 @@ public class MainCollege {
         college.setId(id);
         college.setName(name);
         college.setCountry(country);
-        college.setCountry(location);
+        college.setLocation(location);
         college.setIdProfile(idProfile);
 
         return college;
