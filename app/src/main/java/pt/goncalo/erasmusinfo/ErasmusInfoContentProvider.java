@@ -2,6 +2,7 @@ package pt.goncalo.erasmusinfo;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.UriMatcher;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -12,7 +13,37 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class ErasmusInfoContentProvider extends ContentProvider {
+    public static final String AUTHORITY = "pt.goncalo.erasmusinfo";
+    public static final String PROFILE = "profile";
+    public static final String CONTACT = "contact";
+    public static final String COLLEGE = "college";
+    public static final String SUBJECT= "subject";
+
+    public static final int URI_PROFILE = 100;
+    public static final int URI_UNIQUE_PROFILE = 101;
+    public static final int URI_CONTACT = 200;
+    public static final int URI_UNIQUE_CONTACT = 201;
+    public static final int URI_COLLEGE = 300;
+    public static final int URI_UNIQUE_COLLEGE = 301;
+    public static final int URI_SUBJECT = 400;
+    public static final int URI_UNIQUE_SUBJECT = 401;
+
     private BdErasmusInfoOpenHelper bdErasmusInfoOpenHelper;
+
+    private UriMatcher getUriMatcher() {
+        UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
+        uriMatcher.addURI(AUTHORITY, PROFILE, URI_PROFILE);
+        uriMatcher.addURI(AUTHORITY, PROFILE + "/#", URI_UNIQUE_PROFILE);
+        uriMatcher.addURI(AUTHORITY, CONTACT, URI_CONTACT);
+        uriMatcher.addURI(AUTHORITY, CONTACT + "/#", URI_UNIQUE_CONTACT);
+        uriMatcher.addURI(AUTHORITY, COLLEGE, URI_COLLEGE);
+        uriMatcher.addURI(AUTHORITY, COLLEGE + "/#", URI_UNIQUE_COLLEGE);
+        uriMatcher.addURI(AUTHORITY, SUBJECT, URI_SUBJECT);
+        uriMatcher.addURI(AUTHORITY, SUBJECT + "/#", URI_UNIQUE_SUBJECT);
+
+        return uriMatcher;
+    }
     /**
      * Implement this to initialize your content provider on startup.
      * This method is called for all registered content providers on the
