@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class ErasmusInfoContentProvider extends ContentProvider {
+    private BdErasmusInfoOpenHelper bdErasmusInfoOpenHelper;
     /**
      * Implement this to initialize your content provider on startup.
      * This method is called for all registered content providers on the
@@ -39,6 +40,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
+        bdErasmusInfoOpenHelper = new BdErasmusInfoOpenHelper(getContext());
         return false;
     }
 
