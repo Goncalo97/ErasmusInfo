@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Build;
@@ -138,6 +139,27 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getReadableDatabase();
+        String id = uri.getLastPathSegment();
+
+        switch (getUriMatcher().match(uri)) {
+            case URI_PROFILE:
+                return new BdTableProfile(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_PROFILE:
+                return new BdTableProfile(bd).query(projection, BdTableProfile._ID + "=?", new String[]{id}, null, null, null);
+            case URI_CONTACT:
+                return new BdTableContact(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_CONTACT:
+                return new BdTableContact(bd).query(projection, BdTableContact._ID + "=?", new String[]{id}, null, null, null);
+            case URI_COLLEGE:
+                return new BdTableCollege(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_COLLEGE:
+                return new BdTableCollege(bd).query(projection, BdTableCollege._ID + "=?", new String[]{id}, null, null, null);
+            case URI_SUBJECT:
+                return new BdTableSubject(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_SUBJECT:
+                return new BdTableSubject(bd).query(projection, BdTableSubject._ID + "=?", new String[]{id}, null, null, null);
+        }
         return null;
     }
 
