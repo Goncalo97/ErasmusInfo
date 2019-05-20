@@ -159,8 +159,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return new BdTableSubject(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_SUBJECT:
                 return new BdTableSubject(bd).query(projection, BdTableSubject._ID + "=?", new String[]{id}, null, null, null);
+            default:
+                throw new UnsupportedOperationException("Invalid URI (QUERY): " + uri.toString());
         }
-        return null;
     }
 
     /**
