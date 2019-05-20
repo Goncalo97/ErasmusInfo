@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
@@ -204,7 +205,28 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        return null;
+        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        long id = -1;
+        switch (getUriMatcher().match(uri)) {
+            case URI_PROFILE:
+                id = new BdTableProfile(bd).insert(values);
+                break;
+            case URI_CONTACT:
+                id = new BdTableContact(bd).insert(values);
+                break;
+            case URI_COLLEGE:
+                id = new BdTableCollege(bd).insert(values);
+                break;
+            case URI_SUBJECT:
+                id = new BdTableSubject(bd).insert(values);
+                break;
+            default:
+                throw new UnsupportedOperationException("Invalid URI (INSERT): " + uri.toString());
+        }
+        if (id == -1) {
+            throw new SQLException("It was not possible to insert the record.");
+        }
+        return Uri.withAppendedPath(uri, String.valueOf(id));
     }
 
     /**
