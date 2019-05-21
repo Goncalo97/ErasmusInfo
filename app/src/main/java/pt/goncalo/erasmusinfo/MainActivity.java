@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         recyclerViewProfile = (RecyclerView) findViewById(R.id.recyclerViewProfile);
         adapterProfile = new AdapterProfile();
         recyclerViewProfile.setAdapter(adapterProfile);
+        recyclerViewProfile.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
