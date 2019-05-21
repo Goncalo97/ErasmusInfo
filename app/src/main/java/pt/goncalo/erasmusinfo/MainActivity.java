@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_ERASMUS_INFO, null, this);
         recyclerViewProfile = (RecyclerView) findViewById(R.id.recyclerViewProfile);
-        adapterProfile = new AdapterProfile();
+        adapterProfile = new AdapterProfile(this);
         recyclerViewProfile.setAdapter(adapterProfile);
         recyclerViewProfile.setLayoutManager(new LinearLayoutManager(this));
     }
