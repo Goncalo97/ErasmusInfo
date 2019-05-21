@@ -10,7 +10,7 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AdapterProfile extends RecyclerView.Adapter {
+public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHolderProfile> {
     private Cursor cursor;
     private Context context;
 
@@ -46,7 +46,7 @@ public class AdapterProfile extends RecyclerView.Adapter {
      */
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolderProfile onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View viewItemProfile = LayoutInflater.from(context).inflate(R.layout.item_profile, parent, false);
         ViewHolderProfile viewHolderProfile = new ViewHolderProfile(viewItemProfile);
         return viewHolderProfile;
@@ -73,8 +73,10 @@ public class AdapterProfile extends RecyclerView.Adapter {
      * @param position The position of the item within the adapter's data set.
      */
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull ViewHolderProfile holder, int position) {
+        cursor.moveToPosition(position);
+        MainProfile profile = MainProfile.fromCursor(cursor);
+        holder.setProfile(profile);
     }
 
     /**
@@ -89,6 +91,11 @@ public class AdapterProfile extends RecyclerView.Adapter {
     }
 
     public class ViewHolderProfile extends RecyclerView.ViewHolder {
+        private MainProfile profile;
+        public void setProfile(MainProfile profile) {
+            this.profile = profile;
+        }
+
         public ViewHolderProfile(@NonNull View itemView) {
             super(itemView);
         }
