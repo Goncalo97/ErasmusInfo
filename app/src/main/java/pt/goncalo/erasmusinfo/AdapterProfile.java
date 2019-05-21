@@ -1,6 +1,8 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.Context;
 import android.database.Cursor;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -10,6 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterProfile extends RecyclerView.Adapter {
     private Cursor cursor;
+    private Context context;
+
+    public AdapterProfile(Context context) {
+        this.context = context;
+    }
 
     public void setCursor(Cursor cursor) {
         if (cursor != this.cursor){
@@ -40,7 +47,9 @@ public class AdapterProfile extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View viewItemProfile = LayoutInflater.from(context).inflate(R.layout.item_profile, parent, false);
+        ViewHolderProfile viewHolderProfile = new ViewHolderProfile(viewItemProfile);
+        return viewHolderProfile;
     }
 
     /**
