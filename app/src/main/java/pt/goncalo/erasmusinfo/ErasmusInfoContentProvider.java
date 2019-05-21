@@ -30,6 +30,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     public static final int URI_SUBJECT = 400;
     public static final int URI_UNIQUE_SUBJECT = 401;
 
+    public static final String SINGLE_ITEM = "vnd.android.cursor.item/";
+    public static final String MULTIPLE_ITEMS = "vnd.android.cursor.dir/";
+
     private BdErasmusInfoOpenHelper bdErasmusInfoOpenHelper;
 
     private UriMatcher getUriMatcher() {
@@ -186,6 +189,24 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
+        switch (getUriMatcher().match(uri)) {
+            case URI_PROFILE:
+                return MULTIPLE_ITEMS + PROFILE;
+            case URI_UNIQUE_PROFILE:
+                return SINGLE_ITEM + PROFILE;
+            case URI_CONTACT:
+                return MULTIPLE_ITEMS + CONTACT;
+            case URI_UNIQUE_CONTACT:
+                return SINGLE_ITEM + CONTACT;
+            case URI_COLLEGE:
+                return MULTIPLE_ITEMS + COLLEGE;
+            case URI_UNIQUE_COLLEGE:
+                return SINGLE_ITEM + COLLEGE;
+            case URI_SUBJECT:
+                return MULTIPLE_ITEMS + SUBJECT;
+            case URI_UNIQUE_SUBJECT:
+                return SINGLE_ITEM + SUBJECT;
+        }
         return null;
     }
 
