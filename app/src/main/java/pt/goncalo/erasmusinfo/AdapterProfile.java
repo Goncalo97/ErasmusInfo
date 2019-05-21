@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterProfile extends RecyclerView.Adapter {
     private Cursor cursor;
+
+    public void setCursor(Cursor cursor) {
+        this.cursor = cursor;
+    }
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
      * an item.

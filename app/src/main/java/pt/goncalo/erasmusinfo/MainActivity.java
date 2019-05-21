@@ -13,10 +13,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.CursorAdapter;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +33,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int ID_CURSOR_LOADER_ERASMUS_INFO = 0;
+    private RecyclerView recyclerViewProfile;
+    private AdapterProfile adapterProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         setSupportActionBar(toolbar);
 
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_ERASMUS_INFO, null, this);
+        recyclerViewProfile = (RecyclerView) findViewById(R.id.recyclerViewProfile);
+        adapterProfile = new AdapterProfile();
+        recyclerViewProfile.setAdapter(adapterProfile);
     }
 
     @Override
@@ -148,8 +155,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
-        FloatingActionButton fab = findViewById(R.id.fab);
-        Snackbar.make(fab, "Existing profiles: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
+        // FloatingActionButton fab = findViewById(R.id.fab);
+        // Snackbar.make(fab, "Existing profiles: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
+        adapterProfile.setCursor(data);
     }
 
     /**
@@ -163,6 +171,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
-
+        adapterProfile.setCursor(null);
     }
 }
