@@ -275,6 +275,20 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
-        return 0;
+        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        String id = uri.getLastPathSegment();
+
+        switch (getUriMatcher().match(uri)) {
+            case URI_UNIQUE_PROFILE:
+                return new BdTableProfile(bd).update(values, BdTableProfile._ID + "=?", new String[] {id});
+            case URI_UNIQUE_CONTACT:
+                return new BdTableContact(bd).update(values, BdTableContact._ID + "=?", new String[] {id});
+            case URI_UNIQUE_COLLEGE:
+                return new BdTableCollege(bd).update(values, BdTableCollege._ID + "=?", new String[] {id});
+            case URI_UNIQUE_SUBJECT:
+                return new BdTableSubject(bd).update(values, BdTableSubject._ID + "=?", new String[] {id});
+            default:
+                throw new UnsupportedOperationException("Invalid URI (UPDATE): " + uri.toString());
+        }
     }
 }
