@@ -22,10 +22,10 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     public static final String SUBJECT= "subject";
 
     private static final Uri BASE_ADDRESS = Uri.parse("content://" + AUTHORITY);
-    private static final Uri PROFILE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, PROFILE);
-    private static final Uri CONTACT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, CONTACT);
-    private static final Uri COLLEGE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, COLLEGE);
-    private static final Uri SUBJECT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, SUBJECT);
+    public static final Uri PROFILE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, PROFILE);
+    public static final Uri CONTACT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, CONTACT);
+    public static final Uri COLLEGE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, COLLEGE);
+    public static final Uri SUBJECT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, SUBJECT);
 
     public static final int URI_PROFILE = 100;
     public static final int URI_UNIQUE_PROFILE = 101;
