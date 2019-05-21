@@ -252,7 +252,20 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
-        return 0;
+        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        String id = uri.getLastPathSegment();
+        switch (getUriMatcher().match(uri)) {
+            case URI_UNIQUE_PROFILE:
+                return new BdTableProfile(bd).delete(BdTableProfile._ID + "=?", new String[]{id});
+            case URI_UNIQUE_CONTACT:
+                return new BdTableContact(bd).delete(BdTableContact._ID + "=?", new String[]{id});
+            case URI_UNIQUE_COLLEGE:
+                return new BdTableCollege(bd).delete(BdTableCollege._ID + "=?", new String[]{id});
+            case URI_UNIQUE_SUBJECT:
+                return new BdTableSubject(bd).delete(BdTableSubject._ID + "=?", new String[]{id});
+            default:
+                throw new UnsupportedOperationException("Invalid URI (DELETE): " + uri.toString());
+        }
     }
 
     /**
