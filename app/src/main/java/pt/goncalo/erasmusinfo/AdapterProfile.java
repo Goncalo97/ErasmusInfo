@@ -75,7 +75,8 @@ public class AdapterProfile extends RecyclerView.Adapter {
      */
     @Override
     public int getItemCount() {
-        return 0;
+        if (cursor == null) return 0;
+        else return cursor.getCount();
     }
 
     public class ViewHolderProfile extends RecyclerView.ViewHolder {
