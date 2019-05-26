@@ -11,7 +11,7 @@ public class BdTableProfile implements BaseColumns {
     public static final String FIELD_AGE = "age";
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] {_ID, FIELD_NAME, FIELD_AGE };
+    public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_NAME, FIELD_AGE };
 
     public BdTableProfile(SQLiteDatabase db) {
         this.db = db;
