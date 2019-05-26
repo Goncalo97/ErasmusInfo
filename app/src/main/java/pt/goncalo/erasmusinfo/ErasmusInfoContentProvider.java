@@ -43,7 +43,6 @@ public class ErasmusInfoContentProvider extends ContentProvider {
 
     private UriMatcher getUriMatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-
         uriMatcher.addURI(AUTHORITY, PROFILE, URI_PROFILE);
         uriMatcher.addURI(AUTHORITY, PROFILE + "/#", URI_UNIQUE_PROFILE);
         uriMatcher.addURI(AUTHORITY, CONTACT, URI_CONTACT);
@@ -52,9 +51,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY, COLLEGE + "/#", URI_UNIQUE_COLLEGE);
         uriMatcher.addURI(AUTHORITY, SUBJECT, URI_SUBJECT);
         uriMatcher.addURI(AUTHORITY, SUBJECT + "/#", URI_UNIQUE_SUBJECT);
-
         return uriMatcher;
     }
+
     /**
      * Implement this to initialize your content provider on startup.
      * This method is called for all registered content providers on the
@@ -83,7 +82,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         bdErasmusInfoOpenHelper = new BdErasmusInfoOpenHelper(getContext());
-        return false;
+        return true;
     }
 
     /**
@@ -212,8 +211,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return MULTIPLE_ITEMS + SUBJECT;
             case URI_UNIQUE_SUBJECT:
                 return SINGLE_ITEM + SUBJECT;
+            default:
+                return null;
         }
-        return null;
     }
 
     /**

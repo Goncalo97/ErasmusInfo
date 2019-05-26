@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 public class MainProfile {
-
-
     private long id;
     private String name;
     private String age;
@@ -20,12 +18,12 @@ public class MainProfile {
     public String getName() {
         return name;
     }
-    public String getAge() {
-        return age;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAge() {
+        return age;
     }
     public void setAge(String age) {
         this.age = age;
