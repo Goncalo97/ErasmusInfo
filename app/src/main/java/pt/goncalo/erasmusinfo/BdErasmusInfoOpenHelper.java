@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class BdErasmusInfoOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "erasmusInfo.db";
+    public static final String DATABASE_NAME = "erasmusinfo.db";
     private static final int DATABASE_VERSION = 1;
 
     /**
