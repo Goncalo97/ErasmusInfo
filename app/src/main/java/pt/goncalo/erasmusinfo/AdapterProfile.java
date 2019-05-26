@@ -2,10 +2,12 @@ package pt.goncalo.erasmusinfo;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +21,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
     }
 
     public void setCursor(Cursor cursor) {
-        if (cursor != this.cursor){
+        if (this.cursor != cursor){
             this.cursor = cursor;
             notifyDataSetChanged();
         }
@@ -47,9 +49,13 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
     @NonNull
     @Override
     public ViewHolderProfile onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemProfile = LayoutInflater.from(context).inflate(R.layout.item_profile, parent, false);
+        return  new ViewHolderProfile(itemProfile);
+        /*
         View viewItemProfile = LayoutInflater.from(context).inflate(R.layout.item_profile, parent, false);
         ViewHolderProfile viewHolderProfile = new ViewHolderProfile(viewItemProfile);
         return viewHolderProfile;
+         */
     }
 
     /**
@@ -87,17 +93,50 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
     @Override
     public int getItemCount() {
         if (cursor == null) return 0;
-        else return cursor.getCount();
+        else return cursor.getCount(); //TODO: Check if else or without else???
     }
 
-    public class ViewHolderProfile extends RecyclerView.ViewHolder {
+    private static ViewHolderProfile viewHolderProfileSelected = null;
+
+    public class ViewHolderProfile extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView textViewName;
+        private TextView textViewDate;
+
         private MainProfile profile;
-        public void setProfile(MainProfile profile) {
-            this.profile = profile;
-        }
 
         public ViewHolderProfile(@NonNull View itemView) {
             super(itemView);
+            textViewName = itemView.findViewById(R.id.textViewProfileName);
+            textViewDate = itemView.findViewById(R.id.textViewProfileDate);
+            itemView.setOnClickListener(this);
+        }
+
+        public void setProfile(MainProfile profile) {
+            this.profile = profile;
+            textViewName.setText(profile.getName());
+            textViewDate.setText(String.valueOf(profile.getAge()));
+        }
+
+        /**
+         * Called when a view has been clicked.
+         *
+         * @param v The view that was clicked.
+         */
+        @Override
+        public void onClick(View v) {
+            if (viewHolderProfileSelected != null) viewHolderProfileSelected.unSelect();
+            viewHolderProfileSelected = this;
+            select();
+            // Toast.makeText(context, profile.getName(), Toast.LENGTH_SHORT).show();
+        }
+
+        private void select() {
+            itemView.setBackgroundResource(R.color.colorItemSelected);
+        }
+
+        private void unSelect() {
+            itemView.setBackgroundResource(android.R.color.white);
+
         }
     }
 }

@@ -16,4 +16,5 @@
     <color name="colorText">#492C14</color>
     <color name="colorButton">#FFE2B3</color>
     <color name="colorWhite">#FFF</color>
+    <color name="colorItemSelected">#FFC107</color>
 </resources>

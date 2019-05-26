@@ -5,6 +5,12 @@
     <string name="action_settings">Settings</string>
     <!-- App End -->
 
+    <!-- Top Menu Bar Start -->
+    <string name="add_button">Add</string>
+    <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
+    <!-- Top Menu Bar End -->
+
     <!-- Main Screen Start _ ( Menu ) -->
     <string name="profile">Profile</string>
     <string name="contact">Contacts</string>

@@ -7,6 +7,12 @@
     <string name="action_settings">Configurações</string>
     <!-- App End -->
 
+    <!-- Top Menu Bar Start -->
+    <string name="add_button">Adicionar</string>
+    <string name="edit_button">Alterar</string>
+    <string name="delete_button">Eliminar</string>
+    <!-- Top Menu Bar End -->
+
     <!-- Main Screen Start _ ( Menu ) -->
     <string name="profile">Perfil</string>
     <string name="contact">Contactos</string>
