@@ -93,20 +93,20 @@
         <activity
             android:name=".ProfileDelete"
             android:label="@string/title_activity_profile_delete"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Profile" />
+                android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
             android:name=".ProfileInsert"
             android:label="@string/title_activity_profile_insert"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Profile" />
+                android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
             android:name=".SubjectEdit"
@@ -120,20 +120,20 @@
         <activity
             android:name=".ProfileView"
             android:label="@string/title_activity_profile_view"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Profile" />
+                android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
             android:name=".ProfileEdit"
             android:label="@string/title_activity_profile_edit"
-            android:parentActivityName=".Profile"
+            android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Profile" />
+                android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
             android:name=".Subject"
@@ -163,7 +163,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Profile"
+            android:name=".ProfileActivity"
             android:label="@string/title_activity_profile"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

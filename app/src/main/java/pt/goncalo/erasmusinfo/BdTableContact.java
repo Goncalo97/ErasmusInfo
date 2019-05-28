@@ -25,7 +25,7 @@ public class BdTableContact implements BaseColumns {
                         FIELD_NAME + " TEXT NOT NULL," +
                         FIELD_NUMBER + " TEXT NOT NULL," +
                         FIELD_ID_PROFILE + " INTEGER NOT NULL," +
-                        "FOREIGN KEY (" + FIELD_ID_PROFILE + ") REFERENCES " + BdTableProfile.TABLE_NAME + "(" + BdTableProfile._ID + ")" +
+                        "FOREIGN KEY (" + FIELD_ID_PROFILE + ") REFERENCES " + DbTableProfile.TABLE_NAME + "(" + DbTableProfile._ID + ")" +
                         ")"
         );
     }

@@ -2,7 +2,6 @@ package pt.goncalo.erasmusinfo;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +80,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProfile holder, int position) {
         cursor.moveToPosition(position);
-        MainProfile profile = MainProfile.fromCursor(cursor);
+        Profile profile = Profile.fromCursor(cursor);
         holder.setProfile(profile);
     }
 
@@ -102,7 +101,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
         private TextView textViewName;
         private TextView textViewDate;
 
-        private MainProfile profile;
+        private Profile profile;
 
         public ViewHolderProfile(@NonNull View itemView) {
             super(itemView);
@@ -111,10 +110,10 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
             itemView.setOnClickListener(this);
         }
 
-        public void setProfile(MainProfile profile) {
+        public void setProfile(Profile profile) {
             this.profile = profile;
             textViewName.setText(profile.getName());
-            textViewDate.setText(String.valueOf(profile.getAge()));
+            textViewDate.setText(String.valueOf(profile.getDate()));
         }
 
         /**

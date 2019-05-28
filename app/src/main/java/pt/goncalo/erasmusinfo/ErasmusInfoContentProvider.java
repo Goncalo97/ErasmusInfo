@@ -17,40 +17,22 @@ import androidx.annotation.Nullable;
 public class ErasmusInfoContentProvider extends ContentProvider {
     public static final String AUTHORITY = "pt.goncalo.erasmusinfo";
     public static final String PROFILE = "profile";
-    public static final String CONTACT = "contact";
-    public static final String COLLEGE = "college";
-    public static final String SUBJECT= "subject";
 
     private static final Uri BASE_ADDRESS = Uri.parse("content://" + AUTHORITY);
     public static final Uri PROFILE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, PROFILE);
-    public static final Uri CONTACT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, CONTACT);
-    public static final Uri COLLEGE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, COLLEGE);
-    public static final Uri SUBJECT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, SUBJECT);
 
-    public static final int URI_PROFILE = 100;
-    public static final int URI_UNIQUE_PROFILE = 101;
-    public static final int URI_CONTACT = 200;
-    public static final int URI_UNIQUE_CONTACT = 201;
-    public static final int URI_COLLEGE = 300;
-    public static final int URI_UNIQUE_COLLEGE = 301;
-    public static final int URI_SUBJECT = 400;
-    public static final int URI_UNIQUE_SUBJECT = 401;
+    public static final int URI_PROFILE = 200;
+    public static final int URI_UNIQUE_PROFILE = 201;
 
-    public static final String SINGLE_ITEM = "vnd.android.cursor.item/";
+    public static final String UNIQUE_ITEM = "vnd.android.cursor.item/";
     public static final String MULTIPLE_ITEMS = "vnd.android.cursor.dir/";
 
-    private BdErasmusInfoOpenHelper bdErasmusInfoOpenHelper;
+    private DbErasmusInfoOpenHelper dbErasmusInfoOpenHelper;
 
     private UriMatcher getUriMatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         uriMatcher.addURI(AUTHORITY, PROFILE, URI_PROFILE);
         uriMatcher.addURI(AUTHORITY, PROFILE + "/#", URI_UNIQUE_PROFILE);
-        uriMatcher.addURI(AUTHORITY, CONTACT, URI_CONTACT);
-        uriMatcher.addURI(AUTHORITY, CONTACT + "/#", URI_UNIQUE_CONTACT);
-        uriMatcher.addURI(AUTHORITY, COLLEGE, URI_COLLEGE);
-        uriMatcher.addURI(AUTHORITY, COLLEGE + "/#", URI_UNIQUE_COLLEGE);
-        uriMatcher.addURI(AUTHORITY, SUBJECT, URI_SUBJECT);
-        uriMatcher.addURI(AUTHORITY, SUBJECT + "/#", URI_UNIQUE_SUBJECT);
         return uriMatcher;
     }
 
@@ -81,7 +63,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
-        bdErasmusInfoOpenHelper = new BdErasmusInfoOpenHelper(getContext());
+        dbErasmusInfoOpenHelper = new DbErasmusInfoOpenHelper(getContext());
         return true;
     }
 
@@ -148,28 +130,18 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getReadableDatabase();
+        SQLiteDatabase bd = dbErasmusInfoOpenHelper.getReadableDatabase();
+
         String id = uri.getLastPathSegment();
 
         switch (getUriMatcher().match(uri)) {
             case URI_PROFILE:
-                return new BdTableProfile(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+                return new DbTableProfile(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+
             case URI_UNIQUE_PROFILE:
-                return new BdTableProfile(bd).query(projection, BdTableProfile._ID + "=?", new String[]{id}, null, null, null);
-            case URI_CONTACT:
-                return new BdTableContact(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
-            case URI_UNIQUE_CONTACT:
-                return new BdTableContact(bd).query(projection, BdTableContact._ID + "=?", new String[]{id}, null, null, null);
-            case URI_COLLEGE:
-                return new BdTableCollege(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
-            case URI_UNIQUE_COLLEGE:
-                return new BdTableCollege(bd).query(projection, BdTableCollege._ID + "=?", new String[]{id}, null, null, null);
-            case URI_SUBJECT:
-                return new BdTableSubject(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
-            case URI_UNIQUE_SUBJECT:
-                return new BdTableSubject(bd).query(projection, BdTableSubject._ID + "=?", new String[]{id}, null, null, null);
+                return  new DbTableProfile(bd).query(projection, DbTableProfile._ID + "=?", new String[] { id }, null, null, null);
             default:
-                throw new UnsupportedOperationException("Invalid URI (QUERY): " + uri.toString());
+                throw new UnsupportedOperationException("URI inválida (QUERY): " + uri.toString());
         }
     }
 
@@ -198,19 +170,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
             case URI_PROFILE:
                 return MULTIPLE_ITEMS + PROFILE;
             case URI_UNIQUE_PROFILE:
-                return SINGLE_ITEM + PROFILE;
-            case URI_CONTACT:
-                return MULTIPLE_ITEMS + CONTACT;
-            case URI_UNIQUE_CONTACT:
-                return SINGLE_ITEM + CONTACT;
-            case URI_COLLEGE:
-                return MULTIPLE_ITEMS + COLLEGE;
-            case URI_UNIQUE_COLLEGE:
-                return SINGLE_ITEM + COLLEGE;
-            case URI_SUBJECT:
-                return MULTIPLE_ITEMS + SUBJECT;
-            case URI_UNIQUE_SUBJECT:
-                return SINGLE_ITEM + SUBJECT;
+                return UNIQUE_ITEM + PROFILE;
             default:
                 return null;
         }
@@ -232,26 +192,17 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        SQLiteDatabase bd = dbErasmusInfoOpenHelper.getWritableDatabase();
         long id = -1;
         switch (getUriMatcher().match(uri)) {
             case URI_PROFILE:
-                id = new BdTableProfile(bd).insert(values);
-                break;
-            case URI_CONTACT:
-                id = new BdTableContact(bd).insert(values);
-                break;
-            case URI_COLLEGE:
-                id = new BdTableCollege(bd).insert(values);
-                break;
-            case URI_SUBJECT:
-                id = new BdTableSubject(bd).insert(values);
+                id = new DbTableProfile(bd).insert(values);
                 break;
             default:
-                throw new UnsupportedOperationException("Invalid URI (INSERT): " + uri.toString());
+                throw new UnsupportedOperationException("URI inválida (INSERT):" + uri.toString());
         }
         if (id == -1) {
-            throw new SQLException("It was not possible to insert the record.");
+            throw new SQLException("Não foi possível inserir o registo");
         }
         return Uri.withAppendedPath(uri, String.valueOf(id));
     }
@@ -279,19 +230,13 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
-        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        SQLiteDatabase bd = dbErasmusInfoOpenHelper.getWritableDatabase();
         String id = uri.getLastPathSegment();
         switch (getUriMatcher().match(uri)) {
             case URI_UNIQUE_PROFILE:
-                return new BdTableProfile(bd).delete(BdTableProfile._ID + "=?", new String[]{id});
-            case URI_UNIQUE_CONTACT:
-                return new BdTableContact(bd).delete(BdTableContact._ID + "=?", new String[]{id});
-            case URI_UNIQUE_COLLEGE:
-                return new BdTableCollege(bd).delete(BdTableCollege._ID + "=?", new String[]{id});
-            case URI_UNIQUE_SUBJECT:
-                return new BdTableSubject(bd).delete(BdTableSubject._ID + "=?", new String[]{id});
+                return new DbTableProfile(bd).delete(DbTableProfile._ID + "=?", new String[] {id});
             default:
-                throw new UnsupportedOperationException("Invalid URI (DELETE): " + uri.toString());
+                throw new UnsupportedOperationException("URI inválida (DELETE): " + uri.toString());
         }
     }
 
@@ -315,20 +260,13 @@ public class ErasmusInfoContentProvider extends ContentProvider {
      */
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
-        SQLiteDatabase bd = bdErasmusInfoOpenHelper.getWritableDatabase();
+        SQLiteDatabase bd = dbErasmusInfoOpenHelper.getWritableDatabase();
         String id = uri.getLastPathSegment();
-
         switch (getUriMatcher().match(uri)) {
             case URI_UNIQUE_PROFILE:
-                return new BdTableProfile(bd).update(values, BdTableProfile._ID + "=?", new String[] {id});
-            case URI_UNIQUE_CONTACT:
-                return new BdTableContact(bd).update(values, BdTableContact._ID + "=?", new String[] {id});
-            case URI_UNIQUE_COLLEGE:
-                return new BdTableCollege(bd).update(values, BdTableCollege._ID + "=?", new String[] {id});
-            case URI_UNIQUE_SUBJECT:
-                return new BdTableSubject(bd).update(values, BdTableSubject._ID + "=?", new String[] {id});
+                return new DbTableProfile(bd).update(values, DbTableProfile._ID + "=?", new String[] {id});
             default:
-                throw new UnsupportedOperationException("Invalid URI (UPDATE): " + uri.toString());
+                throw new UnsupportedOperationException("URI inválida (UPDATE): " + uri.toString());
         }
     }
 }

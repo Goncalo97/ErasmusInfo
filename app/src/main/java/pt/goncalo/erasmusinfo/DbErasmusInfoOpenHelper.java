@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class BdErasmusInfoOpenHelper extends SQLiteOpenHelper {
+public class DbErasmusInfoOpenHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "erasmusinfo.db";
-    private static final int DATABASE_VERSION = 1;
+    public static final String DATA_BASE_NAME = "erasmusInfo.db";
+    private static final int DATA_BASE_VERSION = 1;
 
     /**
      * Create a helper object to create, open, and/or manage a database.
@@ -18,11 +18,9 @@ public class BdErasmusInfoOpenHelper extends SQLiteOpenHelper {
      * {@link #getReadableDatabase} is called.
      *
      * @param context to use for locating paths to the the database
-     *                {@link #onUpgrade} will be used to upgrade the database; if the database is
-     *                newer, {@link #onDowngrade} will be used to downgrade the database
      */
-    public BdErasmusInfoOpenHelper(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    public DbErasmusInfoOpenHelper(@Nullable Context context) {
+        super(context, DATA_BASE_NAME, null, DATA_BASE_VERSION);
     }
 
     /**
@@ -33,14 +31,7 @@ public class BdErasmusInfoOpenHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //TODO: Criar tabela de Perfil
-        new BdTableProfile(db).create();
-        //TODO: Criar tabela de Contactos
-        new BdTableContact(db).create();
-        //TODO: Criar tabela de Universidades
-        new BdTableCollege(db).create();
-        //TODO: Criar tabela de Disciplinas
-        new BdTableSubject(db).create();
+        new DbTableProfile(db).create();
     }
 
     /**

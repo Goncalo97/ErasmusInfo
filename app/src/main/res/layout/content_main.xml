@@ -8,12 +8,13 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
+
     <Button
         android:id="@+id/buttonPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/half_side_margin"
         android:layout_marginRight="@dimen/side_margin"
         android:background="@drawable/btn_rounded"
         android:onClick="openProfile"
