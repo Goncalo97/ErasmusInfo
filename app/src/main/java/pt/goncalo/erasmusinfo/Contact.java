@@ -1,51 +1,59 @@
 package pt.goncalo.erasmusinfo;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+public class Contact {
 
-import android.view.View;
-import android.widget.Toast;
+    private long id;
+    private String name;
+    private String number;
+    private long idProfile;
 
-public class Contact extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Toast.makeText(this,
-                "{"+ getString(R.string.contact)+"}",
-                Toast.LENGTH_SHORT).show();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void openContactView(View view) {
-
-        Intent intent = new Intent(this, ContactView.class);
-        startActivity(intent);
+    public String getName() {
+        return name;
+    }
+    public String getNumber() {
+        return number;
     }
 
-    public void openContactInsert(View view) {
-
-        Intent intent = new Intent(this, ContactInsert.class);
-        startActivity(intent);
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public void openContactEdit(View view) {
+    public long getIdProfile() { return idProfile; }
+    public void setIdProfile(long idProfile) { this.idProfile = idProfile; }
 
-        Intent intent = new Intent(this, ContactEdit.class);
-        startActivity(intent);
+    public ContentValues getContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(DbTableContact.FIELD_NAME, name);
+        values.put(DbTableContact.FIELD_NUMBER, number);
+        values.put(DbTableContact.FIELD_ID_PROFILE, idProfile);
+        return values;
     }
 
-    public void openContactDelete(View view) {
+    public static Contact fromCursor(Cursor cursor) {
+        long id = cursor.getLong(cursor.getColumnIndex(DbTableContact._ID));
+        String name = cursor.getString(cursor.getColumnIndex(DbTableContact.FIELD_NAME));
+        String number = cursor.getString(cursor.getColumnIndex(DbTableContact.FIELD_NUMBER));
+        long idProfile = cursor.getLong(cursor.getColumnIndex(DbTableContact.FIELD_ID_PROFILE));
 
-        Intent intent = new Intent(this, ContactDelete.class);
-        startActivity(intent);
+        Contact contact = new Contact();
+        contact.setId(id);
+        contact.setName(name);
+        contact.setNumber(number);
+        contact.setIdProfile(idProfile);
+
+        return contact;
     }
 }

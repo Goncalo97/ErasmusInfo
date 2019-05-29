@@ -102,6 +102,24 @@ public class DbErasmusInfoTest {
         tableProfile.delete(DbTableProfile._ID + "=?", new String[]{String.valueOf(id)});
         cursorProfile = getProfile(tableProfile);
         assertEquals(2, cursorProfile.getCount());
+
+        DbTableContact tableContact = new DbTableContact(db);
+
+        // Test Read Contact (cRud)
+        Cursor cursorContact = getContact(tableContact);
+        assertEquals(0, cursorContact.getCount());
+
+        // Test Create/Read Contact (CRud)
+        name = "John Doe";
+        String number = "12333333";
+
+        id = createContact(tableContact, name, number, 1);
+        cursorContact = getContact(tableContact);
+        assertEquals(1, cursorContact.getCount());
+
+        Contact contact = getContactWithID(cursorContact, id);
+        assertEquals(name, contact.getName());
+        assertEquals(number, contact.getNumber());
     }
 
     private long createProfile(DbTableProfile tableProfile, String name, String date) {
@@ -134,5 +152,32 @@ public class DbErasmusInfoTest {
         assertNotNull(profile);
 
         return profile;
+    }
+
+    // CONTACT
+    private long createContact(DbTableContact tableContact, String name, String number, long idProfile) {
+        Contact contact = new Contact();
+        contact.setName(name);
+        contact.setNumber(number);
+        contact.setIdProfile(idProfile);
+        long id = tableContact.insert(contact.getContentValues());
+        assertNotEquals(-1, id);
+        return id;
+    }
+
+    private Cursor getContact(DbTableContact tableContact) {
+        return tableContact.query(DbTableContact.ALL_COLUMNS, null, null, null, null, null);
+    }
+
+    private Contact getContactWithID(Cursor cursor, long id) {
+        Contact contact = null;
+        while (cursor.moveToNext()) {
+            contact = Contact.fromCursor(cursor);
+            if (contact.getId() == id) {
+                break;
+            }
+        }
+        assertNotNull(contact);
+        return contact;
     }
 }

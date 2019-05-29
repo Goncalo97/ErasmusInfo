@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-public class BdTableContact implements BaseColumns {
+public class DbTableContact implements BaseColumns {
     public static final String TABLE_NAME = "contact";
     public static final String FIELD_NAME = "name";
     public static final String FIELD_NUMBER = "number";
@@ -14,7 +14,7 @@ public class BdTableContact implements BaseColumns {
 
     public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_NAME, FIELD_NUMBER, FIELD_ID_PROFILE };
 
-    public BdTableContact(SQLiteDatabase db) {
+    public DbTableContact(SQLiteDatabase db) {
         this.db = db;
     }
 
@@ -30,8 +30,7 @@ public class BdTableContact implements BaseColumns {
         );
     }
 
-    public Cursor query(String[] columns, String selection, String[] selectionArgs, String groupBy,
-                        String having, String orderBy) {
+    public Cursor query(String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
         return db.query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy);
     }
 

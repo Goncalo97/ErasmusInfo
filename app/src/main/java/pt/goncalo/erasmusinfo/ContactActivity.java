@@ -1,11 +1,14 @@
 package pt.goncalo.erasmusinfo;
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.Toast;
 
@@ -23,27 +26,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-public class ProfileActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-    private static final int ID_CURSOR_LOADER_PROFILE = 0;
-    private RecyclerView recyclerViewProfile;
-    private AdapterProfile adapterProfile;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+public class ContactActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Cursor> {
+    private static final int ID_CURSOR_LOADER_CONTACT = 0;
+    private RecyclerView recyclerViewContact;
+    private AdapterContact adapterContact;
+        @Override
+        protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_contact);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_PROFILE, null, this);
-        recyclerViewProfile = (RecyclerView) findViewById(R.id.recyclerViewProfile);
-        adapterProfile = new AdapterProfile(this);
-        recyclerViewProfile.setAdapter(adapterProfile);
-        recyclerViewProfile.setLayoutManager(new LinearLayoutManager(this));
+        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_CONTACT, null, this);
+        recyclerViewContact = (RecyclerView) findViewById(R.id.recyclerViewContact);
+        adapterContact = new AdapterContact(this);
+        recyclerViewContact.setAdapter(adapterContact);
+        recyclerViewContact.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
     protected void onResume() {
-        getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_PROFILE, null, this);
-
+        getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_CONTACT, null, this);
         super.onResume();
     }
 
@@ -60,7 +62,6 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -71,7 +72,6 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
         } else if (id == R.id.action_delete) {
             Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -87,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        CursorLoader cursorLoader = new CursorLoader(this, ErasmusInfoContentProvider.PROFILE_ADDRESS, DbTableProfile.ALL_COLUMNS, null, null, DbTableProfile.FIELD_NAME
+        CursorLoader cursorLoader = new CursorLoader(this, ErasmusInfoContentProvider.CONTACT_ADDRESS, DbTableContact.ALL_COLUMNS, null, null, DbTableContact.FIELD_NAME
         );
         return cursorLoader;
     }
@@ -136,9 +136,10 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         FloatingActionButton fab = findViewById(R.id.fab);
-        Snackbar.make(fab, "Existing Profiles: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
+        Snackbar.make(fab, "Existing Contacts: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
         Log.i("TAG", "" + data.getCount());
-        adapterProfile.setCursor(data);
+        adapterContact.setCursor(data);
+
     }
 
     /**
@@ -152,6 +153,6 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
      */
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
-        adapterProfile.setCursor(null);
+        adapterContact.setCursor(null);
     }
 }

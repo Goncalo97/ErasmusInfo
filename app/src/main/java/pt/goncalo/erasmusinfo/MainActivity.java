@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openContact(View view) {
-        Intent intent = new Intent(this, Contact.class);
+        Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
     }
 

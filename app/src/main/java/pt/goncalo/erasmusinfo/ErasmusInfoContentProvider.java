@@ -17,12 +17,16 @@ import androidx.annotation.Nullable;
 public class ErasmusInfoContentProvider extends ContentProvider {
     public static final String AUTHORITY = "pt.goncalo.erasmusinfo";
     public static final String PROFILE = "profile";
+    public static final String CONTACT = "contact";
 
     private static final Uri BASE_ADDRESS = Uri.parse("content://" + AUTHORITY);
     public static final Uri PROFILE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, PROFILE);
+    public static final Uri CONTACT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, CONTACT);
 
     public static final int URI_PROFILE = 200;
     public static final int URI_UNIQUE_PROFILE = 201;
+    public static final int URI_CONTACT = 300;
+    public static final int URI_UNIQUE_CONTACT = 301;
 
     public static final String UNIQUE_ITEM = "vnd.android.cursor.item/";
     public static final String MULTIPLE_ITEMS = "vnd.android.cursor.dir/";
@@ -33,6 +37,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         uriMatcher.addURI(AUTHORITY, PROFILE, URI_PROFILE);
         uriMatcher.addURI(AUTHORITY, PROFILE + "/#", URI_UNIQUE_PROFILE);
+        uriMatcher.addURI(AUTHORITY, CONTACT, URI_CONTACT);
+        uriMatcher.addURI(AUTHORITY, CONTACT + "/#", URI_UNIQUE_CONTACT);
         return uriMatcher;
     }
 
@@ -137,9 +143,12 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         switch (getUriMatcher().match(uri)) {
             case URI_PROFILE:
                 return new DbTableProfile(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
-
             case URI_UNIQUE_PROFILE:
                 return  new DbTableProfile(bd).query(projection, DbTableProfile._ID + "=?", new String[] { id }, null, null, null);
+            case URI_CONTACT:
+                return new DbTableContact(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_CONTACT:
+                return  new DbTableContact(bd).query(projection, DbTableContact._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("URI inválida (QUERY): " + uri.toString());
         }
@@ -171,6 +180,10 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return MULTIPLE_ITEMS + PROFILE;
             case URI_UNIQUE_PROFILE:
                 return UNIQUE_ITEM + PROFILE;
+            case URI_CONTACT:
+                return MULTIPLE_ITEMS + CONTACT;
+            case URI_UNIQUE_CONTACT:
+
             default:
                 return null;
         }
@@ -197,6 +210,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         switch (getUriMatcher().match(uri)) {
             case URI_PROFILE:
                 id = new DbTableProfile(bd).insert(values);
+                break;
+            case URI_CONTACT:
+                id = new DbTableContact(bd).insert(values);
                 break;
             default:
                 throw new UnsupportedOperationException("URI inválida (INSERT):" + uri.toString());
@@ -235,6 +251,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         switch (getUriMatcher().match(uri)) {
             case URI_UNIQUE_PROFILE:
                 return new DbTableProfile(bd).delete(DbTableProfile._ID + "=?", new String[] {id});
+            case URI_UNIQUE_CONTACT:
+                return new DbTableContact(bd).delete(DbTableContact._ID + "=?", new String[] {id});
             default:
                 throw new UnsupportedOperationException("URI inválida (DELETE): " + uri.toString());
         }
@@ -265,6 +283,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         switch (getUriMatcher().match(uri)) {
             case URI_UNIQUE_PROFILE:
                 return new DbTableProfile(bd).update(values, DbTableProfile._ID + "=?", new String[] {id});
+            case URI_UNIQUE_CONTACT:
+                return new DbTableContact(bd).update(values, DbTableContact._ID + "=?", new String[] {id});
             default:
                 throw new UnsupportedOperationException("URI inválida (UPDATE): " + uri.toString());
         }

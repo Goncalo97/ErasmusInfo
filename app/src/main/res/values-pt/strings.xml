@@ -76,23 +76,23 @@
     <string name="profile_delete_toast_canceled">Cancelado</string>
     <!-- ProfileActivity Delete Screen End -->
 
-    <!-- Contact Screen Start -->
+    <!-- ContactActivity Screen Start -->
     <string name="title_activity_contact">Contactos</string>
     <string name="contact_view_button">Ver Contacto</string>
     <string name="contact_insert_button">Inserir Contacto</string>
     <string name="contact_edit_button">Alterar Contacto</string>
     <string name="contact_delete_button">Eliminar Contacto</string>
-    <!-- Contact Screen End -->
+    <!-- ContactActivity Screen End -->
 
-    <!-- Contact View Screen Start -->
+    <!-- ContactActivity View Screen Start -->
     <string name="title_activity_contact_view">Ver Contacto</string>
     <string name="contact_view_textView_hint_name">Nome:</string>
     <string name="contact_view_textView_example_name">John Doe</string>
     <string name="contact_view_textView_hint_number">Número:</string>
     <string name="contact_view_textView_example_number">987654321</string>
-    <!-- Contact View Screen End -->
+    <!-- ContactActivity View Screen End -->
 
-    <!-- Contact Insert Screen Start -->
+    <!-- ContactActivity Insert Screen Start -->
     <string name="title_activity_contact_insert">Inserir Contacto</string>
     <string name="contact_insert_textInputEditText_hint_name">Nome:</string>
     <string name="contact_insert_textInputEditText_hint_number">Número:</string>
@@ -103,9 +103,9 @@
     <string name="contact_insert_textInputEditText_error_number">Por favor insira um número.</string>
     <string name="contact_insert_toast_saved">Dados guardados com sucesso!</string>
     <string name="contact_insert_toast_canceled">Cancelado!</string>
-    <!-- Contact Insert Screen End -->
+    <!-- ContactActivity Insert Screen End -->
 
-    <!-- Contact Edit Screen Start -->
+    <!-- ContactActivity Edit Screen Start -->
     <string name="title_activity_contact_edit">Alterar Contacto</string>
     <string name="contact_edit_textInputEditText_hint_name">Nome:</string>
     <string name="contact_edit_textInputEditText_hint_number">Numero:</string>
@@ -116,9 +116,9 @@
     <string name="contact_edit_textInputEditText_error_number">Por favor insira um número.</string>
     <string name="contact_edit_toast_saved">Dados guardados com sucesso!</string>
     <string name="contact_edit_toast_canceled">Cancelado!</string>
-    <!-- Contact Edit Screen End -->
+    <!-- ContactActivity Edit Screen End -->
 
-    <!-- Contact Delete Screen Start -->
+    <!-- ContactActivity Delete Screen Start -->
     <string name="title_activity_contact_delete">Eliminar Contacto</string>
     <string name="contact_delete_textView_hint_name">Nome:</string>
     <string name="contact_delete_textView_example_name">John Doe</string>
@@ -129,7 +129,7 @@
     <!-- Class Begin -->
     <string name="contact_delete_toast_deleted">... eliminado com sucesso</string>
     <string name="contact_delete_toast_canceled">Cancelado</string>
-    <!-- Contact Delete Screen End -->
+    <!-- ContactActivity Delete Screen End -->
 
     <!-- College Screen Start -->
     <string name="title_activity_college">Universidades</string>

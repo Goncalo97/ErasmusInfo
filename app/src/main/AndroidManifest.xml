@@ -57,38 +57,38 @@
         <activity
             android:name=".ContactDelete"
             android:label="@string/title_activity_contact_delete"
-            android:parentActivityName=".Contact"
+            android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Contact" />
+                android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
             android:name=".ContactEdit"
             android:label="@string/title_activity_contact_edit"
-            android:parentActivityName=".Contact"
+            android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Contact" />
+                android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
             android:name=".ContactInsert"
             android:label="@string/title_activity_contact_insert"
-            android:parentActivityName=".Contact"
+            android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Contact" />
+                android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
             android:name=".ContactView"
             android:label="@string/title_activity_contact_view"
-            android:parentActivityName=".Contact"
+            android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Contact" />
+                android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
             android:name=".ProfileDelete"
@@ -154,7 +154,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".Contact"
+            android:name=".ContactActivity"
             android:label="@string/title_activity_contact"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
