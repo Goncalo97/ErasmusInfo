@@ -33,6 +33,7 @@ public class DbErasmusInfoOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         new DbTableProfile(db).create();
         new DbTableContact(db).create();
+        new DbTableCollege(db).create();
     }
 
     /**

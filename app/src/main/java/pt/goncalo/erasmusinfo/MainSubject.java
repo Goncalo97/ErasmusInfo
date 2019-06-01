@@ -57,23 +57,23 @@ public class MainSubject {
 
     public ContentValues getContentValues() {
         ContentValues values = new ContentValues();
-        values.put(BdTableSubject.FIELD_CODE, code);
-        values.put(BdTableSubject.FIELD_NAME, name);
-        values.put(BdTableSubject.FIELD_ECTS, ects);
-        values.put(BdTableSubject.FIELD_EQUAL_SUBJECT, equal_subject);
-        values.put(BdTableSubject.FIELD_SCORE, score);
-        values.put(BdTableSubject.FIELD_ID_COLLEGE, idCollege);
+        values.put(DbTableSubject.FIELD_CODE, code);
+        values.put(DbTableSubject.FIELD_NAME, name);
+        values.put(DbTableSubject.FIELD_ECTS, ects);
+        values.put(DbTableSubject.FIELD_EQUAL_SUBJECT, equal_subject);
+        values.put(DbTableSubject.FIELD_SCORE, score);
+        values.put(DbTableSubject.FIELD_ID_COLLEGE, idCollege);
         return values;
     }
 
     public static MainSubject fromCursor(Cursor cursor) {
-        long id = cursor.getLong(cursor.getColumnIndex(BdTableSubject._ID));
-        String code = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_CODE));
-        String name = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_NAME));
-        int ects = cursor.getInt(cursor.getColumnIndex(BdTableSubject.FIELD_ECTS));
-        String equal_subject = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_EQUAL_SUBJECT));
-        String score = cursor.getString(cursor.getColumnIndex(BdTableSubject.FIELD_SCORE));
-        long idCollege = cursor.getLong(cursor.getColumnIndex(BdTableSubject.FIELD_ID_COLLEGE));
+        long id = cursor.getLong(cursor.getColumnIndex(DbTableSubject._ID));
+        String code = cursor.getString(cursor.getColumnIndex(DbTableSubject.FIELD_CODE));
+        String name = cursor.getString(cursor.getColumnIndex(DbTableSubject.FIELD_NAME));
+        int ects = cursor.getInt(cursor.getColumnIndex(DbTableSubject.FIELD_ECTS));
+        String equal_subject = cursor.getString(cursor.getColumnIndex(DbTableSubject.FIELD_EQUAL_SUBJECT));
+        String score = cursor.getString(cursor.getColumnIndex(DbTableSubject.FIELD_SCORE));
+        long idCollege = cursor.getLong(cursor.getColumnIndex(DbTableSubject.FIELD_ID_COLLEGE));
 
         MainSubject subject = new MainSubject();
         subject.setId(id);

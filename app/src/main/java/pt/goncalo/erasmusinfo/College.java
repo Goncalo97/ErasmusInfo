@@ -1,45 +1,72 @@
 package pt.goncalo.erasmusinfo;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+public class College {
 
-import android.view.View;
-import android.widget.Toast;
+    private long id;
+    private String name;
+    private String country;
+    private String location;
+    private long idProfile;
 
-public class College extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_college);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Toast.makeText(this,
-                "{"+ getString(R.string.college)+"}",
-                Toast.LENGTH_SHORT).show();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void openCollegeInsert(View view) {
-
-        Intent intent = new Intent(this, CollegeInsert.class);
-        startActivity(intent);
+    public String getName() {
+        return name;
+    }
+    public String getCountry() {
+        return country;
+    }
+    public String getLocation() {
+        return location;
     }
 
-    public void openCollegeEdit(View view) {
 
-        Intent intent = new Intent(this, CollegeEdit.class);
-        startActivity(intent);
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public void openCollegeDelete(View view) {
+    public long getIdProfile() { return idProfile; }
+    public void setIdProfile(long idProfile) { this.idProfile = idProfile; }
 
-        Intent intent = new Intent(this, CollegeDelete.class);
-        startActivity(intent);
+    public ContentValues getContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(DbTableCollege.FIELD_NAME, name);
+        values.put(DbTableCollege.FIELD_COUNTRY, country);
+        values.put(DbTableCollege.FIELD_LOCATION, location);
+        values.put(DbTableCollege.FIELD_ID_PROFILE, idProfile);
+        return values;
+    }
+
+    public static College fromCursor(Cursor cursor) {
+        long id = cursor.getLong(cursor.getColumnIndex(DbTableCollege._ID));
+        String name = cursor.getString(cursor.getColumnIndex(DbTableCollege.FIELD_NAME));
+        String country = cursor.getString(cursor.getColumnIndex(DbTableCollege.FIELD_COUNTRY));
+        String location = cursor.getString(cursor.getColumnIndex(DbTableCollege.FIELD_LOCATION));
+        long idProfile = cursor.getLong(cursor.getColumnIndex(DbTableCollege.FIELD_ID_PROFILE));
+
+        College college = new College();
+        college.setId(id);
+        college.setName(name);
+        college.setCountry(country);
+        college.setLocation(location);
+        college.setIdProfile(idProfile);
+
+        return college;
     }
 }
+
+

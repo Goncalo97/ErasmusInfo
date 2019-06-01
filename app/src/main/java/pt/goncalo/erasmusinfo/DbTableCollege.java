@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-public class BdTableCollege implements BaseColumns {
+public class DbTableCollege implements BaseColumns {
     public static final String TABLE_NAME = "college";
     public static final String FIELD_NAME = "name";
     public static final String FIELD_COUNTRY = "country";
@@ -15,7 +15,7 @@ public class BdTableCollege implements BaseColumns {
 
     public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_NAME, FIELD_COUNTRY, FIELD_LOCATION, FIELD_ID_PROFILE };
 
-    public BdTableCollege(SQLiteDatabase db) {
+    public DbTableCollege(SQLiteDatabase db) {
         this.db = db;
     }
 

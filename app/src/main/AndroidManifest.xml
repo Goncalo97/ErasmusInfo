@@ -12,29 +12,29 @@
         <activity
             android:name=".CollegeDelete"
             android:label="@string/title_activity_college_delete"
-            android:parentActivityName=".College"
+            android:parentActivityName=".CollegeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.College" />
+                android:value="pt.goncalo.erasmusinfo.CollegeActivity" />
         </activity>
         <activity
             android:name=".CollegeEdit"
             android:label="@string/title_activity_college_edit"
-            android:parentActivityName=".College"
+            android:parentActivityName=".CollegeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.College" />
+                android:value="pt.goncalo.erasmusinfo.CollegeActivity" />
         </activity>
         <activity
             android:name=".CollegeInsert"
             android:label="@string/title_activity_college_insert"
-            android:parentActivityName=".College"
+            android:parentActivityName=".CollegeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.College" />
+                android:value="pt.goncalo.erasmusinfo.CollegeActivity" />
         </activity>
         <activity
             android:name=".SubjectDelete"
@@ -145,7 +145,7 @@
                 android:value="pt.goncalo.erasmusinfo.MainActivity" />
         </activity>
         <activity
-            android:name=".College"
+            android:name=".CollegeActivity"
             android:label="@string/title_activity_college"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

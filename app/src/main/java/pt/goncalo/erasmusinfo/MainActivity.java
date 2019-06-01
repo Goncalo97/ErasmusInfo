@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openCollege(View view) {
-        Intent intent = new Intent(this, College.class);
+        Intent intent = new Intent(this, CollegeActivity.class);
         startActivity(intent);
     }
 
