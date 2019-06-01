@@ -34,6 +34,7 @@ public class DbErasmusInfoOpenHelper extends SQLiteOpenHelper {
         new DbTableProfile(db).create();
         new DbTableContact(db).create();
         new DbTableCollege(db).create();
+        new DbTableSubject(db).create();
     }
 
     /**

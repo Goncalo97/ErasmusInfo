@@ -181,14 +181,14 @@
     <string name="college_delete_toast_canceled">Canceled</string>
     <!-- College Delete Screen End -->
 
-    <!-- Subject Screen Start -->
+    <!-- SubjectActivity Screen Start -->
     <string name="title_activity_subject">Subjects</string>
     <string name="subject_insert_button">Insert Subject</string>
     <string name="subject_edit_button">Edit Subject</string>
     <string name="subject_delete_button">Delete Subject</string>
-    <!-- Subject Screen End -->
+    <!-- SubjectActivity Screen End -->
 
-    <!-- Subject Insert Screen Start -->
+    <!-- SubjectActivity Insert Screen Start -->
     <string name="title_activity_subject_insert">Insert Subject</string>
     <string name="subject_insert_textInputEditText_hint_code">Code:</string>
     <string name="subject_insert_textInputEditText_hint_name">Name:</string>
@@ -205,9 +205,9 @@
     <string name="subject_insert_textInputEditText_error_score">Please enter a score.</string>
     <string name="subject_insert_toast_saved">Data saved with success!</string>
     <string name="subject_insert_toast_canceled">Canceled!</string>
-    <!-- Subject Insert Screen End -->
+    <!-- SubjectActivity Insert Screen End -->
 
-    <!-- Subject Edit Screen Start -->
+    <!-- SubjectActivity Edit Screen Start -->
     <string name="title_activity_subject_edit">Edit Subject</string>
     <string name="subject_edit_textInputEditText_hint_code">Code:</string>
     <string name="subject_edit_textInputEditText_hint_name">Name:</string>
@@ -224,9 +224,9 @@
     <string name="subject_edit_textInputEditText_error_score">Please enter a score.</string>
     <string name="subject_edit_toast_saved">Data saved with success!</string>
     <string name="subject_edit_toast_canceled">Canceled!</string>
-    <!-- Subject Edit Screen End -->
+    <!-- SubjectActivity Edit Screen End -->
 
-    <!-- Subject Delete Screen Start -->
+    <!-- SubjectActivity Delete Screen Start -->
     <string name="title_activity_subject_delete">Delete Subject</string>
     <string name="subject_delete_textView_hint_code">Code:</string>
     <string name="subject_delete_textView_example_code">UINF8800</string>
@@ -243,6 +243,6 @@
     <!-- Class Begin -->
     <string name="subject_delete_toast_deleted">... successfully deleted</string>
     <string name="subject_delete_toast_canceled">Canceled</string>
-    <!-- Subject Delete Screen End -->
+    <!-- SubjectActivity Delete Screen End -->
 
 </resources>

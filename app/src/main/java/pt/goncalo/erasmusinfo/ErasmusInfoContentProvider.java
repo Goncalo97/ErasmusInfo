@@ -19,11 +19,13 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     public static final String PROFILE = "profile";
     public static final String CONTACT = "contact";
     public static final String COLLEGE = "college";
+    public static final String SUBJECT = "subject";
 
     private static final Uri BASE_ADDRESS = Uri.parse("content://" + AUTHORITY);
     public static final Uri PROFILE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, PROFILE);
     public static final Uri CONTACT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, CONTACT);
     public static final Uri COLLEGE_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, COLLEGE);
+    public static final Uri SUBJECT_ADDRESS = Uri.withAppendedPath(BASE_ADDRESS, SUBJECT);
 
     public static final int URI_PROFILE = 200;
     public static final int URI_UNIQUE_PROFILE = 201;
@@ -31,6 +33,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
     public static final int URI_UNIQUE_CONTACT = 301;
     public static final int URI_COLLEGE = 400;
     public static final int URI_UNIQUE_COLLEGE = 401;
+    public static final int URI_SUBJECT = 500;
+    public static final int URI_UNIQUE_SUBJECT = 501;
 
     public static final String UNIQUE_ITEM = "vnd.android.cursor.item/";
     public static final String MULTIPLE_ITEMS = "vnd.android.cursor.dir/";
@@ -45,6 +49,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY, CONTACT + "/#", URI_UNIQUE_CONTACT);
         uriMatcher.addURI(AUTHORITY, COLLEGE, URI_COLLEGE);
         uriMatcher.addURI(AUTHORITY, COLLEGE + "/#", URI_UNIQUE_COLLEGE);
+        uriMatcher.addURI(AUTHORITY, SUBJECT, URI_SUBJECT);
+        uriMatcher.addURI(AUTHORITY, SUBJECT + "/#", URI_UNIQUE_SUBJECT);
         return uriMatcher;
     }
 
@@ -159,6 +165,10 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return new DbTableCollege(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_COLLEGE:
                 return  new DbTableCollege(bd).query(projection, DbTableCollege._ID + "=?", new String[] { id }, null, null, null);
+            case URI_SUBJECT:
+                return new DbTableSubject(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
+            case URI_UNIQUE_SUBJECT:
+                return  new DbTableSubject(bd).query(projection, DbTableSubject._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("URI inválida (QUERY): " + uri.toString());
         }
@@ -198,6 +208,10 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return MULTIPLE_ITEMS + COLLEGE;
             case URI_UNIQUE_COLLEGE:
                 return UNIQUE_ITEM + COLLEGE;
+            case URI_SUBJECT:
+                return MULTIPLE_ITEMS + SUBJECT;
+            case URI_UNIQUE_SUBJECT:
+                return UNIQUE_ITEM + SUBJECT;
             default:
                 return null;
         }
@@ -230,6 +244,9 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 break;
             case URI_COLLEGE:
                 id = new DbTableCollege(bd).insert(values);
+                break;
+            case URI_SUBJECT:
+                id = new DbTableSubject(bd).insert(values);
                 break;
             default:
                 throw new UnsupportedOperationException("URI inválida (INSERT):" + uri.toString());
@@ -272,6 +289,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return new DbTableContact(bd).delete(DbTableContact._ID + "=?", new String[] {id});
             case URI_UNIQUE_COLLEGE:
                 return new DbTableCollege(bd).delete(DbTableCollege._ID + "=?", new String[] {id});
+            case URI_UNIQUE_SUBJECT:
+                return new DbTableSubject(bd).delete(DbTableSubject._ID + "=?", new String[] {id});
             default:
                 throw new UnsupportedOperationException("URI inválida (DELETE): " + uri.toString());
         }
@@ -306,6 +325,8 @@ public class ErasmusInfoContentProvider extends ContentProvider {
                 return new DbTableContact(bd).update(values, DbTableContact._ID + "=?", new String[] {id});
             case URI_UNIQUE_COLLEGE:
                 return new DbTableCollege(bd).update(values, DbTableCollege._ID + "=?", new String[] {id});
+            case URI_UNIQUE_SUBJECT:
+                return new DbTableSubject(bd).update(values, DbTableSubject._ID + "=?", new String[] {id});
             default:
                 throw new UnsupportedOperationException("URI inválida (UPDATE): " + uri.toString());
         }

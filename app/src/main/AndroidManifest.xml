@@ -39,20 +39,20 @@
         <activity
             android:name=".SubjectDelete"
             android:label="@string/title_activity_subject_delete"
-            android:parentActivityName=".Subject"
+            android:parentActivityName=".SubjectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Subject" />
+                android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
         </activity>
         <activity
             android:name=".SubjectInsert"
             android:label="@string/title_activity_subject_insert"
-            android:parentActivityName=".Subject"
+            android:parentActivityName=".SubjectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Subject" />
+                android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
         </activity>
         <activity
             android:name=".ContactDelete"
@@ -111,11 +111,11 @@
         <activity
             android:name=".SubjectEdit"
             android:label="@string/title_activity_subject_edit"
-            android:parentActivityName=".Subject"
+            android:parentActivityName=".SubjectActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.Subject" />
+                android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
         </activity>
         <activity
             android:name=".ProfileView"
@@ -136,7 +136,7 @@
                 android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
-            android:name=".Subject"
+            android:name=".SubjectActivity"
             android:label="@string/title_activity_subject"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

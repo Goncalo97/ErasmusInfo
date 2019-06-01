@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-public class BdTableSubject implements BaseColumns {
+public class DbTableSubject implements BaseColumns {
     public static final String TABLE_NAME = "subject";
     public static final String FIELD_CODE = "code";
     public static final String FIELD_NAME = "name";
@@ -17,7 +17,7 @@ public class BdTableSubject implements BaseColumns {
 
     public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_CODE, FIELD_NAME, FIELD_ECTS, FIELD_EQUAL_SUBJECT, FIELD_SCORE, FIELD_ID_COLLEGE };
 
-    public BdTableSubject(SQLiteDatabase db) {
+    public DbTableSubject(SQLiteDatabase db) {
         this.db = db;
     }
 
@@ -31,7 +31,7 @@ public class BdTableSubject implements BaseColumns {
                         FIELD_EQUAL_SUBJECT + " TEXT NOT NULL," +
                         FIELD_SCORE + " TEXT NOT NULL," +
                         FIELD_ID_COLLEGE + " INTEGER NOT NULL," +
-                        "FOREIGN KEY (" + FIELD_ID_COLLEGE + ") REFERENCES " + BdTableCollege.TABLE_NAME + "(" + BdTableCollege._ID + ")" +
+                        "FOREIGN KEY (" + FIELD_ID_COLLEGE + ") REFERENCES " + DbTableCollege.TABLE_NAME + "(" + DbTableCollege._ID + ")" +
                         ")"
         );
     }
