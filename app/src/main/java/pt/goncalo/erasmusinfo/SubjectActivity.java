@@ -40,6 +40,7 @@ public class SubjectActivity extends AppCompatActivity  implements LoaderManager
         adapterSubject = new AdapterSubject(this);
         recyclerViewSubject.setAdapter(adapterSubject);
         recyclerViewSubject.setLayoutManager(new LinearLayoutManager(this));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

@@ -41,6 +41,8 @@ public class ContactActivity extends AppCompatActivity  implements LoaderManager
         adapterContact = new AdapterContact(this);
         recyclerViewContact.setAdapter(adapterContact);
         recyclerViewContact.setLayoutManager(new LinearLayoutManager(this));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override

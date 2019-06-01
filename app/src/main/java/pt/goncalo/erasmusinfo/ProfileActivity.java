@@ -38,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
         adapterProfile = new AdapterProfile(this);
         recyclerViewProfile.setAdapter(adapterProfile);
         recyclerViewProfile.setLayoutManager(new LinearLayoutManager(this));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

@@ -41,6 +41,7 @@ public class CollegeActivity extends AppCompatActivity  implements LoaderManager
         adapterCollege = new AdapterCollege(this);
         recyclerViewCollege.setAdapter(adapterCollege);
         recyclerViewCollege.setLayoutManager(new LinearLayoutManager(this));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
