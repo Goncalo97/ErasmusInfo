@@ -95,6 +95,10 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
         else return cursor.getCount(); //TODO: Check if else or without else???
     }
 
+    public Profile getProfileSelected() {
+        if (viewHolderProfileSelected == null) return null;
+        return viewHolderProfileSelected.profile;
+    }
     private static ViewHolderProfile viewHolderProfileSelected = null;
 
     public class ViewHolderProfile extends RecyclerView.ViewHolder implements View.OnClickListener {
