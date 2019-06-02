@@ -10,6 +10,18 @@
     tools:context=".ContactInsertActivity"
     tools:showIn="@layout/activity_contact_insert">
 
+    <TextView
+        android:id="@+id/textViewSpinnerContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:text="Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorAccent" />
+
     <Spinner
         android:id="@+id/spinnnerContact"
         android:layout_width="match_parent"
