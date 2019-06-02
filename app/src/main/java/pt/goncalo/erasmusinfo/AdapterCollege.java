@@ -128,6 +128,7 @@ public class AdapterCollege extends RecyclerView.Adapter<AdapterCollege.ViewHold
         public void onClick(View v) {
             if (viewHolderCollegeSelected != null) viewHolderCollegeSelected.unSelect();
             viewHolderCollegeSelected = this;
+            ((CollegeActivity) context).refreshMenuOptions();
             select();
         }
 

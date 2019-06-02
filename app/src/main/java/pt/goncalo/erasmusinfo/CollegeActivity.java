@@ -50,10 +50,20 @@ public class CollegeActivity extends AppCompatActivity  implements LoaderManager
         super.onResume();
     }
 
+    private Menu menu;
+
+    public void refreshMenuOptions() {
+        College college = adapterCollege.getCollegeSelected();
+        boolean showEditDelete = (college != null);
+        menu.findItem(R.id.action_edit).setVisible(showEditDelete);
+        menu.findItem(R.id.action_delete).setVisible(showEditDelete);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_crud, menu);
+        this.menu = menu;
         return true;
     }
 

@@ -125,6 +125,7 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ViewHold
         public void onClick(View v) {
             if (viewHolderContactSelected != null) viewHolderContactSelected.unSelect();
             viewHolderContactSelected = this;
+            ((ContactActivity) context).refreshMenuOptions();
             select();
         }
 

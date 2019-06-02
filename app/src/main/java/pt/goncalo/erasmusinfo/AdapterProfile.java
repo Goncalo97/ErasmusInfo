@@ -130,6 +130,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
         public void onClick(View v) {
             if (viewHolderProfileSelected != null) viewHolderProfileSelected.unSelect();
             viewHolderProfileSelected = this;
+            ((ProfileActivity) context).refreshMenuOptions();
             select();
             // Toast.makeText(context, profile.getName(), Toast.LENGTH_SHORT).show();
         }

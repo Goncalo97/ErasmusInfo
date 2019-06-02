@@ -134,6 +134,7 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
         public void onClick(View v) {
             if (viewHolderSubjectSelected != null) viewHolderSubjectSelected.unSelect();
             viewHolderSubjectSelected = this;
+            ((SubjectActivity) context).refreshMenuOptions();
             select();
         }
 
