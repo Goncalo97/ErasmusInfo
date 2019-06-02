@@ -99,6 +99,7 @@ public class AdapterProfile extends RecyclerView.Adapter<AdapterProfile.ViewHold
         if (viewHolderProfileSelected == null) return null;
         return viewHolderProfileSelected.profile;
     }
+
     private static ViewHolderProfile viewHolderProfileSelected = null;
 
     public class ViewHolderProfile extends RecyclerView.ViewHolder implements View.OnClickListener {

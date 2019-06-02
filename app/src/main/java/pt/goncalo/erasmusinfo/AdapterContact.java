@@ -90,6 +90,11 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ViewHold
         else return cursor.getCount(); //TODO: Check if else or without else???
     }
 
+    public Contact getContactSelected() {
+        if (viewHolderContactSelected == null) return null;
+        return viewHolderContactSelected.contact;
+    }
+
     private static ViewHolderContact viewHolderContactSelected = null;
 
     public class ViewHolderContact extends RecyclerView.ViewHolder implements View.OnClickListener {

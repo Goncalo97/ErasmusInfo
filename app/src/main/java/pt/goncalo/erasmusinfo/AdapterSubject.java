@@ -90,6 +90,11 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
         else return cursor.getCount(); //TODO: Check if else or without else???
     }
 
+    public Subject getSubjectSelected() {
+        if (viewHolderSubjectSelected == null) return null;
+        return viewHolderSubjectSelected.subject;
+    }
+
     private static ViewHolderSubject viewHolderSubjectSelected = null;
 
     public class ViewHolderSubject extends RecyclerView.ViewHolder implements View.OnClickListener {

@@ -90,6 +90,11 @@ public class AdapterCollege extends RecyclerView.Adapter<AdapterCollege.ViewHold
         else return cursor.getCount(); //TODO: Check if else or without else???
     }
 
+    public College getCollegeSelected() {
+        if (viewHolderCollegeSelected == null) return null;
+        return viewHolderCollegeSelected.college;
+    }
+
     private static ViewHolderCollege viewHolderCollegeSelected = null;
 
     public class ViewHolderCollege extends RecyclerView.ViewHolder implements View.OnClickListener {
