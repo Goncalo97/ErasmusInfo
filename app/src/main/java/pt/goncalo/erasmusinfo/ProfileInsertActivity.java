@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class ProfileInsert extends AppCompatActivity {
+public class ProfileInsertActivity extends AppCompatActivity {
 
     EditText editProfileAge;
     Calendar myCalendar;
@@ -47,7 +47,7 @@ public class ProfileInsert extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(ProfileInsert.this, date,
+                new DatePickerDialog(ProfileInsertActivity.this, date,
                         myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
@@ -77,7 +77,7 @@ public class ProfileInsert extends AppCompatActivity {
             editProfileAge.setError(getString(R.string.profile_edit_textInputEditText_error_birthDate));
             editProfileAge.requestFocus();
             if(editProfileAge.hasFocus())
-                new DatePickerDialog(ProfileInsert.this, date,
+                new DatePickerDialog(ProfileInsertActivity.this, date,
                         myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             return;
