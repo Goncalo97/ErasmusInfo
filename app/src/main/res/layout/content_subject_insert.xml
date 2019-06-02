@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:focusableInTouchMode="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SubjectInsert"
+    tools:context=".SubjectInsertActivity"
     tools:showIn="@layout/activity_subject_insert">
 
     <ScrollView
@@ -20,6 +20,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/spinnerProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

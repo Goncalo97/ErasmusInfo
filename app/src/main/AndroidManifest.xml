@@ -28,7 +28,7 @@
                 android:value="pt.goncalo.erasmusinfo.CollegeActivity" />
         </activity>
         <activity
-            android:name=".CollegeInsert"
+            android:name=".CollegeInsertActivity"
             android:label="@string/title_activity_college_insert"
             android:parentActivityName=".CollegeActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -46,7 +46,7 @@
                 android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
         </activity>
         <activity
-            android:name=".SubjectInsert"
+            android:name=".SubjectInsertActivity"
             android:label="@string/title_activity_subject_insert"
             android:parentActivityName=".SubjectActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -73,7 +73,7 @@
                 android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
-            android:name=".ContactInsert"
+            android:name=".ContactInsertActivity"
             android:label="@string/title_activity_contact_insert"
             android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">

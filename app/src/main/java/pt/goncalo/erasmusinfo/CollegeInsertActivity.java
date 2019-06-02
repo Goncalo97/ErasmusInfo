@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CollegeInsert extends AppCompatActivity {
+public class CollegeInsertActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
