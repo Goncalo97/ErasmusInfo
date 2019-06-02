@@ -138,7 +138,7 @@ public class CollegeActivity extends AppCompatActivity  implements LoaderManager
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         FloatingActionButton fab = findViewById(R.id.fab);
         Snackbar.make(fab, "Existing Colleges: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
-        Log.i("TAG", "" + data.getCount());
+        Log.i("Data Count", "" + data.getCount());
         adapterCollege.setCursor(data);
 
     }

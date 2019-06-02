@@ -115,7 +115,7 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
             this.subject = subject;
             textViewCode.setText(subject.getCode());
             textViewName.setText(subject.getName());
-            textViewECTs.setText(subject.getECTS());
+            textViewECTs.setText(String.valueOf(subject.getECTS()));
             textViewEqualSubject.setText(subject.getEqualSubject());
             textViewScore.setText(subject.getScore());
         }

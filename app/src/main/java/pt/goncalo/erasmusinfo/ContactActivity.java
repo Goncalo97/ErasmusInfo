@@ -139,7 +139,7 @@ public class ContactActivity extends AppCompatActivity  implements LoaderManager
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         FloatingActionButton fab = findViewById(R.id.fab);
         Snackbar.make(fab, "Existing Contacts: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
-        Log.i("TAG", "" + data.getCount());
+        Log.i("Data Count", "" + data.getCount());
         adapterContact.setCursor(data);
 
     }
