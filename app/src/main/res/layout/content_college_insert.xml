@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <Spinner
-                android:id="@+id/spinnerProfile"
+                android:id="@+id/spinnerCollege"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/side_margin"

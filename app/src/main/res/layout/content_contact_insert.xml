@@ -11,7 +11,7 @@
     tools:showIn="@layout/activity_contact_insert">
 
     <Spinner
-        android:id="@+id/spinnerProfile"
+        android:id="@+id/spinnnerContact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/side_margin"
