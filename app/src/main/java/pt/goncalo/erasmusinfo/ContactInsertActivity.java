@@ -39,10 +39,10 @@ public class ContactInsertActivity extends AppCompatActivity implements LoaderMa
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_CONTACT, null, this);
         editTextName = (EditText) findViewById(R.id.editTextContactName);
         spinnerProfile = (Spinner) findViewById(R.id.spinnnerContact);
         editTextNumber = (EditText) findViewById(R.id.editTextContactNumber);
+        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_CONTACT, null, this);
     }
 
     @Override

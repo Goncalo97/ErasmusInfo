@@ -43,13 +43,13 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_SUBJECT, null, this);
         editTextCode = (EditText) findViewById(R.id.editTextSubjectCode);
         spinnerCollege = (Spinner) findViewById(R.id.spinnerSubject);
         editTextName = (EditText) findViewById(R.id.editTextSubjectName);
         editTextECTs = (EditText) findViewById(R.id.editTextSubjectECTs);
         editTextEqualSubject = (EditText) findViewById(R.id.editTextSubjectDiscEqual);
         editTextScore = (EditText) findViewById(R.id.editTextSubjectScore);
+        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_SUBJECT, null, this);
     }
 
     @Override

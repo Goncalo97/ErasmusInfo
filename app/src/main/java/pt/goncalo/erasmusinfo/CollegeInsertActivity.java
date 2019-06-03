@@ -41,11 +41,11 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_COLLEGE, null, this);
         editTextName = (EditText) findViewById(R.id.editTextCollegeName);
         spinnerProfile = (Spinner) findViewById(R.id.spinnerCollege);
         editTextCountry = (EditText) findViewById(R.id.editTextCollegeCountry);
         editTextLocation = (EditText) findViewById(R.id.editTextCollegeLocation);
+        getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_COLLEGE, null, this);
     }
     
     public void collegeSave(View view) {
