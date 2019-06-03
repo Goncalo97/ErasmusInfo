@@ -77,6 +77,9 @@ public class SubjectActivity extends AppCompatActivity  implements LoaderManager
             return true;
         } else if (id == R.id.action_add) {
             Toast.makeText(this, R.string.add_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SubjectInsertActivity.class);
+            startActivity(intent);
+            return true;
         } else if (id == R.id.action_edit) {
             Toast.makeText(this, R.string.edit_button, Toast.LENGTH_SHORT).show();
         } else if (id == R.id.action_delete) {
