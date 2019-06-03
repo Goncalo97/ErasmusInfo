@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -29,6 +30,10 @@ import java.util.Locale;
 public class ProfileInsertActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int ID_CURSOR_LOADER_PROFILE = 0;
+
+    private EditText editTextName;
+    private EditText editTextDate;
+
     EditText editProfileAge;
     Calendar myCalendar;
     DatePickerDialog.OnDateSetListener date;
@@ -67,6 +72,8 @@ public class ProfileInsertActivity extends AppCompatActivity implements LoaderMa
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_PROFILE, null, this);
+        editTextName = (EditText) findViewById(R.id.editTextViewProfileName);
+        editTextDate = (EditText) findViewById(R.id.editTextViewProfileAge);
     }
 
     private void updateLabel() {

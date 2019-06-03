@@ -21,11 +21,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class SubjectInsertActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int ID_CURSOR_LOADER_SUBJECT = 0;
+
+    private EditText editTextCode;
+    private Spinner spinnerCollege;
+    private EditText editTextName;
+    private EditText editTextECTs;
+    private EditText editTextEqualSubject;
+    private EditText editTextScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,12 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_SUBJECT, null, this);
+        editTextCode = (EditText) findViewById(R.id.editTextSubjectCode);
+        spinnerCollege = (Spinner) findViewById(R.id.spinnerSubject);
+        editTextName = (EditText) findViewById(R.id.editTextSubjectName);
+        editTextECTs = (EditText) findViewById(R.id.editTextSubjectECTs);
+        editTextEqualSubject = (EditText) findViewById(R.id.editTextSubjectDiscEqual);
+        editTextScore = (EditText) findViewById(R.id.editTextSubjectScore);
     }
 
     @Override
@@ -42,6 +57,17 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
         getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_SUBJECT, null, this);
 
         super.onResume();
+    }
+
+    private void showCollegeSpinner(Cursor cursorCollege) {
+        SimpleCursorAdapter adapterCollege = new SimpleCursorAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                cursorCollege,
+                new String[]{DbTableCollege.FIELD_NAME},
+                new int[]{android.R.id.text1}
+        );
+        spinnerCollege.setAdapter(adapterCollege);
     }
 
     @Override
@@ -177,7 +203,7 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
      */
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
-
+        showCollegeSpinner(data);
     }
 
     /**
@@ -191,6 +217,6 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
      */
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
-
+        showCollegeSpinner(null);
     }
 }

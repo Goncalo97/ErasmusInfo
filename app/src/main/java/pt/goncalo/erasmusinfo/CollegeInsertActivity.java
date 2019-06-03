@@ -21,11 +21,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class CollegeInsertActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int ID_CURSOR_LOADER_COLLEGE = 0;
+
+    private EditText editTextName;
+    private Spinner spinnerProfile;
+    private EditText editTextCountry;
+    private EditText editTextLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,10 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportLoaderManager().initLoader(ID_CURSOR_LOADER_COLLEGE, null, this);
+        editTextName = (EditText) findViewById(R.id.editTextCollegeName);
+        spinnerProfile = (Spinner) findViewById(R.id.spinnerCollege);
+        editTextCountry = (EditText) findViewById(R.id.editTextCollegeCountry);
+        editTextLocation = (EditText) findViewById(R.id.editTextCollegeLocation);
     }
     
     public void collegeSave(View view) {
@@ -74,6 +85,17 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
         getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_COLLEGE, null, this);
 
         super.onResume();
+    }
+
+    private void showProfileSpinner(Cursor cursorProfile) {
+        SimpleCursorAdapter adapterProfile = new SimpleCursorAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                cursorProfile,
+                new String[]{DbTableProfile.FIELD_NAME},
+                new int[]{android.R.id.text1}
+        );
+        spinnerProfile.setAdapter(adapterProfile);
     }
 
     @Override
@@ -163,7 +185,7 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
      */
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
-
+        showProfileSpinner(data);
     }
 
     /**
@@ -177,6 +199,6 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
      */
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
-
+        showProfileSpinner(null);
     }
 }
