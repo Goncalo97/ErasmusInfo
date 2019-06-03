@@ -9,6 +9,8 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+
+
     <Button
         android:id="@+id/buttonPerfil"
         android:layout_width="match_parent"
@@ -19,7 +21,9 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openProfile"
         android:text="@string/profile"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
     <Button
         android:id="@+id/buttonContacto"
@@ -31,7 +35,9 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openContact"
         android:text="@string/contact"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
     <Button
         android:id="@+id/buttonUniversidade"
@@ -43,7 +49,9 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openCollege"
         android:text="@string/college"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 
     <!-- ToDo: Renomear as strings; -->
     <Button
@@ -56,5 +64,7 @@
         android:background="@drawable/btn_rounded"
         android:onClick="openClass"
         android:text="@string/subject"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorButton"
+        android:textSize="@dimen/buttonSize" />
 </LinearLayout>

@@ -92,32 +92,6 @@
                     android:hint="@string/college_insert_textInputEditText_hint_location"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/buttonCollegeSave"
-                style="@android:style/Widget.Button.Inset"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:onClick="collegeSave"
-                android:text="@string/college_insert_button_save"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
-            <Button
-                android:id="@+id/buttonCollegeCancel"
-                style="@android:style/Widget.DeviceDefault.Button.Inset"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:onClick="collegeCancel"
-                android:text="@string/college_insert_button_cancel"
-                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
