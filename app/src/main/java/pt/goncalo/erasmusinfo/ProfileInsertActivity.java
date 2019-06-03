@@ -23,6 +23,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -136,6 +138,7 @@ public class ProfileInsertActivity extends AppCompatActivity implements LoaderMa
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_save) {
+            save();
             return true;
         } else if (id == R.id.action_cancel) {
             finish();
@@ -143,6 +146,44 @@ public class ProfileInsertActivity extends AppCompatActivity implements LoaderMa
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save() {
+        String name = editTextName.getText().toString();
+
+        if (name.trim().isEmpty()) {
+            editTextName.setError("Please type a name.");
+            return;
+        }
+
+        String date = editTextDate.getText().toString();
+
+        if (name.trim().isEmpty()) {
+            editTextDate.setError("Please insert a date.");
+            return;
+        }
+
+        // save the data
+        Profile profile = new Profile();
+
+        profile.setName(name);
+        profile.setDate(date);
+
+
+        try {
+            getContentResolver().insert(ErasmusInfoContentProvider.PROFILE_ADDRESS, profile.getContentValues());
+
+            Toast.makeText(this, "Saved with success!", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (Exception e) {
+            Snackbar.make(
+                    editTextName,
+                    "Error while saving!",
+                    Snackbar.LENGTH_LONG)
+                    .show();
+
+            e.printStackTrace();
+        }
     }
 
     /**

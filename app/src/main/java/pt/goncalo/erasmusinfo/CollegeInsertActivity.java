@@ -116,6 +116,7 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_save) {
+            save();
             return true;
         } else if (id == R.id.action_cancel) {
             finish();
@@ -123,6 +124,54 @@ public class CollegeInsertActivity extends AppCompatActivity implements LoaderMa
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save() {
+        String name = editTextName.getText().toString();
+
+        if (name.trim().isEmpty()) {
+            editTextName.setError("Please type a name.");
+            return;
+        }
+
+        String country = editTextCountry.getText().toString();
+
+        if (country.trim().isEmpty()) {
+            editTextCountry.setError("Please type a country.");
+            return;
+        }
+
+        String location = editTextLocation.getText().toString();
+
+        if (location.trim().isEmpty()) {
+            editTextLocation.setError("Please type a location.");
+            return;
+        }
+
+        long idProfile = spinnerProfile.getSelectedItemId();
+
+        // Save the data
+        College college = new College();
+
+        college.setName(name);
+        college.setIdProfile(idProfile);
+        college.setCountry(country);
+        college.setLocation(location);
+
+        try {
+            getContentResolver().insert(ErasmusInfoContentProvider.COLLEGE_ADDRESS, college.getContentValues());
+
+            Toast.makeText(this, "Saved with success!", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (Exception e) {
+            Snackbar.make(
+                    editTextName,
+                    "Error while saving!",
+                    Snackbar.LENGTH_LONG)
+                    .show();
+
+            e.printStackTrace();
+        }
     }
 
     /**

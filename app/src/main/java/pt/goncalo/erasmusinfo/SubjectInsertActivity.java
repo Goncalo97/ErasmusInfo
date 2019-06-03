@@ -88,6 +88,7 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_save) {
+            save();
             return true;
         } else if (id == R.id.action_cancel) {
             finish();
@@ -95,6 +96,79 @@ public class SubjectInsertActivity extends AppCompatActivity implements LoaderMa
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save() {
+        String code = editTextCode.getText().toString();
+
+        if (code.trim().isEmpty()) {
+            editTextCode.setError("Please type a code.");
+            return;
+        }
+
+        String name = editTextName.getText().toString();
+
+        if (name.trim().isEmpty()) {
+            editTextName.setError("Please type a name.");
+            return;
+        }
+
+        int ects;
+
+        String strECTs = editTextECTs.getText().toString();
+
+        if (strECTs.trim().isEmpty()) {
+            editTextECTs.setError("Please type the ECTs.");
+            return;
+        }
+
+        try {
+            ects = Integer.parseInt(strECTs);
+        } catch (NumberFormatException e) {
+            editTextECTs.setError("Invalid ECTs.");
+            return;
+        }
+
+        String equalSubject = editTextEqualSubject.getText().toString();
+
+        if (equalSubject.trim().isEmpty()) {
+            editTextEqualSubject.setError("Please type an equal subject.");
+            return;
+        }
+
+        String score = editTextScore.getText().toString();
+
+        if (score.trim().isEmpty()) {
+            editTextScore.setError("Please type a score.");
+            return;
+        }
+
+        long idCollege = spinnerCollege.getSelectedItemId();
+
+        // Save the data
+        Subject subject = new Subject();
+
+        subject.setCode(code);
+        subject.setIdCollege(idCollege);
+        subject.setName(name);
+        subject.setEcts(ects);
+        subject.setEqualSubject(equalSubject);
+        subject.setScore(score);
+
+        try {
+            getContentResolver().insert(ErasmusInfoContentProvider.SUBJECT_ADDRESS, subject.getContentValues());
+
+            Toast.makeText(this, "Saved with success!", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (Exception e) {
+            Snackbar.make(
+                    editTextName,
+                    "Error while saving!",
+                    Snackbar.LENGTH_LONG)
+                    .show();
+
+            e.printStackTrace();
+        }
     }
 
     public void subjectSave(View view) {

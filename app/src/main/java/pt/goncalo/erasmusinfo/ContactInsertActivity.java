@@ -22,6 +22,8 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class ContactInsertActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int ID_CURSOR_LOADER_CONTACT = 0;
@@ -79,6 +81,7 @@ public class ContactInsertActivity extends AppCompatActivity implements LoaderMa
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_save) {
+            save();
             return true;
         } else if (id == R.id.action_cancel) {
             finish();
@@ -86,6 +89,46 @@ public class ContactInsertActivity extends AppCompatActivity implements LoaderMa
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void save() {
+        String name = editTextName.getText().toString();
+
+        if (name.trim().isEmpty()) {
+            editTextName.setError("Please type a name.");
+            return;
+        }
+
+        String number = editTextNumber.getText().toString();
+
+        if (number.trim().isEmpty()) {
+            editTextNumber.setError("Please type a number.");
+            return;
+        }
+
+        long idProfile = spinnerProfile.getSelectedItemId();
+
+        // Save the data
+        Contact contact = new Contact();
+
+        contact.setName(name);
+        contact.setIdProfile(idProfile);
+        contact.setNumber(number);
+
+        try {
+            getContentResolver().insert(ErasmusInfoContentProvider.CONTACT_ADDRESS, contact.getContentValues());
+
+            Toast.makeText(this, "Saved with success!", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (Exception e) {
+            Snackbar.make(
+                    editTextName,
+                    "Error while saving!",
+                    Snackbar.LENGTH_LONG)
+                    .show();
+
+            e.printStackTrace();
+        }
     }
 
     public void contactSave(View view) {
