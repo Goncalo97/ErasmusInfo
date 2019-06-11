@@ -30,7 +30,7 @@
                 android:layout_marginRight="@dimen/side_margin"
                 android:layout_marginBottom="@dimen/bottom_margin"
                 android:text="College"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorAccent" />
 
             <Spinner
