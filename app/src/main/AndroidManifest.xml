@@ -127,7 +127,7 @@
                 android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
-            android:name=".ProfileEdit"
+            android:name=".ProfileEditActivity"
             android:label="@string/title_activity_profile_edit"
             android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">

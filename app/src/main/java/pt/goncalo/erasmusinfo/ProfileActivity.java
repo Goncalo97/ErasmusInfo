@@ -26,6 +26,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class ProfileActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int ID_CURSOR_LOADER_PROFILE = 0;
+    public static final String ID_PROFILE = "ID_PROFILE";
     private RecyclerView recyclerViewProfile;
     private AdapterProfile adapterProfile;
     @Override
@@ -83,6 +84,10 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
             return true;
         } else if (id == R.id.action_edit) {
             Toast.makeText(this, R.string.edit_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ProfileEditActivity.class);
+            intent.putExtra(ID_PROFILE, adapterProfile.getProfileSelected().getId());
+
+            startActivity(intent);
         } else if (id == R.id.action_delete) {
             Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
         }

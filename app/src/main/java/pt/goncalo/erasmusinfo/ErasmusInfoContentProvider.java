@@ -156,7 +156,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
             case URI_PROFILE:
                 return new DbTableProfile(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_PROFILE:
-                return  new DbTableProfile(bd).query(projection, DbTableProfile._ID + "=?", new String[] { id }, null, null, null);
+                return  new DbTableProfile(bd).query(projection,  DbTableProfile.TABLE_NAME+ "." + DbTableProfile._ID + "=?", new String[] { id }, null, null, null);
             case URI_CONTACT:
                 return new DbTableContact(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_CONTACT:
@@ -328,7 +328,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
             case URI_UNIQUE_SUBJECT:
                 return new DbTableSubject(bd).update(values, DbTableSubject._ID + "=?", new String[] {id});
             default:
-                throw new UnsupportedOperationException("URI inválida (UPDATE): " + uri.toString());
+                    throw new UnsupportedOperationException("URI inválida (UPDATE): " + uri.toString());
         }
     }
 }
