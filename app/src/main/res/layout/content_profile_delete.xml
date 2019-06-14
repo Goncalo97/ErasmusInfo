@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:focusableInTouchMode="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ProfileDelete"
+    tools:context=".ProfileDeleteActivity"
     tools:showIn="@layout/activity_profile_delete">
 
 
@@ -59,32 +59,5 @@
         android:ems="10"
         android:text="@string/profile_delete_textView_example_birthDate"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
-
-    <Button
-        android:id="@+id/buttonDeleteProfile"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:onClick="profileDelete"
-        android:text="@string/profile_delete_button_delete"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
-    <Button
-        android:id="@+id/buttonCancelProfile"
-        style="@android:style/Widget.DeviceDefault.Button.Inset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:onClick="cancelProfile"
-        android:text="@string/profile_edit_button_cancel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
 
 </LinearLayout>

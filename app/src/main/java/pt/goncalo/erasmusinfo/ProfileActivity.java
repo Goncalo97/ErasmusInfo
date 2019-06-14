@@ -90,6 +90,10 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
             startActivity(intent);
         } else if (id == R.id.action_delete) {
             Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ProfileDeleteActivity.class);
+            intent.putExtra(ID_PROFILE, adapterProfile.getProfileSelected().getId());
+
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

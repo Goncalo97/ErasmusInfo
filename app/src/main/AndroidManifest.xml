@@ -91,7 +91,7 @@
                 android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
-            android:name=".ProfileDelete"
+            android:name=".ProfileDeleteActivity"
             android:label="@string/title_activity_profile_delete"
             android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
