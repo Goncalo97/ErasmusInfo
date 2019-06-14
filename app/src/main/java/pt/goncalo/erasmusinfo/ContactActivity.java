@@ -88,7 +88,10 @@ public class ContactActivity extends AppCompatActivity  implements LoaderManager
             startActivity(intent);
             return true;
         } else if (id == R.id.action_delete) {
-            Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ContactDeleteActivity.class);
+            intent.putExtra(ID_CONTACT, adapterContact.getContactSelected().getId());
+            startActivity(intent);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

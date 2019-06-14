@@ -35,6 +35,27 @@
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
     <TextView
+        android:id="@+id/textViewProfileHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:text="Profile Name:"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
         android:id="@+id/textViewContactNumberHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +68,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
     <TextView
-        android:id="@+id/textViewProfileDate"
+        android:id="@+id/textViewContactNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/side_margin"
@@ -58,29 +79,4 @@
         android:text="@string/contact_delete_textView_example_number"
         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-    <Button
-        android:id="@+id/buttonContactDelete"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:onClick="contactDelete"
-        android:text="@string/contact_delete_button_delete"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
-    <Button
-        android:id="@+id/buttonContactCancel"
-        style="@android:style/Widget.DeviceDefault.Button.Inset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:onClick="contactCancel"
-        android:text="@string/contact_delete_button_cancel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 </LinearLayout>
