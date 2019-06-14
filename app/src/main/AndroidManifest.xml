@@ -55,7 +55,7 @@
                 android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
         </activity>
         <activity
-            android:name=".ContactDelete"
+            android:name=".ContactDeleteActivity"
             android:label="@string/title_activity_contact_delete"
             android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -64,7 +64,7 @@
                 android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
-            android:name=".ContactEdit"
+            android:name=".ContactEditActivity"
             android:label="@string/title_activity_contact_edit"
             android:parentActivityName=".ContactActivity"
             android:theme="@style/AppTheme.NoActionBar">

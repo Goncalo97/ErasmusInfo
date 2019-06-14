@@ -28,6 +28,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class ContactActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int ID_CURSOR_LOADER_CONTACT = 0;
+    public static final String ID_CONTACT = "ID_CONTACT";
     private RecyclerView recyclerViewContact;
     private AdapterContact adapterContact;
         @Override
@@ -78,12 +79,14 @@ public class ContactActivity extends AppCompatActivity  implements LoaderManager
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_add) {
-            Toast.makeText(this, R.string.add_button, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ContactInsertActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_edit) {
-            Toast.makeText(this, R.string.edit_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ContactEditActivity.class);
+            intent.putExtra(ID_CONTACT, adapterContact.getContactSelected().getId());
+            startActivity(intent);
+            return true;
         } else if (id == R.id.action_delete) {
             Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
         }

@@ -67,5 +67,4 @@
             android:hint="@string/contact_insert_textInputEditText_hint_number"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
-
 </LinearLayout>

@@ -160,7 +160,7 @@ public class ErasmusInfoContentProvider extends ContentProvider {
             case URI_CONTACT:
                 return new DbTableContact(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_CONTACT:
-                return  new DbTableContact(bd).query(projection, DbTableContact._ID + "=?", new String[] { id }, null, null, null);
+                return new DbTableContact(bd).query(projection,  DbTableContact.TABLE_NAME + "." + DbTableContact._ID + "=?", new String[] { id }, null, null, null);
             case URI_COLLEGE:
                 return new DbTableCollege(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_COLLEGE:
