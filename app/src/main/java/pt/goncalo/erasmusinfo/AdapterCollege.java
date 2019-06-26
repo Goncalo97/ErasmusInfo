@@ -1,7 +1,10 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,10 +100,38 @@ public class AdapterCollege extends RecyclerView.Adapter<AdapterCollege.ViewHold
 
     private static ViewHolderCollege viewHolderCollegeSelected = null;
 
+    private String getProfileName(long idProfile) {
+        ContentResolver mResolver = context.getContentResolver();
+
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.PROFILE_ADDRESS, String.valueOf(idProfile));
+
+        Cursor cursor = mResolver.query(uri, DbTableProfile.ALL_COLUMNS, null, null, null);
+        Log.i("CURSOR QUERY", ""+cursor);
+
+        String profileName = "";
+
+        if (!cursor.moveToNext()) {
+            Log.i("CURSOR", "Error: It was not possible to read the Profile.");
+            //Toast.makeText(context, "Error: It was not possible to read the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+        }
+
+        Profile profile;
+        profile = Profile.fromCursor(cursor);
+        profileName = String.valueOf(profile.getName());
+
+        cursor.close();
+        // cursor = null;
+
+        return profileName;
+    }
+
     public class ViewHolderCollege extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView textViewName;
         private TextView textViewCountry;
         private TextView textViewLocation;
+        private TextView textViewProfileName;
 
         private College college;
 
@@ -109,6 +140,7 @@ public class AdapterCollege extends RecyclerView.Adapter<AdapterCollege.ViewHold
             textViewName = itemView.findViewById(R.id.textViewCollegeName);
             textViewCountry = itemView.findViewById(R.id.textViewCollegeCountry);
             textViewLocation = itemView.findViewById(R.id.textViewCollegeLocation);
+            textViewProfileName = itemView.findViewById(R.id.textViewCollegeProfile);
             itemView.setOnClickListener(this);
         }
 
@@ -117,6 +149,7 @@ public class AdapterCollege extends RecyclerView.Adapter<AdapterCollege.ViewHold
             textViewName.setText(college.getName());
             textViewCountry.setText(college.getCountry());
             textViewLocation.setText(college.getLocation());
+            textViewProfileName.setText(getProfileName(college.getIdProfile()));
         }
 
         /**
