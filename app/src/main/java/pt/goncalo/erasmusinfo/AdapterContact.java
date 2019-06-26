@@ -1,12 +1,16 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -97,9 +101,37 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ViewHold
 
     private static ViewHolderContact viewHolderContactSelected = null;
 
+    private String getProfileName(long idProfile) {
+        ContentResolver mResolver = context.getContentResolver();
+
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.PROFILE_ADDRESS, String.valueOf(idProfile));
+
+        Cursor cursor = mResolver.query(uri, DbTableProfile.ALL_COLUMNS, null, null, null);
+        Log.i("CURSOR QUERY", ""+cursor);
+
+        String profileName = "";
+
+        if (!cursor.moveToNext()) {
+            Log.i("CURSOR", "Error: It was not possible to read the Profile.");
+            //Toast.makeText(context, "Error: It was not possible to read the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+        }
+
+        Profile profile;
+        profile = Profile.fromCursor(cursor);
+        profileName = String.valueOf(profile.getName());
+
+        cursor.close();
+        // cursor = null;
+
+        return profileName;
+    }
+
     public class ViewHolderContact extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView textViewName;
         private TextView textViewNumber;
+        private TextView textViewProfileName;
 
         private Contact contact;
 
@@ -107,6 +139,7 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ViewHold
             super(itemView);
             textViewName = itemView.findViewById(R.id.textViewContactName);
             textViewNumber = itemView.findViewById(R.id.textViewContactNumber);
+            textViewProfileName = itemView.findViewById(R.id.textViewContactProfile);
             itemView.setOnClickListener(this);
         }
 
@@ -114,6 +147,7 @@ public class AdapterContact extends RecyclerView.Adapter<AdapterContact.ViewHold
             this.contact = contact;
             textViewName.setText(contact.getName());
             textViewNumber.setText(String.valueOf(contact.getNumber()));
+            textViewProfileName.setText(getProfileName(contact.getIdProfile()));
         }
 
         /**

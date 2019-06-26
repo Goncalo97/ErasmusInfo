@@ -43,7 +43,8 @@
         android:layout_marginRight="@dimen/side_margin"
         android:layout_marginBottom="@dimen/bottom_margin"
         android:text="Profile Name:"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
         android:id="@+id/textViewProfile"

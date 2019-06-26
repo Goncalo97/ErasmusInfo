@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.text.TextUtils;
+import android.util.Log;
 
 public class DbTableProfile implements BaseColumns {
     public static final String TABLE_NAME = "profile";
@@ -30,6 +32,8 @@ public class DbTableProfile implements BaseColumns {
     }
 
     public Cursor query(String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
+        String columnsSelect = TextUtils.join(",", columns);
+        Log.i("Table Profile", "Query: " + columnsSelect);
         return db.query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy);
     }
 

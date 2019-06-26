@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,7 +57,21 @@ public class ContactDeleteActivity extends AppCompatActivity {
 
         textViewName.setText(contact.getName());
         textViewNumber.setText(contact.getNumber());
-        textViewProfile.setText(String.valueOf(contact.getIdProfile()));
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.PROFILE_ADDRESS, String.valueOf(contact.getIdProfile()));
+        Cursor cursorP = getContentResolver().query(uri, DbTableProfile.ALL_COLUMNS, null, null, null);
+
+        Log.i("CURSORP", ""+cursorP);
+        if (!cursorP.moveToNext()) {
+            Toast.makeText(this, "Error: It was not possible to load the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+
+
+        }
+
+
+        Profile profile = Profile.fromCursor(cursorP);
+        textViewProfile.setText(String.valueOf(profile.getName()));
 
     }
 

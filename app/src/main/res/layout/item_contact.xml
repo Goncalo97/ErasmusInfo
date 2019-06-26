@@ -35,4 +35,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewContactName"
         tools:text="910234569" />
 
+
+    <TextView
+        android:id="@+id/textViewContactProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingBottom="16dp"
+        tools:text="Profile Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewContactNumber"
+        app:layout_constraintTop_toBottomOf="@+id/textViewContactNumber" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
