@@ -11,30 +11,30 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
-public class SubjectDelete extends AppCompatActivity {
+public class CollegeDeleteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subject_delete);
+        setContentView(R.layout.activity_college_delete);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void subjectDelete(View view) {
+    public void collegeDelete(View view) {
 
         Toast.makeText(this,
-                "{" + getString(R.string.subject_delete_toast_deleted) + "}",
+                "{" + getString(R.string.college_delete_toast_deleted) + "}",
                 Toast.LENGTH_SHORT).show();
         finish();
 
     }
 
-    public void subjectCancel(View view) {
+    public void collegeCancel(View view) {
 
         Toast.makeText(this,
-                "{" + getString(R.string.subject_delete_toast_canceled) + "}",
+                "{" + getString(R.string.college_delete_toast_canceled) + "}",
                 Toast.LENGTH_SHORT).show();
         finish();
     }

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:focusableInTouchMode="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SubjectEdit"
+    tools:context=".SubjectEditActivity"
     tools:showIn="@layout/activity_subject_edit">
 
     <ScrollView
