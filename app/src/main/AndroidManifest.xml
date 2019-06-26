@@ -82,15 +82,6 @@
                 android:value="pt.goncalo.erasmusinfo.ContactActivity" />
         </activity>
         <activity
-            android:name=".ContactView"
-            android:label="@string/title_activity_contact_view"
-            android:parentActivityName=".ContactActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.ContactActivity" />
-        </activity>
-        <activity
             android:name=".ProfileDeleteActivity"
             android:label="@string/title_activity_profile_delete"
             android:parentActivityName=".ProfileActivity"
@@ -116,15 +107,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pt.goncalo.erasmusinfo.SubjectActivity" />
-        </activity>
-        <activity
-            android:name=".ProfileView"
-            android:label="@string/title_activity_profile_view"
-            android:parentActivityName=".ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="pt.goncalo.erasmusinfo.ProfileActivity" />
         </activity>
         <activity
             android:name=".ProfileEditActivity"

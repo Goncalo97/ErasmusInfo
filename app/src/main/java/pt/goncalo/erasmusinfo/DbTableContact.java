@@ -4,15 +4,20 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.text.TextUtils;
+import android.util.Log;
 
 public class DbTableContact implements BaseColumns {
     public static final String TABLE_NAME = "contact";
+    public static final String ALIAS_PROFILE_NAME = "name_profile";
     public static final String FIELD_NAME = "name";
     public static final String FIELD_NUMBER = "number";
     public static final String FIELD_ID_PROFILE = "idProfile";
+    public static final String FIELD_NAME_PROFILE = DbTableProfile.TABLE_NAME + "." + DbTableProfile.FIELD_NAME + " AS " + ALIAS_PROFILE_NAME; // tabela de perfis (só de leitura)
+
     private SQLiteDatabase db;
 
-    public static final String[] ALL_COLUMNS = new String[] { _ID, FIELD_NAME, FIELD_NUMBER, FIELD_ID_PROFILE };
+    public static final String[] ALL_COLUMNS = new String[] { TABLE_NAME + "." + _ID, TABLE_NAME + "." + FIELD_NAME, FIELD_NUMBER, FIELD_ID_PROFILE, FIELD_NAME_PROFILE };
 
     public DbTableContact(SQLiteDatabase db) {
         this.db = db;
@@ -31,7 +36,19 @@ public class DbTableContact implements BaseColumns {
     }
 
     public Cursor query(String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
-        return db.query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy);
+        String columnsSelect = TextUtils.join(",", columns);
+        // return db.query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, orderBy);
+        String sql = "SELECT " + columnsSelect + " FROM " +
+                TABLE_NAME + " INNER JOIN " + DbTableProfile.TABLE_NAME + " WHERE " + TABLE_NAME + "." + FIELD_ID_PROFILE + "=" + DbTableProfile.TABLE_NAME+ "." + DbTableProfile._ID
+                ;
+
+        if (selection != null) {
+            sql += " AND " + selection;
+        }
+
+        Log.d("Table Contact", "query: " + sql);
+
+        return db.rawQuery(sql, selectionArgs);
     }
 
     public long insert(ContentValues values) {
