@@ -10,16 +10,26 @@
     tools:context=".SubjectEditActivity"
     tools:showIn="@layout/activity_subject_edit">
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <TextView
+        android:id="@+id/textViewSpinnerSubject"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:text="Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorAccent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Spinner
+        android:id="@+id/spinnerSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -72,7 +82,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:hint="@string/subject_edit_textInputEditText_hint_ects"
-            android:inputType="number" />
+            android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -87,7 +97,10 @@
             android:layout_marginTop="@dimen/top_margin"
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginBottom="@dimen/bottom_margin"
+            android:clickable="true"
             android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:hint="@string/subject_edit_textInputEditText_hint_discEqual"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -104,37 +117,13 @@
             android:layout_marginTop="@dimen/top_margin"
             android:layout_marginRight="@dimen/side_margin"
             android:layout_marginBottom="@dimen/bottom_margin"
+            android:clickable="true"
             android:ems="10"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:hint="@string/subject_edit_textInputEditText_hint_score"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/buttonSubjectSave"
-        style="@android:style/Widget.Button.Inset"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginTop="@dimen/top_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:layout_marginBottom="@dimen/bottom_margin"
-            android:onClick="subjectSave"
-            android:text="@string/subject_edit_button_save"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-
-        <Button
-            android:id="@+id/buttonSubjectCancel"
-            style="@android:style/Widget.DeviceDefault.Button.Inset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/side_margin"
-            android:layout_marginTop="@dimen/top_margin"
-            android:layout_marginRight="@dimen/side_margin"
-            android:layout_marginBottom="@dimen/bottom_margin"
-            android:onClick="subjectCancel"
-            android:text="@string/subject_edit_button_cancel"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>
 
