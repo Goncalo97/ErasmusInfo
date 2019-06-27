@@ -27,6 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class SubjectActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final int ID_CURSOR_LOADER_SUBJECT = 0;
+    public static final String ID_SUBJECT = "ID_SUBJECT";
     private RecyclerView recyclerViewSubject;
     private AdapterSubject adapterSubject;
     @Override
@@ -81,9 +82,13 @@ public class SubjectActivity extends AppCompatActivity  implements LoaderManager
             startActivity(intent);
             return true;
         } else if (id == R.id.action_edit) {
-            Toast.makeText(this, R.string.edit_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SubjectEditActivity.class);
+            intent.putExtra(ID_SUBJECT, adapterSubject.getSubjectSelected().getId());
+            startActivity(intent);
         } else if (id == R.id.action_delete) {
-            Toast.makeText(this, R.string.delete_button, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SubjectDeleteActivity.class);
+            intent.putExtra(ID_SUBJECT, adapterSubject.getSubjectSelected().getId());
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

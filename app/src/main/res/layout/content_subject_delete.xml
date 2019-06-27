@@ -9,148 +9,159 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SubjectDeleteActivity"
     tools:showIn="@layout/activity_subject_delete">
-
-    <TextView
-        android:id="@+id/textViewProfileHint"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:text="Profile Name:"
-        android:textColor="@color/colorAccent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <TextView
+                android:id="@+id/textViewCollegeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:text="College Name:"
+                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/textViewCollege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
 
-    <TextView
-        android:id="@+id/textViewSubjectCountryCodeHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_hint_code"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+            <TextView
+                android:id="@+id/textViewSubjectCountryCodeHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_hint_code"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-    <TextView
-        android:id="@+id/textViewSubjectCode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_example_code"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            <TextView
+                android:id="@+id/textViewSubjectCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_example_code"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-    <TextView
-        android:id="@+id/textViewSubjectNameHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_hint_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+            <TextView
+                android:id="@+id/textViewSubjectNameHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_hint_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
-    <TextView
-        android:id="@+id/textViewSubjectName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_example_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            <TextView
+                android:id="@+id/textViewSubjectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_example_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-    <TextView
-        android:id="@+id/textViewSubjectECTsHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_hint_ects"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+            <TextView
+                android:id="@+id/textViewSubjectECTsHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_hint_ects"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-    <TextView
-        android:id="@+id/textViewSubjectECTs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_example_ects"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            <TextView
+                android:id="@+id/textViewSubjectECTs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_example_ects"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-    <TextView
-        android:id="@+id/textViewSubjectDiscEqualHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_hint_discEqual"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+            <TextView
+                android:id="@+id/textViewSubjectDiscEqualHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_hint_discEqual"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-    <TextView
-        android:id="@+id/textViewSubjectDiscEqual"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_example_discEqual"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            <TextView
+                android:id="@+id/textViewSubjectDiscEqual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_example_discEqual"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-    <TextView
-        android:id="@+id/textViewSubjectScoreHint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_hint_score"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+            <TextView
+                android:id="@+id/textViewSubjectScoreHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_hint_score"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-    <TextView
-        android:id="@+id/textViewSubjectScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/side_margin"
-        android:layout_marginTop="@dimen/top_margin"
-        android:layout_marginRight="@dimen/side_margin"
-        android:layout_marginBottom="@dimen/bottom_margin"
-        android:ems="10"
-        android:text="@string/subject_delete_textView_example_score"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+            <TextView
+                android:id="@+id/textViewSubjectScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/bottom_margin"
+                android:ems="10"
+                android:text="@string/subject_delete_textView_example_score"
+                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
