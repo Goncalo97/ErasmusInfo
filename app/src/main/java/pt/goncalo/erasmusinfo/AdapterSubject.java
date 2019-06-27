@@ -1,7 +1,10 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,12 +100,90 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
 
     private static ViewHolderSubject viewHolderSubjectSelected = null;
 
+    private String getProfileName(long idCollege) {
+        ContentResolver mResolver = context.getContentResolver();
+
+        Uri uriC = Uri.withAppendedPath(ErasmusInfoContentProvider.COLLEGE_ADDRESS, String.valueOf(idCollege));
+
+        Cursor cursorC = mResolver.query(uriC, DbTableCollege.ALL_COLUMNS, null, null, null);
+        Log.i("CURSOR QUERY", ""+cursorC);
+
+        String collegeProfileID = "";
+
+        if (!cursorC.moveToNext()) {
+            Log.i("CURSOR", "Error: It was not possible to read the College.");
+            //Toast.makeText(context, "Error: It was not possible to read the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+        }
+
+        College college;
+        college = College.fromCursor(cursorC);
+        //collegeName = String.valueOf(college.getName());
+        collegeProfileID = String.valueOf(college.getIdProfile());
+        cursorC.close();
+        // cursor = null;
+
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.PROFILE_ADDRESS, String.valueOf(collegeProfileID));
+
+        Cursor cursor = mResolver.query(uri, DbTableProfile.ALL_COLUMNS, null, null, null);
+        Log.i("CURSOR QUERY", ""+cursor);
+
+        String profileName = "";
+
+        if (!cursor.moveToNext()) {
+            Log.i("CURSOR", "Error: It was not possible to read the Profile.");
+            //Toast.makeText(context, "Error: It was not possible to read the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+        }
+
+        Profile profile;
+        profile = Profile.fromCursor(cursor);
+        profileName = String.valueOf(profile.getName());
+
+        cursor.close();
+        // cursor = null;
+
+        return profileName;
+    }
+
+    private String getCollegeName(long idCollege) {
+        ContentResolver mResolver = context.getContentResolver();
+
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.COLLEGE_ADDRESS, String.valueOf(idCollege));
+
+        Cursor cursor = mResolver.query(uri, DbTableCollege.ALL_COLUMNS, null, null, null);
+        Log.i("CURSOR QUERY", ""+cursor);
+
+        String collegeName = "";
+
+        if (!cursor.moveToNext()) {
+            Log.i("CURSOR", "Error: It was not possible to read the College.");
+            //Toast.makeText(context, "Error: It was not possible to read the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+        }
+
+        College college;
+        college = College.fromCursor(cursor);
+        collegeName = String.valueOf(college.getName());
+
+        cursor.close();
+        // cursor = null;
+
+        return collegeName;
+    }
+
     public class ViewHolderSubject extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView textViewCode;
         private TextView textViewName;
         private TextView textViewECTs;
         private TextView textViewEqualSubject;
         private TextView textViewScore;
+        private TextView textViewProfileName;
+        private TextView textViewCollegeName;
+
 
         private Subject subject;
 
@@ -113,6 +194,8 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
             textViewECTs = itemView.findViewById(R.id.textViewSubjectECTs);
             textViewEqualSubject = itemView.findViewById(R.id.textViewSubjectEqualSubject);
             textViewScore = itemView.findViewById(R.id.textViewSubjectScore);
+            textViewProfileName = itemView.findViewById(R.id.textViewSubjectProfile);
+            textViewCollegeName = itemView.findViewById(R.id.textViewSubjectCollege);
             itemView.setOnClickListener(this);
         }
 
@@ -123,6 +206,8 @@ public class AdapterSubject extends RecyclerView.Adapter<AdapterSubject.ViewHold
             textViewECTs.setText(String.valueOf(subject.getECTS()));
             textViewEqualSubject.setText(subject.getEqualSubject());
             textViewScore.setText(subject.getScore());
+            textViewProfileName.setText(getProfileName(subject.getIdCollege()));
+            textViewCollegeName.setText(getCollegeName(subject.getIdCollege()));
         }
 
         /**
