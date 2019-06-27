@@ -164,11 +164,11 @@ public class ErasmusInfoContentProvider extends ContentProvider {
             case URI_COLLEGE:
                 return new DbTableCollege(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_COLLEGE:
-                return  new DbTableCollege(bd).query(projection, DbTableCollege._ID + "=?", new String[] { id }, null, null, null);
+                return new DbTableCollege(bd).query(projection,  DbTableCollege.TABLE_NAME + "." + DbTableCollege._ID + "=?", new String[] { id }, null, null, null);
             case URI_SUBJECT:
                 return new DbTableSubject(bd).query(projection, selection, selectionArgs, null, null, sortOrder);
             case URI_UNIQUE_SUBJECT:
-                return  new DbTableSubject(bd).query(projection, DbTableSubject._ID + "=?", new String[] { id }, null, null, null);
+                return  new DbTableSubject(bd).query(projection, DbTableSubject.TABLE_NAME + "." + DbTableSubject._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("URI inválida (QUERY): " + uri.toString());
         }
