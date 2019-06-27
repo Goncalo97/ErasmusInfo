@@ -1,10 +1,12 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -72,7 +74,8 @@ public class ProfileDeleteActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_delete) {
-            delete();
+            //delete();
+            AskDelete();
             return true;
         } else if (id == R.id.action_cancel) {
             finish();
@@ -107,4 +110,32 @@ public class ProfileDeleteActivity extends AppCompatActivity {
         finish();
     }
 
+    private void AskDelete() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        alertDialogBuilder.setTitle("DELETE");
+        alertDialogBuilder.setMessage("Are you sure you want to delete this record?");
+
+        alertDialogBuilder.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        delete();
+                    }
+                }
+        );
+
+        alertDialogBuilder.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;//finish();
+                    }
+                }
+        );
+
+        alertDialogBuilder.show();
+    }
 }
