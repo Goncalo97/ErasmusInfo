@@ -87,7 +87,7 @@ public class CollegeActivity extends AppCompatActivity  implements LoaderManager
             intent.putExtra(ID_COLLEGE, adapterCollege.getCollegeSelected().getId());
             startActivity(intent);
         } else if (id == R.id.action_delete) {
-            Intent intent = new Intent(this, CollegeEditActivity.class);
+            Intent intent = new Intent(this, CollegeDeleteActivity.class);
             intent.putExtra(ID_COLLEGE, adapterCollege.getCollegeSelected().getId());
             startActivity(intent);
         }

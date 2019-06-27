@@ -1,5 +1,8 @@
 package pt.goncalo.erasmusinfo;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -8,11 +11,16 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CollegeDeleteActivity extends AppCompatActivity {
-
+    private Uri collegeDeleteAddress;
+    //TODO por getSupportLoader ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,22 +28,93 @@ public class CollegeDeleteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+        TextView textViewName = (TextView) findViewById(R.id.textViewCollegeName);
+        TextView textViewProfile = (TextView) findViewById(R.id.textViewProfile);
+        TextView textViewCountry = (TextView) findViewById(R.id.textViewCollegeCountry);
+        TextView textViewLocation = (TextView) findViewById(R.id.textViewCollegeLocation);
+
+        Intent intent = getIntent();
+
+        long idCollege = intent.getLongExtra(CollegeActivity.ID_COLLEGE, -1);
+
+            if (idCollege == -1) {
+            Toast.makeText(this, "Error: It was not possible to read the College.", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        collegeDeleteAddress = Uri.withAppendedPath(ErasmusInfoContentProvider.COLLEGE_ADDRESS, String.valueOf(idCollege));
+
+        Cursor cursor = getContentResolver().query(collegeDeleteAddress, DbTableCollege.ALL_COLUMNS, null, null, null);
+
+            if (!cursor.moveToNext()) {
+            Toast.makeText(this, "Error: It was not possible to delete the College.", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        College college = College.fromCursor(cursor);
+
+            textViewName.setText(college.getName());
+            textViewCountry.setText(college.getCountry());
+        textViewLocation.setText(college.getLocation());
+        Uri uri = Uri.withAppendedPath(ErasmusInfoContentProvider.PROFILE_ADDRESS, String.valueOf(college.getIdProfile()));
+        Cursor cursorP = getContentResolver().query(uri, DbTableProfile.ALL_COLUMNS, null, null, null);
+
+            Log.i("CURSORP", ""+cursorP);
+            if (!cursorP.moveToNext()) {
+            Toast.makeText(this, "Error: It was not possible to load the Profile.", Toast.LENGTH_LONG).show();
+            //finish();
+            //return;
+
+        }
+
+        Profile profile = Profile.fromCursor(cursorP);
+        textViewProfile.setText(String.valueOf(profile.getName()));
     }
 
-    public void collegeDelete(View view) {
-
-        Toast.makeText(this,
-                "{" + getString(R.string.college_delete_toast_deleted) + "}",
-                Toast.LENGTH_SHORT).show();
-        finish();
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_delete, menu);
+        return true;
     }
 
-    public void collegeCancel(View view) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
-        Toast.makeText(this,
-                "{" + getString(R.string.college_delete_toast_canceled) + "}",
-                Toast.LENGTH_SHORT).show();
-        finish();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_delete) {
+            delete();
+            return true;
+        } else if (id == R.id.action_cancel) {
+            finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
+
+    private void delete() {
+        // todo: perguntar ao utilizador se tem a certeza
+        int erasedProfile = getContentResolver().delete(collegeDeleteAddress, null, null);
+        if (erasedProfile == 1) {
+            Toast.makeText(this, "College deleted with success!", Toast.LENGTH_LONG).show();
+            finish();
+        } else {
+            Toast.makeText(this, "Error: It was not possible to delete the college!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+
 }

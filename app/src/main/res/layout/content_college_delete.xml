@@ -10,121 +10,98 @@
     tools:context=".CollegeDeleteActivity"
     tools:showIn="@layout/activity_college_delete">
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <TextView
+        android:id="@+id/textViewCollegeNameHint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_hint_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/textViewCollegeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_example_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-            <TextView
-                android:id="@+id/textViewCollegeHintName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_hint_name"
-                android:textColor="@color/colorHint"
-                android:textSize="@dimen/titleSize" />
+    <TextView
+        android:id="@+id/textViewProfileHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:text="Profile Name:"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <TextView
-                android:id="@+id/textViewCollegeName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_example_name"
-                android:textColor="@color/colorText"
-                android:textSize="@dimen/textSize" />
+    <TextView
+        android:id="@+id/textViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <TextView
-                android:id="@+id/textViewCollegeHintCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_hint_country"
-                android:textColor="@color/colorHint"
-                android:textSize="@dimen/titleSize" />
+    <TextView
+        android:id="@+id/textViewCollegeCountryHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_hint_country"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-            <TextView
-                android:id="@+id/textViewCollegeCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_example_country"
-                android:textColor="@color/colorText"
-                android:textSize="@dimen/textSize" />
+    <TextView
+        android:id="@+id/textViewCollegeCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_example_country"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-            <TextView
-                android:id="@+id/textViewCollegeHintLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_hint_location"
-                android:textColor="@color/colorHint"
-                android:textSize="@dimen/titleSize" />
+    <TextView
+        android:id="@+id/textViewCollegeLocationHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_hint_location"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
-            <TextView
-                android:id="@+id/textViewCollegeLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:ems="10"
-                android:text="@string/college_delete_textView_example_location"
-                android:textColor="@color/colorText"
-                android:textSize="@dimen/textSize" />
+    <TextView
+        android:id="@+id/textViewCollegeLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:ems="10"
+        android:text="@string/college_delete_textView_example_location"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle" />
 
-            <Button
-                android:id="@+id/buttonCollegeDelete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:background="@drawable/btn_delete"
-                android:onClick="collegeDelete"
-                android:text="@string/college_delete_button_delete"
-                android:textColor="@color/colorButton"
-                android:textSize="@dimen/buttonSize" />
-
-            <Button
-                android:id="@+id/buttonCollegeCancel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/side_margin"
-                android:layout_marginTop="@dimen/top_margin"
-                android:layout_marginRight="@dimen/side_margin"
-                android:layout_marginBottom="@dimen/bottom_margin"
-                android:background="@drawable/btn_cancel"
-                android:onClick="collegeCancel"
-                android:text="@string/college_delete_button_cancel"
-                android:textColor="@color/colorButton"
-                android:textSize="@dimen/buttonSize" />
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>
