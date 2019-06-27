@@ -159,8 +159,8 @@ public class ProfileActivity extends AppCompatActivity implements LoaderManager.
      */
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
-        FloatingActionButton fab = findViewById(R.id.fab);
-        Snackbar.make(fab, "Existing Profiles: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
+        //FloatingActionButton fab = findViewById(R.id.fab);
+        //Snackbar.make(fab, "Existing Profiles: " + data.getCount(), Snackbar.LENGTH_INDEFINITE).show();
         Log.i("Data Count", "" + data.getCount());
         adapterProfile.setCursor(data);
     }
